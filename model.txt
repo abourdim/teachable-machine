@@ -1,0 +1,6 @@
+image:
+https://teachablemachine.withgoogle.com/models/1ISuuHG-G/
+https://teachablemachine.withgoogle.com/models/hyYiYmWaJ/
+
+audio:
+https://teachablemachine.withgoogle.com/models/KPu59M5Z6/
