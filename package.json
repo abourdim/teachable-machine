@@ -1,0 +1,9 @@
+{
+  "name": "teachable-machine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Teachable Machine for Micro:bit — Teach • Trigger • Control",
+  "scripts": { "build:etsy": "node etsy-package/build-package.js" },
+  "devDependencies": { "@playwright/test": "^1.48.0" }
+}
