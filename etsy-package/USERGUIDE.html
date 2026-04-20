@@ -196,7 +196,7 @@
 └── <span class="kw">seller-only/</span>                 <span class="cm">🔒 Never ships to the buyer</span>
     ├── ETSY_LISTING.md / .html
     ├── ETSY_PUBLISH_GUIDE.html
-    ├── etsy-playbook.html (+ fr / ar)
+    ├── etsy-playbook.html
     ├── ETSY-1MIN-PLAYBOOK.md
     ├── LICENSE-SITE
     ├── SITE_LICENSE_CERTIFICATE.html
@@ -256,7 +256,7 @@ npm run build:etsy</code></pre></dd>
 
 <div class="file">
   <h4>shortcuts-cheatsheet.html <span class="tag buyer">A4 landscape</span></h4>
-  <p><strong>What:</strong> Keyboard shortcuts (Space, 1–8, P, F, K, Esc), BLE state cheat sheet, tab map.</p>
+  <p><strong>What:</strong> Single-page flow reference (Train → Load URL → Start Webcam → Connect → Start Sending), BLE state cheat sheet, TEST button tips.</p>
   <p><strong>When:</strong> Teachers print and pin next to the classroom PC.</p>
 </div>
 
@@ -274,7 +274,7 @@ npm run build:etsy</code></pre></dd>
 
 <div class="file">
   <h4>sticker-sheet.html <span class="tag buyer">A4 portrait</span></h4>
-  <p><strong>What:</strong> 30 circular badges — "I Connected BLE!", theme icons, 3D model crew, language badges, achievement stickers.</p>
+  <p><strong>What:</strong> 30 circular badges — "I Trained an AI!", "I Connected BLE!", "My Micro:bit Listens!" and other achievement stickers.</p>
   <p><strong>When:</strong> Teachers print on sticker paper (Avery 22807 or similar) for student rewards. Great "bonus" line in the Etsy description.</p>
 </div>
 
@@ -291,13 +291,13 @@ npm run build:etsy</code></pre></dd>
   <p><strong>What:</strong> Single HTML file containing 7 <code>&lt;div class="mockup"&gt;</code> elements, each 2000×1500 px. Rendered by <code>build-package.js</code> into <code>output/etsy-mockup-1.png</code> … <code>etsy-mockup-7.png</code>.</p>
   <p><strong>The seven mockups (in upload order):</strong></p>
   <ol>
-    <li><strong>Hero</strong> — app screenshot + "Chrome &amp; Edge only" compatibility badge</li>
-    <li><strong>What's in the ZIP</strong> — file manifest (moved here from slot 5 to reveal value faster)</li>
-    <li><strong>16-cell feature grid</strong> — 8 tabs × features</li>
-    <li><strong>Teacher pitch</strong> — "For teachers" with quotes</li>
-    <li><strong>Kid pitch</strong> — big, playful, colorful</li>
-    <li><strong>4-theme showcase</strong> — Stealth / Neon / Arctic / Blaze</li>
-    <li><strong>Trilingual callout</strong> — EN / FR / AR</li>
+    <li><strong>Hero</strong> — laptop + webcam + BBC micro:bit V2 in frame, "Teach • Trigger • Control" overlay</li>
+    <li><strong>Teachable Machine model-training screen</strong> — three classes with confidence bars</li>
+    <li><strong>Gesture → LED reaction GIF</strong> — hand pose on the left, micro:bit icon on the right</li>
+    <li><strong>Classroom scene</strong> — kids teaching the AI at a shared laptop</li>
+    <li><strong>TEST button close-up</strong> — the one-click BLE sanity check</li>
+    <li><strong>Mobile view</strong> — Chrome sized down to show the single-page flow</li>
+    <li><strong>Bundle / bonus card</strong> — "What's in the ZIP" manifest + lifetime-updates badge</li>
   </ol>
   <p><strong>When:</strong> Upload as the 7 listing images on Etsy in this order. Etsy shows the first image as the search thumbnail.</p>
   <div class="callout info"><strong>Crop caveat:</strong> 2000×1500 is 4:3. Etsy's first-photo square crop will chop 500 px off the sides — verify the product name and the compat badge survive the center-square crop before publishing.</div>
@@ -309,7 +309,7 @@ npm run build:etsy</code></pre></dd>
 
 <div class="file">
   <h4>ETSY_LISTING.md / .html <span class="tag seller">seller-only</span></h4>
-  <p><strong>What:</strong> The full business playbook. Title, description, pricing (single-user $12.99, classroom $29.99, school site $199, district $499+), all 13 tags, paste-ready social copy, Pinterest plan, video scripts, 10 tier-2 product ideas. The <code>.html</code> twin has a copy-to-clipboard button on every paste-ready block.</p>
+  <p><strong>What:</strong> The full business playbook. Title, description, pricing (single-user $14.99, classroom $34.99, school site $249, district $599+), all 13 tags, paste-ready social copy, Pinterest plan, video scripts, 10 tier-2 product ideas. The <code>.html</code> twin has a copy-to-clipboard button on every paste-ready block.</p>
   <p><strong>When:</strong> Your source of truth when you're typing into the Etsy "Create listing" form.</p>
 </div>
 
@@ -320,8 +320,8 @@ npm run build:etsy</code></pre></dd>
 </div>
 
 <div class="file">
-  <h4>etsy-playbook.html / -fr.html / -ar.html <span class="tag seller">seller-only</span></h4>
-  <p><strong>What:</strong> 60-second video script + shot list for the Etsy listing video. EN / FR / AR variants (Etsy allows one video per listing — record in your target language, or create three localized listings).</p>
+  <h4>etsy-playbook.html <span class="tag seller">seller-only</span></h4>
+  <p><strong>What:</strong> 60-second video script + shot list for the Etsy listing video. English-only — this product is monolingual.</p>
   <p><strong>When:</strong> Day you film. Keep open on a second screen while recording.</p>
 </div>
 
@@ -333,7 +333,7 @@ npm run build:etsy</code></pre></dd>
 
 <div class="file">
   <h4>LICENSE-SITE <span class="tag seller">seller-only</span></h4>
-  <p><strong>What:</strong> Legal text for the <strong>School Site License</strong> tier ($199, up to 30 teachers at one school, unlimited students).</p>
+  <p><strong>What:</strong> Legal text for the <strong>School Site License</strong> tier ($249, up to 30 teachers at one school, unlimited students).</p>
   <p><strong>When:</strong> When you create the higher-tier listing on Etsy. Rename to <code>LICENSE</code> inside that tier's ZIP before shipping.</p>
 </div>
 
@@ -364,9 +364,9 @@ npm run build:etsy</code></pre></dd>
   </div>
 
   <div class="stage">
-    <h3>2. Record the video (once per language)</h3>
+    <h3>2. Record the video (once)</h3>
     <ol>
-      <li>Open <code>seller-only/etsy-playbook.html</code> (EN / FR / AR) on a second screen. Record in OBS following the shot list.</li>
+      <li>Open <code>seller-only/etsy-playbook.html</code> on a second screen. Record in OBS following the shot list.</li>
       <li>Export a 60-second MP4, ≤100 MB, 1080p or higher (Etsy's limit).</li>
     </ol>
   </div>

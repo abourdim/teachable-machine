@@ -31,7 +31,7 @@
 - [Screenshot prep](#screenshot-prep--exactly-what-to-capture-for-the-10-listing-photos)
 - [Pinterest pins](#pinterest-pins-free-traffic--biggest-channel-for-stem--homeschool-buyers)
 - [Free-traffic playbook](#free-traffic-playbook-beyond-pinterest)
-- [Second listing — School Site License ($199)](#second-listing--school-site-license-199)
+- [Second listing — School Site License ($249)](#second-listing--school-site-license-199)
 - [Third listing — Arabic](#third-listing--arabic-uncontested-market)
 - [V1.0.0 sell ideas](#new-sell-ideas-enabled-by-the-illustrated-guide-v102)
 - [Tier-2 sell ideas](#tier-2-sell-ideas--deeper-less-obvious)
@@ -40,7 +40,7 @@
 
 ## Title (140 char max — pack it with searchable keywords)
 
-Bluetooth Web App for webcam + BBC micro:bit V2 + Illustrated Guide | 8 Tabs, 5 Robots, Live Graphs | STEM Classroom | Digital Download
+Teachable Machine for Micro:bit — Train an AI, Make a Micro:bit React | Webcam + Bluetooth | Teach Trigger Control | No Install | Chrome
 
 > Product name in your Etsy shop is **"Teachable Machine for Micro:bit"** — use the phrase **"for the webcam + BBC micro:bit V2"** everywhere else to stay within the Micro:bit Educational Foundation's trademark-use guidelines.
 
@@ -57,11 +57,11 @@ micro:bit, microbit v2, STEM, coding kids, BBC microbit, bluetooth app, MakeCode
 
 ## Price suggestion (revised after V1.0.0 — illustrated guide justifies ~30% bump)
 
-- **$12.99** launch (was $9.99 — the interactive illustrated guide is worth the bump)
-- **$17.99** standard, after 5 reviews
-- **$29.99** with a printable Lesson Plan PDF bundle
-- **$199** School Site License (separate listing — was $149; TpT comparables are $200–$400 so $149 was leaving money on the table)
-- **Starting at $499** for districts (3+ sites — quote via Etsy message)
+- **$14.99** launch (was $9.99 — the interactive illustrated guide is worth the bump)
+- **$19.99** standard, after 5 reviews
+- **$34.99** with a printable Lesson Plan PDF bundle
+- **$249** School Site License (separate listing — was $149; TpT comparables are $200–$400 so $149 was leaving money on the table)
+- **Starting at $599** for districts (3+ sites — quote via Etsy message)
 
 ## Listing description
 
@@ -83,11 +83,12 @@ micro:bit, microbit v2, STEM, coding kids, BBC microbit, bluetooth app, MakeCode
 >   — interactive LED playground inside the guide (click cells, copy hex commands)
 >   — visual troubleshooting: decision tree, symptom picker, icon gallery, reset recipe
 > • A printable Quick Setup guide (`SETUP.md`)
-> • 4 themes (Stealth, Neon, Arctic, Blaze)
-> • 8 tabs: LED Matrix, Sensors, Servos, GamePad, Graph, 3D Board, Bench, Settings
-> • 5 interactive 3D models (micro:bit, Buggy, Robot Arm, Balance Game, Weather Station)
-> • Session recording, live graphs, annotations, JSON export
-> • Beginner & Expert modes — grows with the learner
+> • Load any Teachable Machine model (image or audio) by URL
+> • Webcam capture + live classification in Chrome
+> • Web Bluetooth pairing to a BBC micro:bit V2 — LEDs react to every class
+> • TEST button to verify the BLE link without the camera
+> • Optional "Talking computer" — speech synthesis reads the prediction aloud
+> • Single-page flow: Train → Load URL → Start Webcam → Connect → Start Sending
 >
 > 🧒 **Perfect for**: classrooms, homeschool, after-school clubs, makerspaces, STEM camps, robotics enthusiasts, parents teaching kids to code.
 >
@@ -102,7 +103,7 @@ micro:bit, microbit v2, STEM, coding kids, BBC microbit, bluetooth app, MakeCode
 >
 > 📜 **License**: Single-teacher / single-family use. Use it in your own classroom or home as much as you like. You may **not** resell, redistribute, or upload it elsewhere.
 >
-> ⏰ **Launch price $12.99 through Friday {{LAUNCH_DATE}}. Goes to $17.99 after.** Grab it now if you're on the fence.
+> ⏰ **Launch price $14.99 through Friday {{LAUNCH_DATE}}. Goes to $19.99 after.** Grab it now if you're on the fence.
 >
 > <!-- SELLER TODO: replace {{LAUNCH_DATE}} above with the actual launch-Friday date (e.g. "May 2, 2026") BEFORE publishing the listing. See the TOC note next to "Listing description". -->
 >
@@ -129,27 +130,27 @@ Paste this block into the listing just above the FAQ. No fabricated reviews — 
 | Feature | Teachable Machine for Micro:bit | MakeCode Editor | Raw Web Bluetooth demos |
 |---|:---:|:---:|:---:|
 | Works in-browser, zero install | ✅ | ✅ | ✅ |
-| Ready-to-use sensor dashboard (temp, light, sound, accel, compass, touch) | ✅ | ❌ | ❌ |
-| Live graph + CSV / PNG export + session record & replay | ✅ | ❌ | ❌ |
-| Dual servo control UI with gauges and trim | ✅ | ❌ | Build it yourself |
-| 5 interactive 3D models (micro:bit, Buggy, Arm, Balance, Weather) | ✅ | ❌ | ❌ |
-| Trilingual EN/FR/AR with full RTL support | ✅ | Partial | ❌ |
+| Load a Teachable Machine model by URL (image or audio) | ✅ | ❌ | Build it yourself |
+| Live webcam classification with confidence bars | ✅ | ❌ | ❌ |
+| Web Bluetooth pairing + TEST button for a BBC micro:bit V2 | ✅ | ❌ | Build it yourself |
+| One-click gesture → LED icon reaction | ✅ | ❌ | ❌ |
+| Optional "Talking computer" speech synthesis | ✅ | ❌ | ❌ |
 | Classroom lesson plan + printable stickers & A3 poster | ✅ | ❌ | ❌ |
-| Works offline after first load (installable PWA) | ✅ | ❌ | ❌ |
+| Single-page, no-install flow that runs entirely in Chrome | ✅ | ❌ | ❌ |
 
 ---
 
 ## Photo / mockup checklist (Etsy allows 10)
 
-1. Hero: micro:bit + laptop screen with the app open (LED matrix tab)
-2. Sensor dashboard screenshot
-3. **Demo GIF — 5-second silent loop of pairing + drawing on the 5×5 LED matrix** (auto-plays on Etsy, highest conversion slot after the hero)
-4. 3D board viewer screenshot
-5. All 4 themes side-by-side
-6. Mobile / tablet view
-7. Onboarding overlay screenshot
-8. "Works on Chrome / Edge — not iPhone" infographic
-9. List of features as a styled image (text-on-image converts well on Etsy)
+1. Hero: laptop with webcam + BBC micro:bit V2 both in frame, hand posing, "Teach • Trigger • Control" overlay
+2. Teachable Machine model-training screen (three classes, confidence bars)
+3. **Demo GIF — 5-second silent loop of a gesture → micro:bit LED icon lighting up** (auto-plays on Etsy, highest conversion slot after the hero)
+4. Classroom scene — kids teaching the AI at a shared laptop, micro:bit on the desk
+5. TEST button close-up — green status chip, one-click BLE sanity check
+6. Mobile view — Chrome sized down to portrait
+7. Bundle / bonus card — "What's in the ZIP" manifest
+8. "Works on Chrome — not iPhone / Safari" infographic
+9. Feature pills as a styled image: webcam · AI · Bluetooth · micro:bit · Chrome · no install
 10. The Quick Setup guide preview
 
 > Tip: Etsy's first photo is square — design for a square crop.
@@ -182,7 +183,7 @@ Yes — free updates within the v1.x line (new features and bug fixes), plus gua
 >
 > **If it doesn't pair on a Chromebook in under 5 minutes on a supported browser (Chrome or Edge), message me and I'll refund you personally.**
 >
-> This isn't an Etsy-policy refund, it's a me-refund. I'd rather lose $12.99 than leave a teacher stuck before first period.
+> This isn't an Etsy-policy refund, it's a me-refund. I'd rather lose $14.99 than leave a teacher stuck before first period.
 
 ---
 
@@ -200,7 +201,7 @@ A3 micro:bit V2 Pin-out Classroom Poster — Printable PDF | STEM Wall Chart for
 ### Description
 > 🖨️ **One poster. One price. Print it today.**
 >
-> A printable A3 **webcam + BBC micro:bit V2 pin-out poster** — the exact diagram used in the Teachable Machine for Micro:bit illustrated guide. Labeled pins, accelerometer axes, sound sensor callout, touch-logo arrow, radio + BLE note.
+> A printable A3 **Teachable Machine for Micro:bit classroom poster** — the 5-step flow used in the illustrated guide: Train → Load URL → Start Webcam → Connect → Start Sending, plus a big BLE status legend and a "TEST button" callout.
 >
 > 📄 **What you get:** 1 PDF, A3 (297×420 mm) + US Tabloid (11×17 in) versions, print-at-home or send to any copy shop.
 >
@@ -242,7 +243,7 @@ All three are generated from the existing printable HTML templates already shipp
 4. Email provider: **ConvertKit** (free tier up to 1,000 subs) or **MailerLite** (free tier up to 1,000 subs).
 5. Autoresponder email #1 delivers the PDF + links to the Etsy listing.
 6. Autoresponder email #2 (3 days later) shares a classroom tip + the $5 tripwire listing.
-7. Autoresponder email #3 (7 days later) shares a Pinterest pin + the main $12.99 listing with a **10% code**.
+7. Autoresponder email #3 (7 days later) shares a Pinterest pin + the main $14.99 listing with a **10% code**.
 
 ### Where to share the landing page
 - Pinterest pins (use UTMs — see below)
@@ -257,14 +258,14 @@ All three are generated from the existing printable HTML templates already shipp
 **Purpose.** Break the "zero-reviews cold-start" problem by buying the first 10 reviews with a steep discount in exchange for an honest review.
 
 ### Code spec (create in Etsy: Shop Manager → Marketing → Sales and discounts → Item-specific sale)
-- Code name: **LAUNCH10**
-- Discount: **$5.99 off** (brings $12.99 → **$7.00**)
+- Code name: **AILAUNCH**
+- Discount: **$5.99 off** (brings $14.99 → **$7.00**)
 - Quantity: **10 uses** (Etsy supports per-code use caps)
 - Duration: 30 days from first use
 - Applies to: main single-user listing only (not site license, not tripwire)
 
 ### Where to share the code
-- Pinterest pin caption: *"First 10 buyers — code LAUNCH10 for $7 (from $12.99)"*
+- Pinterest pin caption: *"First 10 buyers — code AILAUNCH for $8 (from $14.99)"*
 - Facebook group posts (where self-promo day allows it)
 - Your newsletter's first autoresponder
 
@@ -274,7 +275,7 @@ Send via Etsy's "Contact buyer" → keep it short, keep it human, never beg.
 
 > Hi [First Name] — thank you for grabbing Teachable Machine for Micro:bit with the launch code! 🎉
 >
-> I offered LAUNCH10 to the first 10 buyers in exchange for something small: **an honest review** once you've had a chance to try it. If it worked for you, a quick ⭐ means a LOT for a brand-new shop — it's the difference between Etsy showing my listing to other teachers or burying it.
+> I offered AILAUNCH to the first 10 buyers in exchange for something small: **an honest review** once you've had a chance to try it. If it worked for you, a quick ⭐ means a LOT for a brand-new shop — it's the difference between Etsy showing my listing to other teachers or burying it.
 >
 > If something didn't work, reply here **first** and I'll fix it before you leave a review. I'd rather spend 20 minutes helping you than lose a star I could have earned.
 >
@@ -354,7 +355,7 @@ Watch these weekly for the first 90 days. If the listing is below target after 3
 ### Diagnosis cheat-sheet
 - **CTR < 1.2%** → the photo #1 and title are weak. Swap hero, re-test title keywords.
 - **Conversion < 1%** → price is wrong OR the description doesn't reassure compatibility fast enough. Check that the front-loaded compatibility line is first in the description.
-- **High favorites, low orders** → visitors are price-shocked. Consider the LAUNCH10 code or a small price test at $9.99.
+- **High favorites, low orders** → visitors are price-shocked. Consider the AILAUNCH code or a small price test at $9.99.
 - **High refund / message rate** → wrong-browser buyers (Safari / iPhone). Strengthen photo #8 (compatibility infographic) and the description's first line.
 
 ---
@@ -448,8 +449,8 @@ Etsy plays the listing video **muted and on loop**, so design it like a GIF. No 
 | Time | Shot | Notes |
 |------|------|-------|
 | 0:00 – 0:02 | App home screen, "🔗 Connect" button pulsing | Capture the click → device picker → green "Connected" chip |
-| 0:02 – 0:04 | Hand drags fingertip on the 5×5 LED grid → cut to micro:bit hardware lighting up the same pattern | Side-by-side split screen if possible |
-| 0:04 – 0:06 | Tilt the physical micro:bit → 3D Buggy on screen tilts in sync | Use the Balance or Buggy 3D model |
+| 0:02 – 0:04 | Paste the Teachable Machine model URL → click Load Model → class names fade in | Keep the URL preloaded in the clipboard |
+| 0:04 – 0:06 | Click Start Webcam → pose each class → confidence bars dance | Close-up of the bars filling in |
 | 0:06 – 0:09 | Live graph drawing a sine wave in fullscreen, Neon theme | Smooth motion, bright glow |
 | 0:09 – 0:12 | Fast cycle through all 4 themes (Stealth → Neon → Arctic → Blaze) | One theme per ~700ms |
 | 0:12 – 0:15 | End card: logo + text overlay "Teachable Machine for Micro:bit — works in Chrome / Edge" | Hold for 3 seconds, this is the loop seam |
@@ -466,9 +467,9 @@ Upload this to **Loom**, **YouTube** (unlisted), or **Vimeo** and paste the link
 >
 > *(0:04)* "Plug in a micro:bit V2, click Connect, pick it from the list. Done."
 >
-> *(0:09)* "You get eight tabs: LED matrix, live sensors, two servo channels, a gamepad, recordable graphs, and five interactive 3D models that move when the board moves."
+> *(0:09)* "Paste a Teachable Machine model URL, load it, start the webcam. The AI is watching — confidence bars move as you pose."
 >
-> *(0:18)* "Tilt the board — the 3D buggy tilts. Press a button — the screen lights up. Everything is live."
+> *(0:18)* "Click Start Sending — every class fires an LED icon on the real micro:bit. Flip on Talking computer and it says what it sees."
 >
 > *(0:24)* "It's a one-time download. Use it in your classroom, home-school, or maker space. Link's in the description."
 >
@@ -490,13 +491,13 @@ Etsy shows photo #1 as a **square** in search results, and the first 5 above the
 
 | # | Tab / theme | What to capture | Overlay text |
 |---|-------------|-----------------|--------------|
-| 1 | **Hero** — Stealth theme, LED Matrix tab, micro:bit physically next to laptop | Square crop. App on screen, real hardware in frame. | "micro:bit V2 Playground" + "Instant download" |
-| 2 | Sensors tab, all sparklines populated, micro:bit being held in hand for motion | Show 6+ live values | "Live sensor dashboard — temp, light, sound, motion" |
-| 3 | Graph tab in **fullscreen**, Neon theme, ~3 datasets plotting | Capture mid-animation | "Real-time charts • record • export" |
-| 4 | 3D Board tab, Buggy model rotated to show wheels + LED screen | Drag to a 3/4 angle first | "5 interactive 3D models" |
-| 5 | **2×2 grid** — one screenshot per theme (Stealth, Neon, Arctic, Blaze) | Same tab in each, e.g. Sensors | "4 themes — pick your vibe" |
-| 6 | Mobile-width view (DevTools → 414×896) of the LED Matrix tab | Use Chrome's device toolbar (`Cmd+Shift+M`) | "Works on Chromebooks & Android tablets" |
-| 7 | Onboarding overlay (clear localStorage with `localStorage.clear()` then reload) | Show all 4 welcome steps | "Friendly first-run guide" |
+| 1 | **Hero** — laptop + webcam + BBC micro:bit V2 in frame, a hand posing | Square crop. App on screen, real hardware in frame. | "Teach • Trigger • Control" + "Instant download" |
+| 2 | Teachable Machine model-training screen — three classes, confidence bars | Show a clean Export URL button | "Train an AI in your browser" |
+| 3 | Gesture → LED reaction GIF frame — hand pose on the left, micro:bit icon on the right | Capture the exact moment of the LED change | "Your micro:bit reacts to every class" |
+| 4 | Classroom scene — two kids at a shared laptop, micro:bit on the desk | Natural light, shallow depth | "Kids teach the AI" |
+| 5 | **TEST button close-up** — green status chip, BLE connected | Zoom to the button | "One-click BLE sanity check" |
+| 6 | Mobile-width view (DevTools → 414×896) of the single-page flow | Use Chrome's device toolbar (`Cmd+Shift+M`) | "Works on Chromebooks & Android tablets" |
+| 7 | "Talking computer" toggle — captions overlay reading out a class | Burn in caption text | "Optional speech synthesis" |
 | 8 | **Compatibility infographic** — make in Canva / Figma, not a screenshot | ✅ Chrome / Edge / Android. ❌ Safari / Firefox / iPhone / iPad | "Check before you buy" |
 | 9 | **Feature wall** — text-on-image styled list of top 8 features | Use a Canva template | Bullet list of what's inside |
 | 10 | Preview of the SETUP.md guide rendered in a browser or as a PDF mockup | Show the table of contents + a couple of headings | "Step-by-step setup included" |
@@ -525,18 +526,18 @@ Pinterest indexes pins for years, unlike Instagram. One good pin can drive sales
 ### Pin titles (100 chars max — searchable, so include keywords)
 
 ```
-1. Turn a micro:bit into a STEM lab — works in any browser
-2. The micro:bit Bluetooth app every STEM teacher wishes existed
-3. Homeschool STEM: 8 tabs, 5 robots, zero installs
-4. micro:bit V2 + Chrome = a $10 robotics classroom
-5. From "what's a micro:bit" to "I built a robot" in 5 minutes
+1. Teach a computer to see — then make a micro:bit react
+2. The kid-friendly AI app every STEM teacher wishes existed
+3. Homeschool AI: train a model, trigger an LED, in 10 minutes
+4. Teachable Machine + Chrome + micro:bit V2 = AI literacy in class
+5. From "what's AI?" to "I trained one" in five minutes
 ```
 
 ### Pin descriptions (500 chars, keyword-rich, written for the searcher)
 
-> Looking for a micro:bit project that works straight from the browser? Teachable Machine for Micro:bit gives you 8 tabs of live control — LED matrix, sensors, servos, gamepad, real-time graphs, and 5 interactive 3D models — all over Bluetooth. Perfect for STEM teachers, homeschool parents, and after-school clubs. No installs, no accounts. Works on Chrome and Edge. One-time download. #microbit #STEM #homeschool #coding #edtech
+> Looking for a classroom-ready AI project? Teachable Machine for Micro:bit lets kids train a model in their browser — then a BBC micro:bit V2 reacts over Bluetooth. Paste a Teachable Machine URL, start the webcam, pose, and the right LED icon fires. Optional "Talking computer" reads the prediction aloud. Perfect for STEM teachers, homeschool parents, and after-school clubs. No installs, no accounts. Chrome only. One-time download. #microbit #AI #teachablemachine #STEM #homeschool #edtech
 
-> The Bluetooth control panel for the webcam + BBC micro:bit V2 that turns one $20 board into an entire robotics lab. Draw on the LEDs, watch live sensor graphs, drive a 3D buggy with the on-screen gamepad, and record sessions for science class. Browser-based — no installs. Instant download from Etsy. #microbit #classroomresources #stemforkids #robotics #makered
+> An AI-for-kids project that actually ships. Teachable Machine for Micro:bit turns one $20 board into a hands-on AI lab — kids train a webcam model on Google's Teachable Machine, then every class triggers a micro:bit LED icon over Bluetooth. One browser tab, no installs, instant download from Etsy. #microbit #AI #teachablemachine #classroomresources #stemforkids #makered
 
 ### Hashtag bank (rotate, don't reuse the same set)
 
@@ -558,7 +559,7 @@ Create or pin to: **STEM Activities for Kids**, **Homeschool Resources**, **Clas
 Quick rules of engagement for each channel — read each one carefully, several have strict self-promo policies.
 
 ### TikTok / Instagram Reels (15–30 sec)
-Reuse your demo video. Hook in the first 1.5 seconds: tilt the micro:bit, the 3D buggy tilts on screen. Caption: *"Bought my class a $20 STEM lab"*. Drop the Etsy link in your bio (TikTok) or use the linked sticker (IG). Don't say "link in bio" out loud — TikTok throttles those.
+Reuse your demo video. Hook in the first 1.5 seconds: a hand posing in front of the webcam, then the micro:bit LED icon flipping. Caption: *"My kid taught an AI in 5 minutes"*. Drop the Etsy link in your bio (TikTok) or use the linked sticker (IG). Don't say "link in bio" out loud — TikTok throttles those.
 
 ### Reddit — proceed carefully
 Reddit will ban self-promo posts in seconds. Safe approach:
@@ -582,7 +583,7 @@ A weekly 5-minute "what you can build with Teachable Machine for Micro:bit" vide
 
 ---
 
-## Second listing — School Site License ($199)
+## Second listing — School Site License ($249)
 
 **Why:** One site-license sale = 15 individual sales. Same files, different LICENSE. Zero extra work once the ZIP is built. Buyer file: `~/Desktop/microteachable-machine-v1.0-site-license.zip` (already built).
 
@@ -594,9 +595,9 @@ School Site License for the webcam + BBC micro:bit V2 Bluetooth Web App | Up to 
 
 ### Price
 
-- **$199** launch
-- **$199** after 2 sales
-- **$499+** for multi-site / district — list as "Request a Quote" in the description, handle via Etsy messages
+- **$249** launch
+- **$249** after 2 sales
+- **$599+** for multi-site / district — list as "Request a Quote" in the description, handle via Etsy messages
 
 ### Description
 
@@ -650,102 +651,6 @@ Re-use photos 1–10 from the single-user listing. Add **photo #11**: a mock-up 
 
 ---
 
-## Third listing — Arabic (uncontested market)
-
-**Why:** V8.2 already ships full Arabic UI with RTL support. There is almost no Arabic STEM content on Etsy. Target: homeschool families in Algeria, Morocco, Egypt, Gulf states, plus Arabic-speaking diaspora teachers in France/UK/Canada.
-
-**Files:** same ZIP as the single-user listing (`microteachable-machine-v1.0.zip`). The UI auto-switches to Arabic on first launch if the browser locale is `ar-*`, or the user picks it from the language dropdown.
-
-### Title (Arabic + transliteration — Etsy indexes both)
-
-```
-لوحة تحكم مايكروبت V2 عبر البلوتوث — تطبيق STEM للمعلمين والأطفال | تحميل فوري | Microbit Playground Arabic
-```
-
-### Category
-
-Same as English listing: `Craft Supplies & Tools → Patterns & How To → Tutorials`
-
-### Description (Arabic)
-
-```
-🎮 لوحة تحكم مايكروبت — تطبيق متكامل عبر البلوتوث للوحة webcam + BBC micro:bit V2
-
-حوّل المايكروبت إلى مختبر STEM تفاعلي — بدون تثبيت، بدون حساب، بدون إنترنت. فقط افتح المتصفح واتصل.
-
-✨ ما ستحصل عليه (تحميل فوري):
-• تطبيق ويب كامل (HTML, CSS, JS) يعمل محلياً في متصفح Chrome أو Edge
-• برنامج جاهز للمايكروبت (makecode.ts)
-• دليل إعداد مطبوع
-• 4 ثيمات (ستيلث، نيون، أركتيك، بليز)
-• 8 تبويبات: مصفوفة LED، المستشعرات، المحركات، جويباد، الرسم البياني، عرض ثلاثي الأبعاد، البنش، الإعدادات
-• 5 نماذج ثلاثية الأبعاد تفاعلية (مايكروبت، روبوت، ذراع روبوتي، لعبة توازن، محطة طقس)
-• تسجيل الجلسات، رسوم بيانية حية، تصدير JSON
-• وضع المبتدئ ووضع الخبير — يتطور مع المتعلم
-• واجهة عربية كاملة مع دعم RTL (اليمين إلى اليسار)
-
-🧒 مناسب لـ: الفصول الدراسية، التعليم المنزلي، النوادي المدرسية، ورش الصنع، معسكرات STEM، الأطفال المهتمين بالبرمجة والروبوتات.
-
-⚙️ يتطلب:
-• لوحة webcam + BBC micro:bit V2 (تُشترى بشكل منفصل)
-• متصفح Chrome أو Edge على كمبيوتر أو لابتوب أو جهاز أندرويد
-• تفعيل البلوتوث
-
-❌ لا يعمل على: Safari، Firefox، iPhone، iPad (قيود Web Bluetooth في هذه المتصفحات).
-
-📦 التسليم: تحميل فوري بعد الشراء — ملف ZIP واحد.
-
-📜 الترخيص: استخدام شخصي وتعليمي. يمكنك استخدامه بحرية في فصلك أو بيتك، لكن لا يجوز إعادة بيعه أو إعادة نشره.
-
-💬 هل لديك سؤال قبل الشراء؟ راسلني وسأجيبك بالعربية في غضون ساعات.
-```
-
-### Tags (mix of Arabic + English — Etsy indexes both, and Arabic buyers often search with both)
-
-```
-مايكروبت, STEM أطفال, تعليم البرمجة, روبوت للأطفال, تحميل رقمي,
-تعليم منزلي, microbit arabic, arabic stem, homeschool arabic,
-coding arabic, برمجة للأطفال, علوم stem
-```
-
-> Etsy's tag limit is still 13. Arabic strings may count as more than 20 characters due to encoding — if Etsy rejects one, shorten it. Keep at least 3 tags in English so the listing appears in cross-language searches.
-
-### Materials
-
-Same as the English listing.
-
-### Message to buyers (Arabic auto-reply)
-
-```
-شكراً جزيلاً على طلبك! 🎉
-
-تم تجهيز التحميل فوراً — ستجد الرابط في بريدك الإلكتروني ومن خلال حسابك في Etsy → Purchases & Reviews.
-
-📘 ابدأ من هنا: فك ضغط الملف وافتح SETUP.md (دليل 5 دقائق). تحتاج لوحة webcam + BBC micro:bit V2 ومتصفح Chrome أو Edge — لا يعمل على Safari أو iPhone (قيود Web Bluetooth).
-
-💬 واجهت مشكلة؟ راسلني برقم الطلب وصورة من الشاشة — سأرد خلال 24 ساعة.
-
-📜 الترخيص: استخدام شخصي / فصل دراسي واحد. يُرجى عدم إعادة البيع أو إعادة النشر. الشروط الكاملة في ملف LICENSE داخل الحزمة.
-
-⭐ إذا أعجبك التطبيق، تقييم بنجوم يعني الكثير — المتاجر الصغيرة تعيش على التقييمات.
-
-برمجة ممتعة!
-— [اسمك]
-```
-
-### Arabic-market channels (beyond Etsy)
-
-- **Facebook groups**: "تعليم البرمجة للأطفال", "التعليم المنزلي", "ستيم للأطفال", "Algeria Homeschool Network"
-- **TikTok**: Arabic-language micro:bit demos have near-zero saturation. Post a 15-sec clip with Arabic on-screen text.
-- **Instagram**: Tag @microbit_educational and Arabic STEM influencers.
-- **Telegram channels**: many Arabic homeschool communities live on Telegram, not Facebook. One good post in a 5k-member channel = 30–50 visits.
-
-### Pricing note
-
-Price at **$12.99** (same as English) — do **not** discount for Arabic buyers. Diaspora buyers pay in USD/EUR comfortably; local buyers in MENA expect foreign digital goods to be priced internationally.
-
----
-
 ## New sell ideas enabled by the illustrated guide (V1.0.0)
 
 The visual helpers added in V1.0.0 unlock product angles that weren't viable before. Ranked by payoff ÷ effort.
@@ -760,7 +665,7 @@ The SVG diagrams inside `guide.html` are print-ready. Extract each as a standalo
 
 Price the 4-poster pack at **$14.99** on Etsy + **$24.99** on Teachers Pay Teachers. Buyers who already own the app will upgrade for the printable versions. Pure margin.
 
-### 2. "Teacher's First-Workshop Pack" bundle ($29.99)
+### 2. "Teacher's First-Workshop Pack" bundle ($34.99)
 A listing that combines:
 - The app (standard ZIP)
 - 4 printable posters (above)
@@ -844,7 +749,7 @@ Tired of the "install → flash → paste → pray" dance? This USB stick does i
 ```
 
 #### 1c. Price ladder
-- Launch (first 10 units): **$29.99** + €4.50 shipping EU / $9 worldwide
+- Launch (first 10 units): **$34.99** + €4.50 shipping EU / $9 worldwide
 - Standard: **$39.99**
 - Stick-only (no board): **$14.99** (for buyers who already own a V2)
 
@@ -856,7 +761,7 @@ Tired of the "install → flash → paste → pray" dance? This USB stick does i
 | Printed Quick-Start card (250 gsm, 4 col) | $0.80 |
 | Padded envelope + label | $0.60 |
 | **Total COGS** | **~$15.90** |
-| Margin at $29.99 launch | **~$14 per unit** |
+| Margin at $34.99 launch | **~$14 per unit** |
 
 #### 1e. Workflow
 1. Buy 20 micro:bit V2 boards wholesale, 20 sticks, 20 envelopes. One-time ~$320 outlay.
@@ -895,13 +800,13 @@ Offer **5 teachers** a free perpetual license + $50 Etsy credit in exchange for:
 >
 > Hi [First Name],
 >
-> I run a small Etsy shop called [Shop Name] — I make a browser-based micro:bit playground app. I saw your [Twitter / blog / review] and the way you talk about STEM resonated with me.
+> I run a small Etsy shop called [Shop Name] — I make a browser-based AI app for the BBC micro:bit V2 called Teachable Machine for Micro:bit. I saw your [Twitter / blog / review] and the way you talk about STEM resonated with me.
 >
 > I'm launching an Ambassador program for 5 teachers this quarter. Here's what it looks like:
 >
 > **What I give you:**
-> - A free perpetual license for the full app (normally $17.99)
-> - A free School Site License for your school (normally $199)
+> - A free perpetual license for the full app (normally $19.99)
+> - A free School Site License for your school (normally $249)
 > - $50 Etsy credit to spend however you want
 > - Early access to everything I ship for the next 12 months
 > - Your name on the shop page as a featured teacher
@@ -947,7 +852,7 @@ Ambassador log (spreadsheet columns):
 
 ### 3. 🥈 School-district pitch deck (1 sale = 50× individual licenses)
 
-A 10-slide PDF + cover-letter template, sold on Etsy as "School-District Licensing Pack — Quote on Request" starting at **$499** (with upsell to $2,500+ via message).
+A 10-slide PDF + cover-letter template, sold on Etsy as "School-District Licensing Pack — Quote on Request" starting at **$599** (with upsell to $2,500+ via message).
 
 #### 3a. Listing title
 ```
@@ -961,7 +866,7 @@ Teachable Machine for Micro:bit — District-Wide STEM Licensing | Quote for 3+ 
 | 1 | **Cover** | Logo + "Teachable Machine for Micro:bit — District-Wide Licensing Proposal for [District Name]" + your name + date |
 | 2 | **The problem** | 3 bullets: "Most STEM software requires installs / accounts / cloud approvals. IT departments say no. Teachers get stuck." |
 | 3 | **What it is** | Screenshot of the app + tab map. One sentence: "A browser-based Bluetooth control panel for webcam + BBC micro:bit V2 — no install, no account, no cloud." |
-| 4 | **Standards alignment** | Map the 8 tabs to Common Core / ISTE / national STEM frameworks. *(Adapt per country.)* |
+| 4 | **Standards alignment** | Map the Train → Load → Webcam → Connect → Send flow to Common Core / ISTE / national STEM + AI-literacy frameworks. *(Adapt per country.)* |
 | 5 | **What the district gets** | Unlimited schools + unlimited teachers + unlimited students + 12 months of updates + dedicated support channel + **4 printable classroom posters** + 3 live training sessions |
 | 6 | **Adoption ROI** | Cost per student: at 3 schools × 800 students = 2400 students. Total cost $2,500 → **$1.04 per student per year**. Compare to any per-seat STEM license ($15–50/student). |
 | 7 | **IT concerns addressed** | No cloud. No external servers. No data leaves the device. No accounts. No installs. Offline-capable PWA. Runs on Chromebooks. |
@@ -999,7 +904,7 @@ Warmly,
 4. Send a written quote within 48h of the call
 5. Handle contract via DocuSign (free tier)
 6. Payment via invoice / bank transfer (not Etsy — Etsy's limit is $2,500, and custom B2B contracts go outside)
-7. **Return to Etsy to close the lead sale** with a $499 "Consulting Fee" item so the buyer can "complete" the purchase there (Etsy rewards closed sales)
+7. **Return to Etsy to close the lead sale** with a $599 "Consulting Fee" item so the buyer can "complete" the purchase there (Etsy rewards closed sales)
 
 #### 3e. Expected close rate
 - Cold outreach: ~2% close → 1 district sale per 50 emails
@@ -1041,7 +946,7 @@ Last year you bought Teachable Machine for Micro:bit on Etsy (order #[X]). Thank
 Because you're an early supporter:
 • The update is FREE — download here: [Stripe link or Gumroad link w/ $0 code]
 • Or the full "Workshop Pack" with 4 printable posters + lesson plan is $19.99
-  (normally $29.99): [Stripe link]
+  (normally $34.99): [Stripe link]
 
 No Etsy needed. I get to skip the 10% fee, you get a 33% discount — we both win.
 
@@ -1161,7 +1066,7 @@ Everything you need for your first STEM workshop of the year. Available Aug 1 �
 
 [Full bundle contents...]
 
-🎁 This month only: 20-min Zoom onboarding call with the creator. $199 value, included free.
+🎁 This month only: 20-min Zoom onboarding call with the creator. $249 value, included free.
 
 Ships instantly. License covers one teacher / one family. Full terms in LICENSE.
 
@@ -1169,7 +1074,7 @@ Ships instantly. License covers one teacher / one family. Full terms in LICENSE.
 ```
 
 #### 7d. Expected month-1 boost
-- Normal month: 15 sales × $12.99 = $195
+- Normal month: 15 sales × $14.99 = $195
 - Back-to-School: 30 sales × $39.99 = $1,200
 - **Etsy algorithm interprets the sales spike as "hot listing" → pushes all your other listings up**
 
@@ -1182,7 +1087,7 @@ Publish free tutorials on [Instructables](https://www.instructables.com) that ra
 #### 8a. Tutorial ideas (pick 3, publish one per week)
 1. "**How to make a micro:bit thermometer in 5 minutes**" — manual version (MakeCode only)
 2. "**micro:bit sound level meter** — no code needed" — same
-3. "**Control a servo from your laptop via Bluetooth**" — advanced manual setup
+3. "**Make a micro:bit react to an AI model over Bluetooth**" — advanced manual setup
 
 Each Instructable has:
 - Real, working code (shows you're credible)
@@ -1243,7 +1148,7 @@ Subject: White-label micro:bit app for your kits — $1/unit licensing
 
 Hi [Name],
 
-I'm the developer of Teachable Machine for Micro:bit — a browser-based app that turns a bare micro:bit V2 into an interactive STEM lab (LEDs, sensors, servos, graphs, 3D). You can see it at [Etsy URL].
+I'm the developer of Teachable Machine for Micro:bit — a browser-based app that lets kids train a Teachable Machine model and make a BBC micro:bit V2 react over Bluetooth. You can see it at [Etsy URL].
 
 Proposal: I license you a co-branded version of the app ("Powered by [Your Company]" footer, your logo) to ship with your micro:bit kits. Buyers scan the QR code on the box and get the full app — no cloud, no install.
 
@@ -1278,14 +1183,14 @@ A lot of people will find `guide.html` via Pinterest / Google / ambassador blog 
 
 #### 10a. How it works
 - Every visitor to `guide.html` sees a small floating banner at the top
-- Banner says: *"Love the guide? Get the full app + all diagrams for $12.99 →"*
+- Banner says: *"Love the guide? Get the full app + all diagrams for $14.99 →"*
 - Banner is dismissible (stored in localStorage — don't nag)
 - Once they've paired a real micro:bit in the app, the banner auto-hides (they're a buyer)
 
 #### 10b. CSS + JS snippet to add near the top of `guide.html`
 ```html
 <div id="buyBanner" style="position:fixed;top:0;left:0;right:0;z-index:200;background:linear-gradient(90deg,#2563eb,#16a34a);color:white;padding:10px 14px;text-align:center;font-size:14px;box-shadow:0 2px 10px rgba(0,0,0,0.2);display:none;">
-  <span class="en">Love the guide? Get the full app with all diagrams &amp; 8 tabs for $12.99</span>
+  <span class="en">Love the guide? Get the full Teachable Machine for Micro:bit app for $14.99</span>
   <span class="fr">Vous aimez le guide ? L'app complète avec tous les diagrammes : 12,99 $</span>
   <span class="ar">يعجبك الدليل؟ التطبيق الكامل بـ 12.99$</span>
   <a href="https://etsy.com/listing/YOUR-LISTING-ID" target="_blank" style="color:white;font-weight:700;margin:0 14px;text-decoration:underline;">→ Buy on Etsy</a>

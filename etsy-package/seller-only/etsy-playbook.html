@@ -106,25 +106,14 @@
   .pill { background: rgba(34,211,238,.1); border: 1px solid rgba(34,211,238,.3); color: var(--accent2); padding: 4px 10px; border-radius: 999px; font-size: .78rem; font-weight: 600; font-family: var(--mono); }
 
   @media (max-width: 640px) { body { padding: 14px 10px; } .slate h1 { font-size: 1.5rem; } h2 { font-size: 1.2rem; } }
-
-  .lang-strip { display: flex; justify-content: center; gap: 8px; margin: 0 0 14px; font-family: var(--mono); font-size: .78rem; }
-  .lang-strip a { background: rgba(34,211,238,.08); border: 1px solid rgba(34,211,238,.28); border-radius: 8px; padding: 4px 12px; color: var(--accent2); text-transform: uppercase; letter-spacing: 1.2px; font-weight: 700; border-bottom: 1px solid rgba(34,211,238,.28); }
-  .lang-strip a.active { background: rgba(34,197,94,.18); border-color: var(--accent); color: var(--accent); }
-  .lang-strip a:hover { background: rgba(34,211,238,.22); color: var(--accent2); }
 </style>
 </head>
 <body>
 
-<div class="lang-strip">
-  <a href="etsy-playbook.html" class="active">EN</a>
-  <a href="etsy-playbook-fr.html">FR</a>
-  <a href="etsy-playbook-ar.html">AR</a>
-</div>
-
 <div class="slate">
   <div class="slate-clap">🎬</div>
   <div class="tag">— ETSY PLAYBOOK · v1.0.0 —</div>
-  <h1>micro:bit <span>Playground</span></h1>
+  <h1>Teach <span>•</span> Trigger <span>•</span> Control</h1>
   <div class="tag">The 1-minute listing demo · copy-ready snippets</div>
   <div class="meta"><span><b>Format:</b> 9:16 portrait</span><span><b>Length:</b> ≤ 60 s</span><span><b>Goal:</b> turn scrollers into buyers</span></div>
 </div>
@@ -144,13 +133,14 @@
 <h2>Before you press Record</h2>
 <div class="card">
   <ul class="checklist" onclick="var li=event.target.closest('li');if(li)li.classList.toggle('checked')">
-    <li><input type="checkbox"><label>micro:bit V2 powered on, showing <kbd>X</kbd> icon<span class="where">If not → reflash <code>makecode.ts</code></span></label></li>
-    <li><input type="checkbox"><label>Chrome or Edge open, <code>index.html</code> loaded<span class="where">Safari/Firefox/iOS will not work</span></label></li>
-    <li><input type="checkbox"><label>BLE connected — status chip is <strong>green</strong><span class="where">Click 🔗 Connect, pick BBC micro:bit from picker</span></label></li>
-    <li><input type="checkbox"><label>Theme picked — <strong>Neon</strong> looks best on camera<span class="where">Header → paint-roller dropdown</span></label></li>
-    <li><input type="checkbox"><label>Servo plugged into P1 (if showing Robot Arm / Buggy)</label></li>
-    <li><input type="checkbox"><label>3D Board tab open, Buggy or Robot Arm selected<span class="where">Tab 6 → model dropdown</span></label></li>
-    <li><input type="checkbox"><label>Phone in 9:16 mode on a tripod, lit from the front</label></li>
+    <li><input type="checkbox"><label>BBC micro:bit V2 powered on (USB or battery), showing a friendly icon<span class="where">If dark → re-flash the <code>makecode.ts</code> hex from the ZIP</span></label></li>
+    <li><input type="checkbox"><label>Chrome is open, our <code>index.html</code> loaded<span class="where">Safari / Firefox / iOS will not work — Web Bluetooth only lives on Chromium</span></label></li>
+    <li><input type="checkbox"><label>A Teachable Machine model URL is in your clipboard<span class="where">An Image project with 3 classes (e.g. Wave / Fist / Nothing) is easiest to film</span></label></li>
+    <li><input type="checkbox"><label>Model loaded — class names show in the app</label></li>
+    <li><input type="checkbox"><label>Webcam started — confidence bars move when you pose</label></li>
+    <li><input type="checkbox"><label>BLE paired — status chip is <strong>green</strong>, <strong>TEST</strong> passes<span class="where">Click 🔗 Connect, pick BBC micro:bit from the Chrome picker</span></label></li>
+    <li><input type="checkbox"><label>Face and hands well lit — the AI is only as good as your light</label></li>
+    <li><input type="checkbox"><label>Phone in 9:16 on a tripod — laptop + micro:bit both in frame</label></li>
     <li><input type="checkbox"><label>Desk cleared — only the board and one prop in frame</label></li>
     <li><input type="checkbox"><label>Script read aloud once — timed under 55 s</label></li>
   </ul>
@@ -161,120 +151,136 @@
 <h2>Structure</h2>
 <div class="card">
   <pre style="color:var(--accent2);font-family:var(--mono);font-size:.9rem;line-height:1.7;margin:0">
- 0–3 s   HOOK        "Watch what this micro:bit does in 60 seconds."
- 3–10 s  CONTEXT     Board on-screen, X icon → status turns green.
-10–35 s  DEMO        Tilt → 3D model follows. Press A → LED heart. Servo swings.
-35–50 s  PAYOFF      Zoom on live graph + 3D model mirroring real board.
+ 0–3 s   HOOK        "Your kid teaches an AI — in 60 seconds."
+ 3–10 s  CONTEXT     Paste Teachable Machine URL → Load Model → class names appear.
+10–25 s  DEMO        Start Webcam → confidence bars move. Connect → TEST passes.
+25–40 s  DEMO        Start Sending → pose each class → micro:bit LED icon reacts.
+40–50 s  PAYOFF      Flip "Talking computer" on → voice says what it sees.
 50–55 s  CTA         "Full kit in my shop — link below."
 55–60 s  END FRAME   Logo + handle frozen for the loop preview.</pre>
 </div>
 
 <!-- ═══════════ SCRIPT ═══════════ -->
 <div class="slug" id="script">SLUG — SCENE-BY-SCENE SCRIPT</div>
-<h2>Template: "The micro:bit becomes a playground"</h2>
+<h2>Template: "Teach the computer to see"</h2>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:00–00:03</span><span class="scene-phase phase-hook">HOOK</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div>"Your micro:bit is a playground. No install, no account — just a browser."</div>
-    <div class="do"><div class="do-label">🎬 DO</div>Hold the board in frame. Close-up of the X icon pulsing on the LED matrix.</div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Your kid can teach an AI — and make a micro:bit react. Watch."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Open on a hand gesture in front of the webcam. Text overlay: "Teach • Trigger • Control."</div>
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:03–00:10</span><span class="scene-phase phase-demo">CONTEXT</span></div>
+  <div class="scene-head"><span class="scene-time">00:03–00:10</span><span class="scene-phase phase-demo">CONTEXT · LOAD MODEL</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div>"Open the page, click connect — and that's it. Sensors live, LEDs live, servos live."</div>
-    <div class="do"><div class="do-label">🎬 DO</div>Screen recording: click <strong>🔗 Connect to micro:bit</strong>, pick the board, status chip goes green.</div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Train three classes on Google's Teachable Machine. Copy the URL. Paste. Load."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Screen recording: paste the Teachable Machine model URL into the input, click <strong>Load Model</strong>. Class names fade in.</div>
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:10–00:25</span><span class="scene-phase phase-demo">DEMO · SENSORS + 3D</span></div>
+  <div class="scene-head"><span class="scene-time">00:10–00:18</span><span class="scene-phase phase-demo">DEMO · WEBCAM LIVE</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div>"Tilt it — the 3D model on screen tilts too. Tap the logo — it reacts."</div>
-    <div class="do"><div class="do-label">🎬 DO</div>Tab <kbd>6</kbd> → 3D Board. Tilt the real board → the virtual one follows. Hand holds the micro:bit next to the screen for the split.</div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Start the webcam — the AI is watching. Confidence bars dance."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Click <strong>Start Webcam</strong>. Pose each class. Zoom on the confidence bars moving in real time.</div>
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:25–00:40</span><span class="scene-phase phase-demo">DEMO · SERVOS + GAMEPAD</span></div>
+  <div class="scene-head"><span class="scene-time">00:18–00:25</span><span class="scene-phase phase-demo">DEMO · BLE CONNECT</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div>"Move a servo from the browser. Drive a robot with the GamePad."</div>
-    <div class="do"><div class="do-label">🎬 DO</div>Tab <kbd>3</kbd> → drag Servo 1 slider, the real servo swings. Tab <kbd>4</kbd> → press ⬆ → LED arrow lights up.</div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Pair the micro:bit over Bluetooth. One click. Press TEST — it lights up."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Click <strong>Connect</strong> → Chrome BLE picker → select BBC micro:bit → status goes green. Press <strong>TEST</strong>. Cut to the real board showing a check icon.</div>
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:40–00:50</span><span class="scene-phase phase-payoff">PAYOFF · GRAPH</span></div>
+  <div class="scene-head"><span class="scene-time">00:25–00:40</span><span class="scene-phase phase-demo">DEMO · GESTURE → LED</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div>"Record, replay, export CSV. It's a whole science lab in a browser tab."</div>
-    <div class="do"><div class="do-label">🎬 DO</div>Tab <kbd>5</kbd> → 🎲 Simulate → live chart dances. Zoom on the Record/CSV buttons.</div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Start Sending. Wave → heart. Fist → arrow. Every class, a reaction."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Click <strong>Start Sending</strong>. Split screen: hand pose on the left, real micro:bit LED icon on the right. Hold each class 2 s.</div>
+  </div>
+</div>
+
+<div class="scene">
+  <div class="scene-head"><span class="scene-time">00:40–00:50</span><span class="scene-phase phase-payoff">PAYOFF · TALKING COMPUTER</span></div>
+  <div class="scene-body">
+    <div class="say"><div class="say-label">🎙 SAY</div>"Flip on Talking computer — the AI says what it sees. Kids love this."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Toggle the <strong>Talking computer</strong> switch. Pose → voice says "I see a wave!" Burn in the caption text.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:50–00:60</span><span class="scene-phase phase-cta">CTA + END FRAME</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div>"Full kit, lifetime updates — link in description. Teachers, tag me when you use it."</div>
-    <div class="do"><div class="do-label">🎬 DO</div>Switch to logo + handle overlay. Hold 3 seconds still — becomes the loop frame.</div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Full kit, lifetime updates — link below. Teachers, tag me when you use it."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Switch to logo + shop handle. Hold 3 seconds still — becomes the loop frame.</div>
   </div>
 </div>
 
 <!-- ═══════════ LISTING COPY ═══════════ -->
 <div class="slug" id="listing">SLUG — COPY-READY LISTING TEXT</div>
 <h2>Etsy title (140 chars max)</h2>
-<div class="copybox">Teachable Machine for Micro:bit — BLE Control Panel for Teachers &amp; Kids · Sensors · Servos · Live Graph · 3D Models · No Install · Chrome / Edge<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
+<div class="copybox">Teachable Machine for Micro:bit — Train an AI, Make a Micro:bit React · Webcam + Bluetooth · Teach Trigger Control · No Install · Chrome<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
+
+<h2>Hero copybox (the sentence on the first image)</h2>
+<div class="copybox">Teachable Machine for Micro:bit — Teach • Trigger • Control. Train an AI model in your browser, then make your micro:bit react. Chrome + webcam + micro:bit V2.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
 
 <h2>Short description (first 160 chars — shown in search)</h2>
-<div class="copybox">Browser-based BLE control panel for the webcam + BBC micro:bit V2. Sensors, servos, live graphs, 3D models, and a GamePad — all from Chrome. No install, no account.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
+<div class="copybox">Load a Teachable Machine model, point a webcam, pair a BBC micro:bit V2 over Bluetooth — LEDs react to every class. No install, no account. Chrome only.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
 
 <h2>Full description</h2>
-<div class="copybox">🎮 Teachable Machine for Micro:bit — a browser-based BLE control panel for the webcam + BBC micro:bit V2.
+<div class="copybox">🎓 Teachable Machine for Micro:bit — the easiest way for kids to train an AI and see it control real hardware.
 
-Open one HTML file in Chrome or Edge, pair over Bluetooth, and unlock 8 tabs of hands-on STEM fun — no install, no account, no backend, no tracking.
+Open one HTML file in Chrome, load any Teachable Machine model by URL (image or audio), turn on the webcam, pair a BBC micro:bit V2 over Bluetooth, and every classification lights up an LED icon on the board. No install. No account. No cloud.
 
 WHAT YOU GET
-• 🎛 LED matrix + preset icons + text scroller
-• 📡 Live sensors: temperature, light, sound, accelerometer, compass, touch
-• ⚙️ 2 servos (P1 + P2) with sliders, gauges, trim, OFF buttons
-• 🎮 D-pad GamePad for robots and games
-• 📈 Live Graph (Chart.js) — record, replay, annotate, export PNG + CSV
-• 🎲 5 interactive 3D models (Three.js): micro:bit, Buggy, Arm, Balance, Weather
-• 🎨 4 themes (Stealth · Neon · Arctic · Blaze) + 3 languages (EN · FR · AR with full RTL)
-• 📱 PWA — installable, offline-capable
-• 👶 Beginner mode + 🧙 Expert mode
+• 🎓 Load any Teachable Machine model (image or audio) by URL
+• 📷 Webcam capture + live classification, right in the browser
+• 📡 Web Bluetooth pairing to a BBC micro:bit V2
+• 🟢 TEST button — verify the BLE link without the camera
+• 🔊 Optional "Talking computer" — speech synthesis says what the AI sees
+• 🧭 Single-page flow: Train → Load URL → Start Webcam → Connect → Start Sending
+• 🌐 Runs locally — nothing leaves your computer
+• 👩‍🏫 Teacher printables: quickstart card, classroom poster, lesson plan, stickers
 
 WHAT'S IN YOUR DOWNLOAD
 • index.html — the full app
 • makecode.ts — micro:bit firmware (flash once from MakeCode)
 • SETUP.md — 5-minute quick-start
 • docs/ — illustrated guide, cheat sheet, FAQ, Etsy playbook
+• printables/ — A4 / A3 PDFs + editable HTML
 • LICENSE — personal / classroom single-user license
 
 REQUIREMENTS
-• webcam + BBC micro:bit V2 (V1 works but has no sound sensor)
-• Chrome or Edge on desktop (or Chrome on Android)
+• Computer + Chrome (desktop) or Chrome on Android
+• Webcam
+• BBC micro:bit V2 + USB cable or battery pack
 • Bluetooth enabled
-• HTTPS or file:// — double-clicking the HTML works
 
 WHO IT'S FOR
-Teachers running STEM workshops · home-schooling families · robotics clubs · makers prototyping BLE projects · anyone curious about the micro:bit.
+STEM teachers · homeschool families · after-school clubs · maker parents · anyone curious about AI.
 
 PRIVACY FIRST
-Nothing leaves your computer. No analytics, no logins, no cloud. All calibrations, recordings, and presets live in your browser's localStorage and on your disk.
+The app runs in your browser. No logins. No analytics. No cloud. The model URL you paste goes straight from Chrome to Teachable Machine's CDN — your webcam frames never leave the device.
 
 LIFETIME UPDATES
 Every version shipped from this listing is yours forever. Re-download the latest ZIP anytime from your Etsy Purchases page.
 
-Happy hacking! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
+Happy teaching! 🎓📷🤖<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
 
 <h2>Price tiers</h2>
 <table>
   <tr><th>Tier</th><th>Who</th><th>Price</th></tr>
-  <tr><td>Single user</td><td>One teacher / family / maker</td><td><code>{{PRICE}}</code></td></tr>
-  <tr><td>Classroom / Site</td><td>Up to 30 teachers at one school, unlimited students</td><td><code>{{PRICE}}</code></td></tr>
-  <tr><td>District / OEM</td><td>Multiple sites — DM through the Etsy order</td><td>Custom</td></tr>
+  <tr><td>Launch</td><td>Early-bird single user</td><td>$14.99</td></tr>
+  <tr><td>Standard</td><td>Single user</td><td>$19.99</td></tr>
+  <tr><td>Bundle</td><td>App + all printables</td><td>$34.99</td></tr>
+  <tr><td>Tripwire</td><td>Try before you buy</td><td>$5</td></tr>
+  <tr><td>Site license</td><td>Up to 30 teachers at one school</td><td>$249</td></tr>
+  <tr><td>District</td><td>Multiple sites</td><td>$599</td></tr>
+  <tr><td>Promo <code>AILAUNCH</code></td><td>First-10-buyers discount</td><td>$8</td></tr>
 </table>
 
 <!-- ═══════════ TAGS ═══════════ -->
@@ -282,47 +288,55 @@ Happy hacking! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.
 <h2>13 Etsy tags (20 chars each)</h2>
 <div class="pills">
   <span class="pill">micro:bit</span>
-  <span class="pill">BLE</span>
-  <span class="pill">bluetooth</span>
+  <span class="pill">AI</span>
+  <span class="pill">machine learning</span>
+  <span class="pill">teachable machine</span>
   <span class="pill">education</span>
   <span class="pill">STEM</span>
-  <span class="pill">robotics</span>
   <span class="pill">kids coding</span>
   <span class="pill">teacher resource</span>
-  <span class="pill">sensors</span>
-  <span class="pill">servos</span>
   <span class="pill">classroom</span>
-  <span class="pill">home school</span>
+  <span class="pill">homeschool</span>
   <span class="pill">makerspace</span>
+  <span class="pill">webcam</span>
+  <span class="pill">bluetooth</span>
+</div>
+
+<h2>Feature pills (for mockups / hero)</h2>
+<div class="pills">
+  <span class="pill">webcam</span>
+  <span class="pill">AI</span>
+  <span class="pill">Bluetooth</span>
+  <span class="pill">micro:bit</span>
+  <span class="pill">Chrome</span>
+  <span class="pill">no install</span>
 </div>
 
 <h2>Materials (what powers it)</h2>
 <div class="pills">
   <span class="pill">HTML5</span>
   <span class="pill">JavaScript</span>
+  <span class="pill">TensorFlow.js</span>
   <span class="pill">Web Bluetooth</span>
-  <span class="pill">Chart.js</span>
-  <span class="pill">Three.js</span>
-  <span class="pill">PWA</span>
   <span class="pill">MakeCode</span>
   <span class="pill">TypeScript</span>
 </div>
 
 <h2>SEO keywords</h2>
-<p><code>browser-based</code> · <code>no-install</code> · <code>privacy-first</code> · <code>offline-capable</code> · <code>web bluetooth</code> · <code>teacher resource</code> · <code>STEM workshop</code> · <code>micro:bit V2</code></p>
+<p><code>browser-based</code> · <code>no-install</code> · <code>AI for kids</code> · <code>AI literacy</code> · <code>machine learning</code> · <code>web bluetooth</code> · <code>teacher resource</code> · <code>micro:bit V2</code></p>
 
 <!-- ═══════════ IMAGES ═══════════ -->
 <div class="slug" id="images">SLUG — 7-IMAGE LISTING ORDER</div>
 <h2>Image sequence (Etsy shows 1 &amp; 2 largest)</h2>
 <div class="card">
   <ol style="padding-left:22px;line-height:2">
-    <li><strong>Hero</strong> — real micro:bit + laptop split-screen showing the 3D model mirroring the board's tilt. Title overlay in Orbitron.</li>
-    <li><strong>Tabs overview</strong> — grid screenshot of all 8 tabs with emoji labels.</li>
-    <li><strong>Live graph close-up</strong> — Chart.js with colored lines + annotations, Record button glowing red.</li>
-    <li><strong>3D Buggy + Robot Arm</strong> — split screenshot showing two of the five Three.js models.</li>
-    <li><strong>Hand-holding the board</strong> — real servo plugged into P1, sliders on screen in the background.</li>
-    <li><strong>Theme sampler</strong> — 2×2 grid: Stealth · Neon · Arctic · Blaze.</li>
-    <li><strong>Text card</strong> — "Single-user license · Lifetime updates · No cloud · Chrome / Edge" on a dark gradient.</li>
+    <li><strong>Hero</strong> — laptop + webcam + BBC micro:bit V2 all in frame, hand posing, "Teach • Trigger • Control" overlay in Orbitron.</li>
+    <li><strong>Teachable Machine model-training screen</strong> — three classes with healthy confidence bars, Export button highlighted.</li>
+    <li><strong>Gesture → LED reaction GIF</strong> — 3-second loop: hand pose on the left, micro:bit LED icon on the right.</li>
+    <li><strong>Classroom scene</strong> — two kids at a shared laptop teaching the AI, micro:bit on the desk.</li>
+    <li><strong>TEST button close-up</strong> — the one-click BLE sanity check, green status chip visible.</li>
+    <li><strong>Mobile view</strong> — Chrome sized to portrait, the single-page flow fits cleanly.</li>
+    <li><strong>Bundle / bonus card</strong> — "What's in the ZIP" file manifest + "Lifetime updates · No cloud · Chrome" on a dark gradient.</li>
   </ol>
 </div>
 
@@ -331,18 +345,18 @@ Happy hacking! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.
 <h2>Common mistakes</h2>
 <table>
   <tr><th>❌ Don't</th><th>✅ Do</th></tr>
-  <tr><td>Start with "Hi, I'm…" + 10s of intro</td><td>Open with the real board tilting a 3D model in the first 3 s</td></tr>
+  <tr><td>Start with "Hi, I'm…" + 10s of intro</td><td>Open with a hand gesture that triggers a micro:bit LED in the first 3 s</td></tr>
   <tr><td>Film landscape (16:9)</td><td>9:16 portrait — Etsy autoplays on mobile</td></tr>
-  <tr><td>Talk over busy on-screen animation</td><td>Let the visual breathe for 1s, then explain</td></tr>
+  <tr><td>Talk over busy on-screen animation</td><td>Let the confidence bars breathe for 1s, then explain</td></tr>
   <tr><td>Forget captions (Etsy plays muted)</td><td>Burn in captions or add a text overlay every scene</td></tr>
-  <tr><td>Show iOS / Safari in the video</td><td>Always demo on Chrome/Edge — iPhone users will buy and return</td></tr>
+  <tr><td>Show Safari / iPhone in the video</td><td>Chrome only — iOS users will buy and return</td></tr>
   <tr><td>Skip the CTA</td><td>Say "link below" in the last 5 seconds every single time</td></tr>
 </table>
 
 <!-- ═══════════ QUICK CARD ═══════════ -->
 <div class="slug">SLUG — POCKET CHEAT CARD</div>
-<div class="copybox">PRE    V2 powered (X icon) · Chrome open · BLE green · 9:16 phone
-SHOOT  Hook in 3 s · Tilt → 3D mirror · Servo swing · Graph sim · CTA
+<div class="copybox">PRE    V2 powered · Chrome open · model URL ready · webcam on · BLE green · TEST passed · 9:16 phone
+SHOOT  Hook in 3 s · Load Model · Start Webcam · Connect · TEST · Start Sending · Talk on · CTA
 POST   Trim to 55 s · captions burn-in · first frame = thumbnail
 LIST   Title · 160-char desc · 13 tags · 7 images · price tiers</div>
 
