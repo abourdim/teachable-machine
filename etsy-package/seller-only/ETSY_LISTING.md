@@ -46,7 +46,7 @@
 
 ## Title (140 char max — pack it with searchable keywords)
 
-Bluetooth Web App for BBC micro:bit V2 + Illustrated Guide | Features, TensorFlow.js ML, Live Graphs | STEM Classroom | Digital Download
+Teach a Webcam AI to Drive a BBC micro:bit V2 | Load a Teachable Machine Model, Send Predictions over BLE | Kids Classroom Kit
 
 > Product name in your Etsy shop is **"Teachable Machine"** — use the phrase **"for the BBC micro:bit V2"** everywhere else to stay within the Micro:bit Educational Foundation's trademark-use guidelines.
 
@@ -57,7 +57,7 @@ Digital Downloads → Educational Resources
 
 ## Tags (13 max — Etsy lets you use all 13, use them)
 
-micro:bit, microbit v2, STEM, coding kids, BBC microbit, bluetooth app, MakeCode, classroom resource, homeschool STEM, robotics, web bluetooth, coding club, chromebook stem
+teachable machine kids, tensorflow kids, machine learning classroom, gesture recognition, ai for kids, microbit v2, STEM classroom, coding kids, homeschool STEM, coding club, chromebook stem, bluetooth robot, webcam ml
 
 > Replaced the two weakest tags (`edtech` — corporate, not what teachers search; `sensor playground` — zero search volume) with `coding club` and `chromebook stem` (both strong long-tail teacher queries).
 
@@ -82,18 +82,16 @@ micro:bit, microbit v2, STEM, coding kids, BBC microbit, bluetooth app, MakeCode
 > 🧪 **Try it now** (Simulate mode, no micro:bit needed): <https://abourdim.github.io/teachable-machine/>
 >
 > ✨ **What you get** (instant download):
-> • A complete web app (HTML, CSS, JS) you run locally in Chrome or Edge
-> • Ready-to-flash micro:bit firmware (`makecode.ts`)
-> • **Illustrated trilingual user guide (EN/FR/AR) with built-in diagrams:**
->   — architecture diagram • micro:bit V2 pin-out • firmware flow storyboard
->   — interactive LED playground inside the guide (click cells, copy hex commands)
->   — visual troubleshooting: decision tree, symptom picker, icon gallery, reset recipe
-> • A printable Quick Setup guide (`SETUP.md`)
-> • 4 themes (Stealth, Neon, Arctic, Blaze)
-> • train + predict: LED matrix, Sensors, Classes, Samples, Graph, Camera View, Bench, Settings
-> • 5 interactive 3D models (micro:bit, Buggy, Robot Arm, Balance Game, Weather Station)
-> • Session recording, live graphs, annotations, JSON export
-> • Beginner & Expert modes — grows with the learner
+> • A browser app that **loads ANY Google Teachable Machine image model** (paste the `teachablemachine.withgoogle.com/models/...` URL, click Load) and runs inference via TensorFlow.js
+> • **Live webcam inference** — the classifier's top label + confidence update in real time
+> • **BLE bridge to BBC micro:bit V2** — sends `CMD:LABEL,CONFIDENCE` over Nordic UART (UUID `6e400001-...`)
+> • **micro:bit firmware maps labels to LED icons**: LEFT/RIGHT/UP/DOWN arrows, RED (♥), GREEN (:)), BLUE (■), YELLOW (♦), WHITE (·), TEST (T), UNKNOWN (?), STOP (clear)
+> • **Optional speech synthesis** reads the predicted label aloud (en-US)
+> • Front / back camera switch + mirror toggle
+> • Works on **any laptop or Chromebook** (webcam + Chrome/Edge) — no install, no account
+> • Kids train a model in 5 minutes on teachablemachine.withgoogle.com, then drive the micro:bit in a class period
+> • Perfect lesson arc: **collect samples → train → see the micro:bit respond to your body** (the "aha" moment for ML)
+> • No cloud uploads after training — inference is 100% local
 >
 > 🧒 **Perfect for**: classrooms, homeschool, after-school clubs, makerspaces, STEM camps, robotics enthusiasts, parents teaching kids to code.
 >
@@ -130,18 +128,18 @@ Paste this block into the listing just above the FAQ. No fabricated reviews — 
 
 ## Compare table for the description
 
-**What makes Teachable Machine different?** Side-by-side with the two free alternatives most teachers try first:
+**What makes this different?** Side-by-side with the ways teachers try to do it today:
 
-| Feature | Teachable Machine | MakeCode Editor | Raw Web Bluetooth demos |
+| Feature | Teachable Machine for micro:bit | Teachable Machine alone | DIY Python + TF + serial |
 |---|:---:|:---:|:---:|
-| Works in-browser, zero install | ✅ | ✅ | ✅ |
-| Ready-to-use sensor dashboard (temp, light, sound, accel, classification, touch) | ✅ | ❌ | ❌ |
-| Live graph + CSV / PNG export + session record & replay | ✅ | ❌ | ❌ |
-| Dual class control UI with gauges and trim | ✅ | ❌ | Build it yourself |
-| 5 interactive 3D models (micro:bit, Buggy, Arm, Balance, Weather) | ✅ | ❌ | ❌ |
-| Trilingual EN/FR/AR with full RTL support | ✅ | Partial | ❌ |
-| Classroom lesson plan + printable stickers & A3 poster | ✅ | ❌ | ❌ |
-| Works offline after first load (installable PWA) | ✅ | ❌ | ❌ |
+| Browser-only — no Python, no install | ✅ | ✅ | ❌ |
+| Streams predictions to a micro:bit V2 over BLE | ✅ | ❌ | ✅ (your code) |
+| Firmware pre-maps labels to LED icons | ✅ | ❌ | Write it yourself |
+| Kid-safe **local** inference (no post-training uploads) | ✅ | ✅ | ✅ |
+| Speech feedback on predicted label | ✅ | ❌ | ❌ |
+| Works on Chromebook | ✅ | ✅ | ❌ |
+| Ready-made classroom lesson plan (5-min model + deploy) | ✅ | ❌ | ❌ |
+| Printable stickers + A3 poster + symptom picker | ✅ | ❌ | ❌ |
 
 ---
 
