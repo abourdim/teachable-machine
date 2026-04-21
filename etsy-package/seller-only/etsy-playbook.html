@@ -1,10 +1,9 @@
 <!doctype html>
-<!-- REWRITE PER PRODUCT — DO NOT SHIP AS-IS -->
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Teachable Machine — Etsy 1-Min Playbook</title>
+<title>Teachable Machine for Micro:bit — Etsy 1-Min Playbook</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -125,8 +124,8 @@
 <div class="slate">
   <div class="slate-clap">🎬</div>
   <div class="tag">— ETSY PLAYBOOK · v1.0.0 —</div>
-  <h1>Teachable Machine</h1>
-  <div class="tag">The 1-minute listing demo · copy-ready snippets</div>
+  <h1>Teachable Machine for Micro:bit</h1>
+  <div class="tag">Teach · Trigger · Control · copy-ready snippets</div>
   <div class="meta"><span><b>Format:</b> 9:16 portrait</span><span><b>Length:</b> ≤ 60 s</span><span><b>Goal:</b> turn scrollers into buyers</span></div>
 </div>
 
@@ -145,14 +144,14 @@
 <h2>Before you press Record</h2>
 <div class="card">
   <ul class="checklist" onclick="var li=event.target.closest('li');if(li)li.classList.toggle('checked')">
-    <li><input type="checkbox"><label>micro:bit V2 powered on, showing <kbd>X</kbd> icon<span class="where">If not → reflash <code>makecode.ts</code></span></label></li>
-    <li><input type="checkbox"><label>Chrome or Edge open, <code>index.html</code> loaded<span class="where">Safari/Firefox/iOS will not work</span></label></li>
-    <li><input type="checkbox"><label>BLE connected — status chip is <strong>green</strong><span class="where">Click 🔗 Connect, pick BBC micro:bit from picker</span></label></li>
-    <li><input type="checkbox"><label>Theme picked — <strong>Neon</strong> looks best on camera<span class="where">Header → paint-roller dropdown</span></label></li>
-    <li><input type="checkbox"><label>Servo plugged into P1 (if showing Robot Arm / Buggy)</label></li>
-    <li><input type="checkbox"><label>3D Board tab open, Buggy or Robot Arm selected<span class="where">Tab 6 → model dropdown</span></label></li>
+    <li><input type="checkbox"><label>micro:bit V2 powered on, firmware flashed, showing <kbd>?</kbd> (UNKNOWN) at rest<span class="where">If not → reflash <code>makecode.ts</code> from MakeCode</span></label></li>
+    <li><input type="checkbox"><label>Chrome or Edge open on a laptop/Chromebook with a built-in webcam<span class="where">Safari/Firefox/iOS will not work — no Web Bluetooth</span></label></li>
+    <li><input type="checkbox"><label>A trained Teachable Machine model URL copied to clipboard<span class="where">Format: <code>https://teachablemachine.withgoogle.com/models/XXXXX/</code></span></label></li>
+    <li><input type="checkbox"><label>BLE paired — "BBC micro:bit" picked, status shows <strong>Connected</strong><span class="where">Click Connect, pick the micro:bit from the browser picker</span></label></li>
+    <li><input type="checkbox"><label>Webcam tested — front/back camera switch and mirror toggle verified</label></li>
+    <li><input type="checkbox"><label>Speech synthesis ON — hit the speaker toggle, confirm it says the label aloud</label></li>
     <li><input type="checkbox"><label>Phone in 9:16 mode on a tripod, lit from the front</label></li>
-    <li><input type="checkbox"><label>Desk cleared — only the board and one prop in frame</label></li>
+    <li><input type="checkbox"><label>Desk cleared — only the laptop screen and the micro:bit in frame</label></li>
     <li><input type="checkbox"><label>Script read aloud once — timed under 55 s</label></li>
   </ul>
 </div>
@@ -162,111 +161,118 @@
 <h2>Structure</h2>
 <div class="card">
   <pre style="color:var(--accent2);font-family:var(--mono);font-size:.9rem;line-height:1.7;margin:0">
- 0–3 s   HOOK        "Watch what this micro:bit does in 60 seconds."
- 3–10 s  CONTEXT     Board on-screen, X icon → status turns green.
-10–35 s  DEMO        Tilt → 3D model follows. Press A → LED heart. Servo swings.
-35–50 s  PAYOFF      Zoom on live graph + 3D model mirroring real board.
-50–55 s  CTA         "Full kit in my shop — link below."
+ 0–3 s   HOOK        "Teach a model in 5 minutes. Control a micro:bit with your body."
+ 3–10 s  CONTEXT     Paste a Teachable Machine URL → Load → webcam live.
+10–25 s  DEMO 1      Training flow cut → 4 classes loaded → prediction bars fill per gesture.
+25–40 s  DEMO 2      Hand LEFT → micro:bit LED arrow West. "LEFT" spoken aloud.
+40–50 s  PAYOFF      Real ML in a browser. No accounts. Inference runs locally.
+50–55 s  CTA         "Full firmware + lesson plan — link below."
 55–60 s  END FRAME   Logo + handle frozen for the loop preview.</pre>
 </div>
 
 <!-- ═══════════ SCRIPT ═══════════ -->
 <div class="slug" id="script">SLUG — SCENE-BY-SCENE SCRIPT</div>
-<!-- REWRITE PER PRODUCT — THE 6 SCENES BELOW ARE EMPTY SHELLS.
-     Fill each SAY/DO with a product-specific line BEFORE shooting.
-     Never ship this file with the placeholder italics still in place. -->
 
-<h2>6-scene template — Teachable Machine</h2>
-<p class="aka" style="color:#f59e0b;font-weight:700;">⚠️ The 6 scenes below are shells. Replace every line with a filmable action specific to Teachable Machine before you shoot.</p>
+<h2>6-scene script — Teachable Machine for Micro:bit</h2>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:00–00:03</span><span class="scene-phase phase-hook">HOOK</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[Hook line — 1-second promise, the reason a scroller stops]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[The hook shot — what the viewer sees during the line]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Teach a model in 5 minutes. Control a micro:bit with your body."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Split frame: kid raises left hand on the left → micro:bit 5×5 LED draws a West arrow on the right, in real time.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:03–00:10</span><span class="scene-phase phase-demo">CONTEXT</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[Who this is for, what problem it solves]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[Setup shot — connecting, first meaningful screen]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Paste a Teachable Machine URL. That's it."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Screen recording: the URL field and Load button. Paste <code>teachablemachine.withgoogle.com/models/...</code> → click Load. Webcam preview lights up.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:10–00:25</span><span class="scene-phase phase-demo">DEMO 1</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[First wow-moment — a marquee feature of Teachable Machine]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[The 15-second action shot]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Train four classes on teachablemachine.withgoogle.com. Load the URL. Watch it predict."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Quick cut: Teachable Machine training UI with 4 classes — Hand-Up, Hand-Left, Hand-Right, Neutral. Jump back to the app — live prediction bars fill per class, top label + confidence update in real time.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:25–00:40</span><span class="scene-phase phase-demo">DEMO 2</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[Second wow-moment — second feature / use case]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[The 15-second action shot]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Every label fires a LED icon on the micro:bit. And it can even talk."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Rapid-fire: hand LEFT → West arrow on LED. Hand RIGHT → East arrow. Hand UP → North arrow. Say "LEFT" aloud — the app speaks the label via speech synthesis (en-US). App sends <code>CMD:LABEL,CONFIDENCE</code> over Nordic UART to the micro:bit.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:40–00:50</span><span class="scene-phase phase-payoff">PAYOFF</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[The "why it matters" — time saved, skill acquired, safety]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[The screen that carries the message — export, capture, result]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Real machine learning, in a browser. No accounts. No uploads after training. Classroom-ready."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Teacher screenshot: Teachable Machine training UI with captured samples. Cut to the app running inference locally via TensorFlow.js — no network traffic badge.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:50–00:60</span><span class="scene-phase phase-cta">CTA + END FRAME</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 SAY</div><em>[Call to action — full kit + link in description]</em></div>
-    <div class="do"><div class="do-label">🎬 DO</div><em>[Logo overlay, 3-second still for the loop]</em></div>
+    <div class="say"><div class="say-label">🎙 SAY</div>"Full firmware + lesson plan + micro:bit mapping, link below."</div>
+    <div class="do"><div class="do-label">🎬 DO</div>Logo overlay + handle. Freeze on the hero split (gesture → LED arrow) for 3 seconds for the loop preview.</div>
   </div>
 </div>
 
 <!-- ═══════════ LISTING COPY ═══════════ -->
 <div class="slug" id="listing">SLUG — COPY-READY LISTING TEXT</div>
 <h2>Etsy title (140 chars max)</h2>
-<div class="copybox">[TODO — 140-char Etsy title, see ETSY_LISTING.md]<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
+<div class="copybox">Teachable Machine for Micro:bit — Webcam ML · Train in Browser · BLE Gesture Control · Speech · No Install · Chrome/Edge · V2<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
 
 <h2>Short description (first 160 chars — shown in search)</h2>
-<div class="copybox">[TODO — 160-char short description, see ETSY_LISTING.md]<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
+<div class="copybox">Train a Google Teachable Machine model, paste the URL, and control a BBC micro:bit V2 with gestures. Webcam ML in your browser. No account, no install.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
 
 <h2>Full description</h2>
-<div class="copybox">🎮 Teachable Machine — a browser-based BLE control panel for the BBC micro:bit V2.
+<div class="copybox">🤖 Teachable Machine for Micro:bit — teach a webcam model, trigger a label, control a BBC micro:bit V2.
 
-[TODO — 1-sentence pitch of what the product does when opened]
+Paste any Google Teachable Machine image-model URL, hit Load, and the browser runs inference locally on TensorFlow.js. Every predicted label is sent as <code>CMD:LABEL,CONFIDENCE</code> over Bluetooth Nordic UART to your micro:bit, which lights a matching icon on its 5×5 LED display.
+
 WHAT YOU GET
-• [TODO — product-specific feature 1]• [TODO — your live signal list]• [TODO — your control surface if any]• [TODO — your interactive surface]
-• [TODO — your record/replay/export feature]• [TODO — your visualization feature if any]• [TODO — your themes / UI variety + languages]• 📱 PWA — installable, offline-capable
-• 👶 Beginner mode + 🧙 Expert mode
+• 🧠 Load ANY Teachable Machine image model by URL — paste → Load → predict
+• 📷 Live webcam inference — top label + confidence updates in real time
+• 📡 Web Bluetooth UART bridge to BBC micro:bit V2 (Nordic UART 6e400001)
+• 🎯 9 built-in label → icon mappings on the micro:bit:
+   LEFT/RIGHT/UP/DOWN → arrow West/East/North/South
+   RED → ♥ Heart · GREEN → :) Happy · BLUE → ■ Square
+   YELLOW → ♦ Diamond · WHITE → · SmallDiamond
+   TEST → "T" · UNKNOWN → "?" · STOP → clear
+• 🗣 Optional speech synthesis — reads the predicted label aloud (en-US)
+• 🔄 Front/back camera switch + mirror toggle
+• 🌐 Works on any laptop or Chromebook with a webcam and Chrome/Edge
 
 WHAT'S IN YOUR DOWNLOAD
-• index.html — the full app
-• makecode.ts — micro:bit firmware (flash once from MakeCode)
+• index.html — the full browser app
+• makecode.ts — micro:bit V2 firmware (flash once from MakeCode)
 • SETUP.md — 5-minute quick-start
-• docs/ — illustrated guide, cheat sheet, FAQ, Etsy playbook
+• docs/ — illustrated guide, lesson plan, FAQ, Etsy playbook
 • LICENSE — personal / classroom single-user license
 
 REQUIREMENTS
-• BBC micro:bit V2 (V1 works but has no sound sensor)
+• BBC micro:bit V2 (required — V2-only BLE services)
+• Webcam-equipped laptop or Chromebook
 • Chrome or Edge on desktop (or Chrome on Android)
 • Bluetooth enabled
 • HTTPS or file:// — double-clicking the HTML works
 
 WHO IT'S FOR
-Teachers running STEM workshops · home-schooling families · robotics clubs · makers prototyping BLE projects · anyone curious about the micro:bit.
+Teachers running ML / STEM workshops · home-schooling families · robotics clubs · makers prototyping gesture projects · anyone curious about hands-on machine learning.
 
 PRIVACY FIRST
-Nothing leaves your computer. No analytics, no logins, no cloud. All calibrations, recordings, and presets live in your browser's localStorage and on your disk.
+Training happens on teachablemachine.withgoogle.com — after that, inference runs entirely in your browser. Nothing leaves your computer. No analytics, no logins, no cloud. Webcam frames never hit a server.
 
 LIFETIME UPDATES
 Every version shipped from this listing is yours forever. Re-download the latest ZIP anytime from your Etsy Purchases page.
 
-Happy hacking! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
+Happy teaching! 🤖📷🚀<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPY</button></div>
 
 <h2>Price tiers</h2>
 <table>
@@ -281,15 +287,15 @@ Happy hacking! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.
 <h2>13 Etsy tags (20 chars each)</h2>
 <div class="pills">
   <span class="pill">micro:bit</span>
+  <span class="pill">teachable machine</span>
+  <span class="pill">machine learning</span>
+  <span class="pill">webcam ML</span>
   <span class="pill">BLE</span>
-  <span class="pill">bluetooth</span>
-  <span class="pill">education</span>
   <span class="pill">STEM</span>
-  <span class="pill">robotics</span>
+  <span class="pill">gesture control</span>
   <span class="pill">kids coding</span>
   <span class="pill">teacher resource</span>
-  <span class="pill">sensors</span>
-  <span class="pill">[product tag]</span>
+  <span class="pill">TensorFlow js</span>
   <span class="pill">classroom</span>
   <span class="pill">home school</span>
   <span class="pill">makerspace</span>
@@ -299,29 +305,29 @@ Happy hacking! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.
 <div class="pills">
   <span class="pill">HTML5</span>
   <span class="pill">JavaScript</span>
+  <span class="pill">TensorFlow.js</span>
+  <span class="pill">Teachable Machine</span>
   <span class="pill">Web Bluetooth</span>
-  <span class="pill">[render lib]</span>
-  <span class="pill">[3D lib if any]</span>
-  <span class="pill">PWA</span>
+  <span class="pill">Web Speech API</span>
   <span class="pill">MakeCode</span>
   <span class="pill">TypeScript</span>
 </div>
 
 <h2>SEO keywords</h2>
-<p><code>browser-based</code> · <code>no-install</code> · <code>privacy-first</code> · <code>offline-capable</code> · <code>web bluetooth</code> · <code>teacher resource</code> · <code>STEM workshop</code> · <code>micro:bit V2</code></p>
+<p><code>browser-based ML</code> · <code>no-install</code> · <code>privacy-first</code> · <code>local inference</code> · <code>web bluetooth</code> · <code>teachable machine micro:bit</code> · <code>STEM workshop</code> · <code>micro:bit V2</code></p>
 
 <!-- ═══════════ IMAGES ═══════════ -->
 <div class="slug" id="images">SLUG — 7-IMAGE LISTING ORDER</div>
 <h2>Image sequence (Etsy shows 1 &amp; 2 largest)</h2>
 <div class="card">
   <ol style="padding-left:22px;line-height:2">
-    <li><strong>[TODO — Hero shot: hardware + computer screen showing the marquee product state]</strong></li>
-    <li><strong>[TODO — grid screenshot of your main screens or features]</strong></li>
-    <li><strong>[TODO — close-up of your marquee feature]</strong></li>
-    <li><strong>[TODO — split screenshot showing two product features]</strong></li>
-    <li><strong>[TODO — shot showing hardware in-use or hand-to-screen reference]</strong></li>
-    <li><strong>[TODO — styling / variety grid].</li>
-    <li><strong>Text card</strong> — "Single-user license · Lifetime updates · No cloud · Chrome / Edge" on a dark gradient.</li>
+    <li><strong>Hero split</strong> — on the left, webcam view of a kid gesturing; on the right, the micro:bit 5×5 LED showing a matching arrow. Orbitron headline over the top.</li>
+    <li><strong>URL-paste UI</strong> — screenshot of the Teachable Machine URL field and Load button in the browser, with a sample <code>teachablemachine.withgoogle.com/models/...</code> URL visible.</li>
+    <li><strong>Live prediction bars</strong> — mid-inference close-up: 4 class bars (Hand-Up / Hand-Left / Hand-Right / Neutral) with confidence percentages, top label highlighted.</li>
+    <li><strong>micro:bit LED icon set</strong> — labeled grid: 4 arrows + Heart + Happy + Square + Diamond + SmallDiamond, each with the label name under it.</li>
+    <li><strong>Speech synthesis active</strong> — app screenshot with the speaker toggle ON and a subtitle bubble showing "LEFT" being spoken.</li>
+    <li><strong>Teacher screenshot</strong> — Teachable Machine training UI on teachablemachine.withgoogle.com with webcam samples captured for each class.</li>
+    <li><strong>Privacy-first infographic</strong> — "Inference runs in your browser after training · No uploads · No accounts · Chrome / Edge" on a dark gradient.</li>
   </ol>
 </div>
 
@@ -330,23 +336,23 @@ Happy hacking! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.
 <h2>Common mistakes</h2>
 <table>
   <tr><th>❌ Don't</th><th>✅ Do</th></tr>
-  <tr><td>Start with "Hi, I'm…" + 10s of intro</td><td>Open with the real board tilting a 3D model in the first 3 s</td></tr>
+  <tr><td>Start with "Hi, I'm…" + 10s of intro</td><td>Open with the gesture→LED split in the first 3 s</td></tr>
   <tr><td>Film landscape (16:9)</td><td>9:16 portrait — Etsy autoplays on mobile</td></tr>
-  <tr><td>Talk over busy on-screen animation</td><td>Let the visual breathe for 1s, then explain</td></tr>
-  <tr><td>Forget captions (Etsy plays muted)</td><td>Burn in captions or add a text overlay every scene</td></tr>
+  <tr><td>Train the model on camera for 30 s</td><td>Pre-train your model — cut to the training UI for 2 s max</td></tr>
+  <tr><td>Forget captions (Etsy plays muted)</td><td>Burn in the predicted label + micro:bit icon as captions every scene</td></tr>
   <tr><td>Show iOS / Safari in the video</td><td>Always demo on Chrome/Edge — iPhone users will buy and return</td></tr>
   <tr><td>Skip the CTA</td><td>Say "link below" in the last 5 seconds every single time</td></tr>
 </table>
 
 <!-- ═══════════ QUICK CARD ═══════════ -->
 <div class="slug">SLUG — POCKET CHEAT CARD</div>
-<div class="copybox">PRE    V2 powered (X icon) · Chrome open · BLE green · 9:16 phone
-SHOOT  Hook in 3 s · [TODO — 3 verbs for your product] · CTA
-POST   Trim to 55 s · captions burn-in · first frame = thumbnail
-LIST   Title · 160-char desc · 13 tags · 7 images · price tiers</div>
+<div class="copybox">PRE    webcam + micro:bit V2 paired · TM model URL in clipboard · Chrome open
+SHOOT  hook gesture → paste URL → predict → micro:bit responds → speech flex → CTA
+POST   cut at 55 s · burn subtitles · first frame is gesture→LED arrow split
+LIST   see ETSY_LISTING.md</div>
 
 <p style="text-align:center;margin-top:40px;color:var(--muted);font-size:.85rem">
-  Teachable Machine v1.0.0 — Etsy 1-Min Playbook · print A4 · laminate · keep it next to your shoot rig
+  Teachable Machine for Micro:bit v1.0.0 — Etsy 1-Min Playbook · print A4 · laminate · keep it next to your shoot rig
 </p>
 
 </body>

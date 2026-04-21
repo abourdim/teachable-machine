@@ -1,10 +1,9 @@
 <!doctype html>
-<!-- REWRITE PER PRODUCT — DO NOT SHIP AS-IS · TRANSLATE TO FRENCH -->
 <html lang="fr" dir="ltr">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Teachable Machine — Playbook Etsy 1 minute</title>
+<title>Teachable Machine pour Micro:bit — Playbook Etsy 1 minute</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -125,8 +124,8 @@
 <div class="slate">
   <div class="slate-clap">🎬</div>
   <div class="tag">— PLAYBOOK ETSY · v1.0.0 —</div>
-  <h1>Teachable Machine</h1>
-  <div class="tag">La démo d'annonce en 1 minute · extraits prêts à copier</div>
+  <h1>Teachable Machine pour Micro:bit</h1>
+  <div class="tag">Entraîner · Déclencher · Contrôler · extraits prêts à copier</div>
   <div class="meta"><span><b>Format :</b> portrait 9:16</span><span><b>Durée :</b> ≤ 60 s</span><span><b>Objectif :</b> transformer les curieux en acheteurs</span></div>
 </div>
 
@@ -145,14 +144,14 @@
 <h2>Avant d'appuyer sur Rec</h2>
 <div class="card">
   <ul class="checklist" onclick="var li=event.target.closest('li');if(li)li.classList.toggle('checked')">
-    <li><input type="checkbox"><label>micro:bit V2 allumé, icône <kbd>X</kbd> affichée<span class="where">Sinon → reflasher <code>makecode.ts</code></span></label></li>
-    <li><input type="checkbox"><label>Chrome ou Edge ouvert, <code>index.html</code> chargé<span class="where">Safari/Firefox/iOS ne fonctionneront pas</span></label></li>
-    <li><input type="checkbox"><label>BLE connecté — la puce d'état est <strong>verte</strong><span class="where">Cliquez sur 🔗 Connecter, choisissez BBC micro:bit dans la fenêtre</span></label></li>
-    <li><input type="checkbox"><label>Thème choisi — <strong>Neon</strong> rend le mieux à la caméra<span class="where">En-tête → menu rouleau de peinture</span></label></li>
-    <li><input type="checkbox"><label>Servo branché sur P1 (pour Bras Robot / Buggy)</label></li>
-    <li><input type="checkbox"><label>Onglet 3D Board ouvert, Buggy ou Bras Robot sélectionné<span class="where">Onglet 6 → menu des modèles</span></label></li>
+    <li><input type="checkbox"><label>micro:bit V2 allumé, firmware flashé, affichant <kbd>?</kbd> (UNKNOWN) au repos<span class="where">Sinon → reflasher <code>makecode.ts</code> depuis MakeCode</span></label></li>
+    <li><input type="checkbox"><label>Chrome ou Edge ouvert sur un ordi portable ou Chromebook avec webcam intégrée<span class="where">Safari/Firefox/iOS ne fonctionnent pas — pas de Web Bluetooth</span></label></li>
+    <li><input type="checkbox"><label>URL d'un modèle Teachable Machine déjà entraîné copiée dans le presse-papiers<span class="where">Format : <code>https://teachablemachine.withgoogle.com/models/XXXXX/</code></span></label></li>
+    <li><input type="checkbox"><label>BLE appairé — « BBC micro:bit » sélectionné, statut <strong>Connecté</strong><span class="where">Cliquez Connecter, choisissez le micro:bit dans la fenêtre du navigateur</span></label></li>
+    <li><input type="checkbox"><label>Webcam testée — bascule caméra avant/arrière et miroir vérifiés</label></li>
+    <li><input type="checkbox"><label>Synthèse vocale ACTIVÉE — cliquez sur le haut-parleur, vérifiez qu'elle lit bien l'étiquette</label></li>
     <li><input type="checkbox"><label>Téléphone en 9:16 sur trépied, éclairé de face</label></li>
-    <li><input type="checkbox"><label>Bureau dégagé — uniquement la carte et un accessoire dans le cadre</label></li>
+    <li><input type="checkbox"><label>Bureau dégagé — uniquement l'écran du portable et le micro:bit dans le cadre</label></li>
     <li><input type="checkbox"><label>Script lu à voix haute une fois — chronométré sous 55 s</label></li>
   </ul>
 </div>
@@ -162,112 +161,118 @@
 <h2>Structure</h2>
 <div class="card">
   <pre style="color:var(--accent2);font-family:var(--mono);font-size:.9rem;line-height:1.7;margin:0">
- 0–3 s   ACCROCHE    « Regardez ce que ce micro:bit fait en 60 secondes. »
- 3–10 s  CONTEXTE    Carte à l'écran, icône X → le statut passe au vert.
-10–35 s  DÉMO        Inclinez → le modèle 3D suit. Appuyez sur A → cœur LED. Le servo bouge.
-35–50 s  RÉCOMPENSE  Zoom sur le graphique en direct + modèle 3D qui reflète la carte réelle.
-50–55 s  CTA         « Kit complet dans ma boutique — lien ci-dessous. »
+ 0–3 s   ACCROCHE    « Entraîne un modèle en 5 minutes. Contrôle un micro:bit avec ton corps. »
+ 3–10 s  CONTEXTE    Colle une URL Teachable Machine → Charger → webcam en direct.
+10–25 s  DÉMO 1      Flux d'entraînement → 4 classes chargées → les barres se remplissent.
+25–40 s  DÉMO 2      Main GAUCHE → flèche Ouest sur LED. « LEFT » prononcé à voix haute.
+40–50 s  RÉCOMPENSE  Vrai ML dans un navigateur. Pas de compte. Inférence en local.
+50–55 s  CTA         « Firmware complet + fiche pédagogique — lien ci-dessous. »
 55–60 s  IMAGE FIN   Logo + pseudo figé pour l'aperçu en boucle.</pre>
 </div>
 
 <!-- ═══════════ SCRIPT ═══════════ -->
 <div class="slug" id="script">SLUG — SCRIPT SCÈNE PAR SCÈNE</div>
-<!-- REWRITE PER PRODUCT — LE SCRIPT CI-DESSOUS DOIT ÊTRE RÉÉCRIT POUR CHAQUE PRODUIT.
-     Les 6 scènes sont des coquilles. Remplacez chaque `DIRE` par une phrase-clé
-     spécifique à votre produit et chaque `FAIRE` par une action filmable.
-     Ne laissez JAMAIS ce fichier partir en production avec les coquilles. -->
 
-<h2>Modèle 6 scènes — Teachable Machine</h2>
-<p class="aka" style="color:#f59e0b;font-weight:700;">⚠️ Les 6 scènes ci-dessous sont des coquilles. Réécrivez chacune avec une action filmable propre à Teachable Machine avant de tourner.</p>
+<h2>Script 6 scènes — Teachable Machine pour Micro:bit</h2>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:00–00:03</span><span class="scene-phase phase-hook">ACCROCHE</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div><em>[Phrase d'accroche — 1 seconde, promesse claire du produit, pourquoi scroller s'arrête]</em></div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div><em>[Le plan d'accroche — ce qu'on voit à l'écran pendant la phrase]</em></div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Entraîne un modèle en 5 minutes. Contrôle un micro:bit avec ton corps. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>Plan partagé : à gauche, un enfant lève la main gauche ; à droite, le micro:bit affiche en temps réel une flèche Ouest sur sa matrice 5×5 LED.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:03–00:10</span><span class="scene-phase phase-demo">CONTEXTE</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div><em>[Phrase qui situe : à qui c'est destiné, quel problème c'est résolu]</em></div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div><em>[Action à l'écran — setup, connexion, premier affichage utile]</em></div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Colle une URL Teachable Machine. C'est tout. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>Capture d'écran : le champ URL et le bouton Charger. Coller <code>teachablemachine.withgoogle.com/models/...</code> → cliquer Charger. La webcam s'allume.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:10–00:25</span><span class="scene-phase phase-demo">DÉMO 1</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div><em>[Premier wow-moment — une fonctionnalité phare de Teachable Machine]</em></div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div><em>[L'action visible — 15 secondes, mouvement à l'écran]</em></div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Entraîne quatre classes sur teachablemachine.withgoogle.com. Charge l'URL. Regarde-le prédire. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>Cut rapide : interface d'entraînement avec 4 classes — Main-Haut, Main-Gauche, Main-Droite, Neutre. Retour sur l'app — les barres de prédiction se remplissent, l'étiquette principale et la confiance s'actualisent en direct.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:25–00:40</span><span class="scene-phase phase-demo">DÉMO 2</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div><em>[Second wow-moment — une deuxième fonctionnalité / cas d'usage]</em></div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div><em>[L'action visible — 15 secondes]</em></div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Chaque étiquette déclenche une icône LED sur le micro:bit. Et il peut même parler. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>Enchaînement rapide : main GAUCHE → flèche Ouest sur LED. Main DROITE → flèche Est. Main HAUT → flèche Nord. Dire « LEFT » à voix haute — l'app prononce l'étiquette via la synthèse vocale (en-US). L'app envoie <code>CMD:LABEL,CONFIDENCE</code> en Nordic UART vers le micro:bit.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:40–00:50</span><span class="scene-phase phase-payoff">RÉCOMPENSE</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div><em>[Le « pourquoi c'est utile » — bénéfice concret : temps gagné, sécurité, compétence acquise]</em></div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div><em>[L'écran qui porte le message — export, capture, résultat visible]</em></div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Du vrai machine learning, dans un navigateur. Pas de compte. Pas d'upload après l'entraînement. Prêt pour la classe. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>Capture d'écran côté enseignant : l'interface Teachable Machine avec les échantillons capturés. Transition vers l'app qui fait tourner l'inférence en local via TensorFlow.js — aucun trafic réseau.</div>
   </div>
 </div>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:50–00:60</span><span class="scene-phase phase-cta">CTA + IMAGE DE FIN</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 DIRE</div><em>[Appel à l'action — kit complet + lien en description]</em></div>
-    <div class="do"><div class="do-label">🎬 FAIRE</div><em>[Overlay logo + image de fin, 3 secondes immobile]</em></div>
+    <div class="say"><div class="say-label">🎙 DIRE</div>« Firmware complet + fiche pédagogique + mapping micro:bit, lien ci-dessous. »</div>
+    <div class="do"><div class="do-label">🎬 FAIRE</div>Overlay logo + pseudo. Fige sur le plan partagé d'ouverture (geste → flèche LED) pendant 3 secondes pour la boucle.</div>
   </div>
 </div>
 
 <!-- ═══════════ TEXTE D'ANNONCE ═══════════ -->
 <div class="slug" id="listing">SLUG — TEXTE D'ANNONCE PRÊT À COPIER</div>
 <h2>Titre Etsy (140 caractères max)</h2>
-<div class="copybox">[TODO — titre Etsy 140 caractères, voir ETSY_LISTING-fr.md]<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
+<div class="copybox">Teachable Machine pour Micro:bit — ML par Webcam · Entraînement dans le Navigateur · Contrôle Gestuel BLE · Voix · V2<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
 
 <h2>Description courte (160 premiers caractères — affichés en recherche)</h2>
-<div class="copybox">[TODO — description courte 160 caractères, voir ETSY_LISTING-fr.md]<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
+<div class="copybox">Entraînez un modèle Google Teachable Machine, collez l'URL, contrôlez un BBC micro:bit V2 avec vos gestes. ML dans le navigateur. Sans compte, sans installation.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
 
 <h2>Description complète</h2>
-<div class="copybox">🎮 Teachable Machine — un panneau de contrôle BLE dans le navigateur pour le BBC micro:bit V2.
+<div class="copybox">🤖 Teachable Machine pour Micro:bit — entraîne un modèle webcam, déclenche une étiquette, contrôle un BBC micro:bit V2.
 
-[TODO — 1-phrase pitch de ce que le produit fait quand on ouvre le fichier]
+Colle n'importe quelle URL de modèle image Google Teachable Machine, clique Charger, et le navigateur exécute l'inférence en local avec TensorFlow.js. Chaque étiquette prédite est envoyée en <code>CMD:LABEL,CONFIDENCE</code> via Bluetooth Nordic UART vers ton micro:bit, qui allume l'icône correspondante sur sa matrice 5×5 LED.
+
 CE QUE VOUS OBTENEZ
-• [TODO — product-specific feature 1]• [TODO — your live signal list]• [TODO — your control surface if any]• [TODO — your interactive surface]
-• [TODO — your record/replay/export feature]• [TODO — your visualization feature if any]• [TODO — your themes / UI variety + languages]• 📱 PWA — installable, utilisable hors ligne
-• [TODO — learning modes if any]
+• 🧠 Chargez N'IMPORTE QUEL modèle image Teachable Machine par URL — coller → Charger → prédire
+• 📷 Inférence webcam en direct — étiquette principale + confiance actualisées en temps réel
+• 📡 Pont Web Bluetooth UART vers BBC micro:bit V2 (Nordic UART 6e400001)
+• 🎯 9 correspondances étiquette → icône intégrées sur le micro:bit :
+   LEFT/RIGHT/UP/DOWN → flèche Ouest/Est/Nord/Sud
+   RED → ♥ Cœur · GREEN → :) Sourire · BLUE → ■ Carré
+   YELLOW → ♦ Losange · WHITE → · PetitLosange
+   TEST → « T » · UNKNOWN → « ? » · STOP → effacé
+• 🗣 Synthèse vocale optionnelle — lit l'étiquette prédite à voix haute (en-US)
+• 🔄 Bascule caméra avant/arrière + miroir
+• 🌐 Fonctionne sur tout portable ou Chromebook avec webcam et Chrome/Edge
 
 CONTENU DU TÉLÉCHARGEMENT
-• index.html — l'application complète
-• makecode.ts — firmware micro:bit (à flasher une fois depuis MakeCode)
+• index.html — l'application complète dans le navigateur
+• makecode.ts — firmware micro:bit V2 (à flasher une fois depuis MakeCode)
 • SETUP.md — démarrage rapide en 5 minutes
-• docs/ — guide illustré, aide-mémoire, FAQ, playbook Etsy
+• docs/ — guide illustré, fiche pédagogique, FAQ, playbook Etsy
 • LICENSE — licence mono-utilisateur personnelle / classe
 
 PRÉREQUIS
-• BBC micro:bit V2 (V1 fonctionne mais sans capteur de son)
+• BBC micro:bit V2 (requis — services BLE V2 uniquement)
+• Ordinateur portable ou Chromebook avec webcam
 • Chrome ou Edge sur ordinateur (ou Chrome sur Android)
 • Bluetooth activé
 • HTTPS ou file:// — un double-clic sur le HTML suffit
 
 POUR QUI
-Enseignants animant des ateliers STEM · familles en école à la maison · clubs de robotique · makers prototypant des projets BLE · toute personne curieuse du micro:bit.
+Enseignants animant des ateliers ML / STEM · familles en école à la maison · clubs de robotique · makers prototypant des projets gestuels · toute personne curieuse de machine learning concret.
 
 CONFIDENTIALITÉ D'ABORD
-Rien ne quitte votre ordinateur. Pas d'analytique, pas de connexion, pas de cloud. Tous les calibrages, enregistrements et préréglages restent dans le localStorage du navigateur et sur votre disque.
+L'entraînement se passe sur teachablemachine.withgoogle.com — ensuite, l'inférence tourne entièrement dans votre navigateur. Rien ne quitte votre ordinateur. Pas d'analytique, pas de connexion, pas de cloud. Les images de la webcam ne partent jamais vers un serveur.
 
 MISES À JOUR À VIE
 Chaque version publiée depuis cette annonce est à vous pour toujours. Retéléchargez le dernier ZIP à tout moment depuis votre page Achats Etsy.
 
-Bon hacking ! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
+Bon enseignement ! 🤖📷🚀<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">COPIER</button></div>
 
 <h2>Tarifs</h2>
 <table>
@@ -282,15 +287,15 @@ Bon hacking ! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.w
 <h2>13 étiquettes Etsy (20 caractères chacune)</h2>
 <div class="pills">
   <span class="pill">micro:bit</span>
+  <span class="pill">teachable machine</span>
+  <span class="pill">machine learning</span>
+  <span class="pill">ML webcam</span>
   <span class="pill">BLE</span>
-  <span class="pill">bluetooth</span>
-  <span class="pill">éducation</span>
   <span class="pill">STEM</span>
-  <span class="pill">robotique</span>
+  <span class="pill">contrôle gestuel</span>
   <span class="pill">code enfants</span>
   <span class="pill">ressource prof</span>
-  <span class="pill">capteurs</span>
-  <span class="pill">[product tag]</span>
+  <span class="pill">TensorFlow js</span>
   <span class="pill">classe</span>
   <span class="pill">école maison</span>
   <span class="pill">makerspace</span>
@@ -300,29 +305,29 @@ Bon hacking ! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.w
 <div class="pills">
   <span class="pill">HTML5</span>
   <span class="pill">JavaScript</span>
+  <span class="pill">TensorFlow.js</span>
+  <span class="pill">Teachable Machine</span>
   <span class="pill">Web Bluetooth</span>
-  <span class="pill">[render lib]</span>
-  <span class="pill">[3D lib if any]</span>
-  <span class="pill">PWA</span>
+  <span class="pill">Web Speech API</span>
   <span class="pill">MakeCode</span>
   <span class="pill">TypeScript</span>
 </div>
 
 <h2>Mots-clés SEO</h2>
-<p><code>dans-le-navigateur</code> · <code>sans-installation</code> · <code>respect-vie-privée</code> · <code>hors-ligne</code> · <code>web bluetooth</code> · <code>ressource enseignant</code> · <code>atelier STEM</code> · <code>micro:bit V2</code></p>
+<p><code>ML-navigateur</code> · <code>sans-installation</code> · <code>respect-vie-privée</code> · <code>inférence-locale</code> · <code>web bluetooth</code> · <code>teachable machine micro:bit</code> · <code>atelier STEM</code> · <code>micro:bit V2</code></p>
 
 <!-- ═══════════ IMAGES ═══════════ -->
 <div class="slug" id="images">SLUG — ORDRE DES 7 IMAGES</div>
 <h2>Séquence d'images (Etsy affiche 1 &amp; 2 en plus grand)</h2>
 <div class="card">
   <ol style="padding-left:22px;line-height:2">
-    <li><strong>[TODO — Hero shot: hardware + computer screen showing the marquee product state]</strong></li>
-    <li><strong>[TODO — grille des écrans ou fonctionnalités du produit]</strong></li>
-    <li><strong>[TODO — plan serré sur votre feature phare]</strong></li>
-    <li><strong>[TODO — split screen of two headline product features]</strong> — capture partagée montrant deux des cinq modèles Three.js.</li>
-    <li><strong>[TODO — plan main-sur-carte ou démo terrain]</strong></li>
-    <li><strong>[TODO — styling / variety grid].</li>
-    <li><strong>Carte texte</strong> — « Licence mono-utilisateur · Mises à jour à vie · Pas de cloud · Chrome / Edge » sur dégradé sombre.</li>
+    <li><strong>Image héroïque partagée</strong> — à gauche, vue webcam d'un enfant qui gesticule ; à droite, matrice 5×5 LED du micro:bit affichant la flèche correspondante. Titre Orbitron par-dessus.</li>
+    <li><strong>Interface de collage d'URL</strong> — capture du champ URL Teachable Machine et du bouton Charger dans le navigateur, avec une URL d'exemple <code>teachablemachine.withgoogle.com/models/...</code> visible.</li>
+    <li><strong>Barres de prédiction en direct</strong> — plan serré en pleine inférence : 4 barres (Main-Haut / Main-Gauche / Main-Droite / Neutre) avec pourcentages de confiance, étiquette principale mise en évidence.</li>
+    <li><strong>Jeu d'icônes LED du micro:bit</strong> — grille annotée : 4 flèches + Cœur + Sourire + Carré + Losange + PetitLosange, chaque icône étiquetée avec son nom.</li>
+    <li><strong>Synthèse vocale active</strong> — capture d'app avec le haut-parleur ON et une bulle de sous-titres montrant « LEFT » prononcé.</li>
+    <li><strong>Capture côté enseignant</strong> — interface d'entraînement Teachable Machine sur teachablemachine.withgoogle.com avec des échantillons webcam capturés pour chaque classe.</li>
+    <li><strong>Infographie confidentialité</strong> — « L'inférence tourne dans votre navigateur après l'entraînement · Aucun upload · Aucun compte · Chrome / Edge » sur dégradé sombre.</li>
   </ol>
 </div>
 
@@ -331,23 +336,23 @@ Bon hacking ! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.w
 <h2>Erreurs fréquentes</h2>
 <table>
   <tr><th>❌ À éviter</th><th>✅ À faire</th></tr>
-  <tr><td>Commencer par « Bonjour, je suis… » + 10 s d'intro</td><td>Ouvrir avec une action produit visible dans les 3 premières secondes</td></tr>
+  <tr><td>Commencer par « Bonjour, je suis… » + 10 s d'intro</td><td>Ouvrir avec le plan partagé geste→LED dans les 3 premières secondes</td></tr>
   <tr><td>Filmer en paysage (16:9)</td><td>Portrait 9:16 — Etsy lit en auto sur mobile</td></tr>
-  <tr><td>Parler par-dessus une animation chargée</td><td>Laisser le visuel respirer 1 s, puis expliquer</td></tr>
-  <tr><td>Oublier les sous-titres (Etsy joue muet)</td><td>Incruster des sous-titres ou ajouter un texte à chaque scène</td></tr>
+  <tr><td>Entraîner le modèle en direct pendant 30 s</td><td>Pré-entraînez votre modèle — coupez sur l'UI d'entraînement 2 s max</td></tr>
+  <tr><td>Oublier les sous-titres (Etsy joue muet)</td><td>Incrustez l'étiquette prédite + l'icône micro:bit comme sous-titres à chaque scène</td></tr>
   <tr><td>Montrer iOS / Safari dans la vidéo</td><td>Toujours démontrer sur Chrome/Edge — les utilisateurs iPhone achèteront puis rendront</td></tr>
   <tr><td>Sauter le CTA</td><td>Dire « lien ci-dessous » dans les 5 dernières secondes à chaque fois</td></tr>
 </table>
 
 <!-- ═══════════ CARTE RAPIDE ═══════════ -->
 <div class="slug">SLUG — AIDE-MÉMOIRE DE POCHE</div>
-<div class="copybox">PRÉ     V2 allumé (icône X) · Chrome ouvert · BLE vert · téléphone 9:16
-TOURNE  Accroche en 3 s · [TODO — 3 key verbs for your product] · CTA
-POST    Coupez à 55 s · sous-titres incrustés · première image = miniature
-ANNONCE Titre · desc 160 car. · 13 étiquettes · 7 images · tarifs</div>
+<div class="copybox">PRÉ     webcam + micro:bit V2 appairé · URL modèle TM dans presse-papiers · Chrome ouvert
+TOURNE  geste d'accroche → coller URL → prédire → micro:bit répond → démo vocale → CTA
+POST    coupez à 55 s · sous-titres incrustés · première image = plan partagé geste→flèche LED
+ANNONCE voir ETSY_LISTING-fr.md</div>
 
 <p style="text-align:center;margin-top:40px;color:var(--muted);font-size:.85rem">
-  Teachable Machine v1.0.0 — Playbook Etsy 1 minute · imprimer en A4 · plastifier · à garder à côté de votre matériel de tournage
+  Teachable Machine pour Micro:bit v1.0.0 — Playbook Etsy 1 minute · imprimer en A4 · plastifier · à garder à côté de votre matériel de tournage
 </p>
 
 </body>
