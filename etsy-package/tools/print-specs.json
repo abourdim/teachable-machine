@@ -1,91 +1,91 @@
 {
-  "_comment": "Per-language strings for the poster (A3 portrait) and flyer (A4 portrait). Used by generate-print.mjs. Screenshots referenced are resolved from output/<lang>/screenshots/.",
+  "_comment": "Print specs for Teachable Machine for Micro:bit. Google Teachable Machine URL → local TF.js inference → BLE UART → 9 label→LED icon mappings on micro:bit V2.",
 
   "common": {
     "url": "abourdim.github.io/teachable-machine",
     "qrUrl": "https://abourdim.github.io/teachable-machine/?utm_source=etsy&utm_medium=print&utm_campaign=poster",
     "screenshots": {
       "teacher": "screenshot-model.png",
-      "kid": "screenshot-audience-kid-3d.png",
+      "kid": "screenshot-microbit.png",
       "maker": "screenshot-audience-maker-3d.png"
     }
   },
 
   "en": {
     "brand": "teachable-machine",
-    "posterTitle": "Every sensor.\nLive in every browser.",
-    "posterKicker": "WEB BLUETOOTH · MICRO:BIT V2",
-    "posterSubtitle": "Classroom-ready control panel. 30 laptops. Zero install.",
+    "posterTitle": "Teach a model.\nDrive a micro:bit.",
+    "posterKicker": "GOOGLE TEACHABLE MACHINE · LOCAL TF.JS · BLE UART",
+    "posterSubtitle": "Paste any Teachable Machine image-model URL. Classify in the browser. Light the 5×5.",
     "features": [
-      { "icon": "⚡", "h": "Live sensors", "p": "Temperature, sound, light, ML model, classification — all streaming in real time." },
-      { "icon": "🎛️", "h": "Full control", "p": "Paint LEDs, train a class, drive motors. Record CSV sessions for lessons." },
-      { "icon": "🧊", "h": "Live 3D mirror", "p": "A photoreal board tilts with your micro:bit. Kids see the physics click." }
+      { "icon": "🧠", "h": "Any TM image model", "p": "Paste a Teachable Machine URL — the model loads, TensorFlow.js runs inference locally on your webcam." },
+      { "icon": "💡", "h": "9 label → LED mappings", "p": "Map each class to an icon: heart, arrow, smile, tick, cross, note, house, yes, no. Swap at will." },
+      { "icon": "📡", "h": "CMD:LABEL,CONFIDENCE", "p": "Open Nordic UART protocol over BLE. Works with any MakeCode firmware — fork the .hex, change the LEDs." }
     ],
     "steps": [
-      "Plug in the micro:bit (USB or battery).",
-      "Open Chrome or Edge on any laptop.",
-      "Visit the URL below — no install.",
-      "Click Connect, pick your board.",
-      "Dot goes green. You're live."
+      "Train a model on teachablemachine.withgoogle.com.",
+      "Copy the sharable URL.",
+      "Open Chrome or Edge — paste the URL.",
+      "Show a gesture — the label + confidence fire.",
+      "Pair a micro:bit V2 — watch the LEDs."
     ],
     "stepsHeader": "Get started in 60 seconds",
     "qrCaption": "Scan to try the live demo",
     "audienceLine": "For teachers, kids, and makers.",
-    "footerLeft": "Chrome / Edge · Works offline · No account",
-    "footerRight": "MakeCode firmware · Open source friendly",
-    "flyerTagline": "The browser IS the IDE.",
-    "motto": "Every scientist started by asking \"what happens if I press this?\""
+    "footerLeft": "Chrome / Edge · No cloud after training · 100% local inference",
+    "footerRight": "TensorFlow.js · MakeCode firmware · Open source friendly",
+    "flyerTagline": "The browser IS the ML classifier.",
+    "motto": "Classroom ML, demystified — one label at a time."
   },
 
   "fr": {
     "brand": "teachable-machine",
-    "posterTitle": "Chaque capteur,\nen direct dans le navigateur.",
-    "posterKicker": "WEB BLUETOOTH · MICRO:BIT V2",
-    "posterSubtitle": "Panneau de contrôle prêt pour la classe. 30 ordinateurs. Zéro installation.",
+    "posterTitle": "Entraîne un modèle.\nPilote un micro:bit.",
+    "posterKicker": "GOOGLE TEACHABLE MACHINE · TF.JS LOCAL · BLE UART",
+    "posterSubtitle": "Colle une URL d'image-model Teachable Machine. Classifie dans le navigateur. Allume les LEDs.",
     "features": [
-      { "icon": "⚡", "h": "Capteurs en direct", "p": "Fonctionnalités du produit — voir la description." },
-      { "icon": "🎛️", "h": "Contrôle complet", "p": "Peindre les LEDs, faire tourner les classes, piloter les moteurs. Export CSV." },
-      { "icon": "🧊", "h": "Miroir 3D", "p": "Une carte photoréaliste s'incline avec votre micro:bit. La physique prend vie." }
+      { "icon": "🧠", "h": "N'importe quel modèle TM", "p": "Colle l'URL Teachable Machine — le modèle se charge, TensorFlow.js tourne en local sur la webcam." },
+      { "icon": "💡", "h": "9 icônes label → LED", "p": "Mappe chaque classe à une icône : cœur, flèche, sourire, coche, croix, note, maison, oui, non. Échangeable." },
+      { "icon": "📡", "h": "CMD:LABEL,CONFIDENCE", "p": "Protocole Nordic UART ouvert, sur BLE. Compatible tout firmware MakeCode — forke le .hex, change les LEDs." }
     ],
     "steps": [
-      "Branchez le micro:bit (USB ou pile).",
-      "Ouvrez Chrome ou Edge.",
-      "Visitez l'URL ci-dessous — rien à installer.",
-      "Cliquez Connecter, choisissez votre carte.",
-      "Le point passe au vert. C'est parti."
+      "Entraîne un modèle sur teachablemachine.withgoogle.com.",
+      "Copie l'URL partageable.",
+      "Ouvre Chrome ou Edge — colle l'URL.",
+      "Fais un geste — le label + confiance s'affichent.",
+      "Connecte un micro:bit V2 — regarde les LEDs."
     ],
     "stepsHeader": "Démarrez en 60 secondes",
     "qrCaption": "Scannez pour la démo en direct",
     "audienceLine": "Pour les enseignants, les enfants et les makers.",
-    "footerLeft": "Chrome / Edge · Hors ligne · Sans compte",
-    "footerRight": "Firmware MakeCode · Compatible open source",
-    "flyerTagline": "Le navigateur EST l'IDE.",
-    "motto": "Chaque scientifique a commencé par demander « que se passe-t-il si j'appuie ici ? »"
+    "footerLeft": "Chrome / Edge · Sans cloud après entraînement · 100 % local",
+    "footerRight": "TensorFlow.js · Firmware MakeCode · Compatible open source",
+    "flyerTagline": "Le navigateur EST le classificateur ML.",
+    "motto": "Le ML en classe, démystifié — un label à la fois."
   },
 
   "ar": {
     "brand": "teachable-machine",
-    "posterTitle": "كل حساس،\nمباشرةً في المتصفح.",
-    "posterKicker": "WEB BLUETOOTH · MICRO:BIT V2",
-    "posterSubtitle": "لوحة تحكم جاهزة للقاعة الدراسية. 30 جهازاً. بدون تثبيت.",
+    "posterTitle": "درّب نموذجاً.\nقُد micro:bit.",
+    "posterKicker": "GOOGLE TEACHABLE MACHINE · TF.JS محلي · BLE UART",
+    "posterSubtitle": "الصق رابط نموذج صور Teachable Machine. صنّف في المتصفح. أضئ الـLED.",
     "features": [
-      { "icon": "⚡", "h": "مستشعرات حية", "p": "الحرارة، الصوت، الضوء، التسارع، البوصلة — كلها في الوقت الحقيقي." },
-      { "icon": "🎛️", "h": "تحكم كامل", "p": "ارسم على مصفوفة LED، أدِر السيرفو، قُد المحركات. تصدير CSV للدروس." },
-      { "icon": "🧊", "h": "مرآة ثلاثية الأبعاد", "p": "لوحة واقعية تميل مع micro:bit الفعلي. الفيزياء تصبح مرئية." }
+      { "icon": "🧠", "h": "أي نموذج TM", "p": "الصق رابط Teachable Machine — يتحمّل النموذج وتعمل TensorFlow.js محلياً على الكاميرا." },
+      { "icon": "💡", "h": "9 أيقونات label → LED", "p": "اربط كل فئة بأيقونة: قلب، سهم، ابتسامة، ✓، ✗، نوتة، بيت، نعم، لا. قابل للتبديل." },
+      { "icon": "📡", "h": "CMD:LABEL,CONFIDENCE", "p": "بروتوكول Nordic UART مفتوح، عبر BLE. يعمل مع أي فيرموير MakeCode — بدّل الـ.hex واللَّمبات." }
     ],
     "steps": [
-      "وصّل micro:bit (USB أو بطارية).",
-      "افتح Chrome أو Edge.",
-      "زُر الرابط أدناه — بدون تثبيت.",
-      "اضغط Connect واختر لوحتك.",
-      "تتحول النقطة إلى الأخضر. جاهز."
+      "درّب نموذجاً على teachablemachine.withgoogle.com.",
+      "انسخ الرابط القابل للمشاركة.",
+      "افتح Chrome أو Edge — الصق الرابط.",
+      "اعمل إيماءة — الفئة والثقة تظهران.",
+      "اربط micro:bit V2 — شاهد الـLED."
     ],
     "stepsHeader": "ابدأ خلال 60 ثانية",
     "qrCaption": "امسح لتجربة العرض المباشر",
     "audienceLine": "للمعلمين والأطفال والمبدعين.",
-    "footerLeft": "Chrome / Edge · يعمل دون اتصال · بدون حساب",
-    "footerRight": "فيرموير MakeCode · متوافق مع المصدر المفتوح",
-    "flyerTagline": "المتصفح هو بيئة التطوير.",
-    "motto": "كل عالِم بدأ بسؤال: «ماذا يحدث لو ضغطت هنا؟»"
+    "footerLeft": "Chrome / Edge · بدون سحاب بعد التدريب · استدلال محلّي",
+    "footerRight": "TensorFlow.js · فيرموير MakeCode · مفتوح المصدر",
+    "flyerTagline": "المتصفح هو مصنّف الـML.",
+    "motto": "تعليم الذكاء الآلي في القاعة، ببساطة — تصنيفٌ تلو الآخر."
   }
 }

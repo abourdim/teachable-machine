@@ -1,50 +1,50 @@
 {
-  "_comment": "A/B hero image specs. Each produces a 1500x1500 Etsy thumbnail. Ship 2-5 variants — Etsy's own image-order experiment picks the winner. Screenshots reference output/screenshots/<file>.",
+  "_comment": "A/B hero image specs for Teachable Machine for Micro:bit. 1500×1500 Etsy thumbnails. Features: load any Google Teachable Machine image model, run local TF.js inference, stream predictions to micro:bit V2 over BLE UART, 9 label→LED icon mappings.",
 
   "heroes": [
     {
       "name": "hero-teacher",
       "theme": "arctic",
       "accentColor": "#0077cc",
-      "screenshots": ["screenshot-model.png", "screenshot-model.png"],
-      "title": "Every Sensor,\nLive in Every Browser",
-      "subtitle": "Built for STEM classrooms · 30 laptops, zero install",
+      "screenshots": ["screenshot-model.png", "screenshot-microbit.png"],
+      "title": "Teach a Model.\nDrive a micro:bit.",
+      "subtitle": "Any Google Teachable Machine URL · local TF.js inference · 9 LED icon mappings",
       "badge": "Chrome / Edge",
       "footerLeft": "Lifetime updates · Site license available",
-      "footerRight": "micro:bit V2"
+      "footerRight": "BBC micro:bit V2 + webcam"
     },
     {
       "name": "hero-kid",
       "theme": "neon",
       "accentColor": "#00ff88",
-      "screenshots": ["screenshot-model.png", "screenshot-audience-kid-3d.png"],
-      "title": "Your micro:bit\nbecomes a playground",
-      "subtitle": "Sensors. Classes. 3D models. No install, no account.",
-      "badge": "Works offline",
-      "footerLeft": "Kid-safe · No cloud",
-      "footerRight": "60-sec setup"
+      "screenshots": ["screenshot-model.png", "screenshot-microbit.png"],
+      "title": "Raise your hand.\nLEDs light up.",
+      "subtitle": "Train on Teachable Machine. Paste the URL. Show gestures. Watch your micro:bit respond.",
+      "badge": "Kid-ready ML",
+      "footerLeft": "No cloud after training · 100% local inference",
+      "footerRight": "COPPA-friendly"
     },
     {
       "name": "hero-maker",
       "theme": "blaze",
       "accentColor": "#ff6b35",
-      "screenshots": ["screenshot-model.png", "screenshot-audience-maker-3d.png"],
-      "title": "BLE Control Panel\nfor Makers",
-      "subtitle": "Live motors · 3D mirrors · CSV export · open firmware",
-      "badge": "Web Bluetooth",
-      "footerLeft": "MakeCode firmware · Open source friendly",
-      "footerRight": "Hack it"
+      "screenshots": ["screenshot-model.png", "screenshot-microbit.png"],
+      "title": "CMD:LABEL,CONFIDENCE\nover Nordic UART.",
+      "subtitle": "TensorFlow.js → BLE UART → LED arrows + hearts + smiles · open protocol",
+      "badge": "Hackable",
+      "footerLeft": "MakeCode firmware · any TM image model · Web Bluetooth",
+      "footerRight": "Fork it"
     },
     {
       "name": "hero-laptop",
       "theme": "stealth",
       "accentColor": "#00ff88",
       "frame": "laptop",
-      "screenshots": ["screenshot-audience-kid-3d.png"],
-      "title": "Your micro:bit,\non your laptop.",
-      "subtitle": "One browser tab. Live 3D. Zero install.",
+      "screenshots": ["screenshot-model.png"],
+      "title": "Real machine learning,\nin a browser tab.",
+      "subtitle": "5-minute model training → 3-second deploy. Classroom ML demystified.",
       "badge": "Chrome / Edge",
-      "footerLeft": "No cloud · No account",
+      "footerLeft": "Runs on any Chromebook with a webcam",
       "footerRight": "teachable-machine"
     },
     {
@@ -52,36 +52,36 @@
       "theme": "arctic",
       "accentColor": "#e63946",
       "lang": "fr",
-      "screenshots": ["screenshot-model.png", "screenshot-model.png"],
-      "title": "Chaque capteur,\nen direct, dans le navigateur",
-      "subtitle": "Conçu pour les salles de STEM · 30 ordinateurs, zéro installation",
+      "screenshots": ["screenshot-model.png", "screenshot-microbit.png"],
+      "title": "Entraîne un modèle.\nPilote un micro:bit.",
+      "subtitle": "Toute URL Teachable Machine · inférence TF.js locale · 9 icônes LED",
       "badge": "Chrome / Edge",
       "footerLeft": "Mises à jour à vie · Licence école disponible",
-      "footerRight": "micro:bit V2"
+      "footerRight": "BBC micro:bit V2 + webcam"
     },
     {
       "name": "hero-fr-kid",
       "theme": "neon",
       "accentColor": "#00ff88",
       "lang": "fr",
-      "screenshots": ["screenshot-model.png", "screenshot-audience-kid-3d.png"],
-      "title": "Ton micro:bit\nprend vie dans ton navigateur",
-      "subtitle": "Rien à installer, aucun compte.",
-      "badge": "Fonctionne hors ligne",
-      "footerLeft": "Sûr pour les enfants · Pas de cloud",
-      "footerRight": "60 sec · c'est prêt"
+      "screenshots": ["screenshot-model.png", "screenshot-microbit.png"],
+      "title": "Lève la main.\nLes LEDs s'allument.",
+      "subtitle": "Entraîne sur Teachable Machine. Colle l'URL. Fais des gestes. Regarde le micro:bit.",
+      "badge": "ML pour enfants",
+      "footerLeft": "Pas de cloud après entraînement · 100 % local",
+      "footerRight": "Conforme RGPD"
     },
     {
       "name": "hero-fr-maker",
       "theme": "blaze",
       "accentColor": "#ff6b35",
       "lang": "fr",
-      "screenshots": ["screenshot-model.png", "screenshot-audience-maker-3d.png"],
-      "title": "Panneau BLE\npour makers",
-      "subtitle": "Moteurs en direct · miroir 3D · export CSV · firmware libre",
-      "badge": "Web Bluetooth",
-      "footerLeft": "Firmware MakeCode · compatible open source",
-      "footerRight": "À hacker"
+      "screenshots": ["screenshot-model.png", "screenshot-microbit.png"],
+      "title": "CMD:LABEL,CONFIDENCE\nsur UART Nordic.",
+      "subtitle": "TensorFlow.js → BLE UART → flèches + cœurs + sourires LED · protocole ouvert",
+      "badge": "Hackable",
+      "footerLeft": "Firmware MakeCode · tout modèle TM · Web Bluetooth",
+      "footerRight": "À forker"
     },
     {
       "name": "hero-ar-teacher",
@@ -89,12 +89,12 @@
       "accentColor": "#0077cc",
       "lang": "ar",
       "dir": "rtl",
-      "screenshots": ["screenshot-model.png", "screenshot-model.png"],
-      "title": "كل حساس،\nمباشرةً في المتصفح",
-      "subtitle": "مصمم لقاعات STEM · 30 جهازاً، بدون تثبيت",
+      "screenshots": ["screenshot-model.png", "screenshot-microbit.png"],
+      "title": "درّب نموذجاً.\nقُد micro:bit.",
+      "subtitle": "أي رابط Teachable Machine · استدلال TF.js محلي · 9 أيقونات LED",
       "badge": "Chrome / Edge",
       "footerLeft": "تحديثات مدى الحياة · ترخيص مدرسي متاح",
-      "footerRight": "micro:bit V2"
+      "footerRight": "BBC micro:bit V2 + كاميرا"
     },
     {
       "name": "hero-ar-kid",
@@ -102,12 +102,12 @@
       "accentColor": "#00ff88",
       "lang": "ar",
       "dir": "rtl",
-      "screenshots": ["screenshot-model.png", "screenshot-audience-kid-3d.png"],
-      "title": "micro:bit الخاص بك\nيصبح ساحة لعب",
-      "subtitle": "مستشعرات، محركات، نماذج ثلاثية الأبعاد. بدون تثبيت، بدون حساب.",
-      "badge": "يعمل دون اتصال",
-      "footerLeft": "آمن للأطفال · بدون سحاب",
-      "footerRight": "60 ثانية للبدء"
+      "screenshots": ["screenshot-model.png", "screenshot-microbit.png"],
+      "title": "ارفع يدك.\nتضيء الـ LEDs.",
+      "subtitle": "درّب على Teachable Machine. الصق الرابط. افعل إيماءة. شاهد الـ micro:bit يستجيب.",
+      "badge": "ML للأطفال",
+      "footerLeft": "بدون سحاب بعد التدريب · 100٪ محلّي",
+      "footerRight": "صديق للخصوصية"
     },
     {
       "name": "hero-ar-maker",
@@ -115,12 +115,12 @@
       "accentColor": "#ff6b35",
       "lang": "ar",
       "dir": "rtl",
-      "screenshots": ["screenshot-model.png", "screenshot-audience-maker-3d.png"],
-      "title": "لوحة تحكم BLE\nللمبدعين",
-      "subtitle": "محركات حية · انعكاس ثلاثي الأبعاد · تصدير CSV · فيرموير مفتوح",
-      "badge": "Web Bluetooth",
-      "footerLeft": "فيرموير MakeCode · متوافق مع المصدر المفتوح",
-      "footerRight": "للاختراق"
+      "screenshots": ["screenshot-model.png", "screenshot-microbit.png"],
+      "title": "CMD:LABEL,CONFIDENCE\nعبر Nordic UART.",
+      "subtitle": "TensorFlow.js → BLE UART → أسهم + قلوب + ابتسامات LED · بروتوكول مفتوح",
+      "badge": "قابل للاختراق",
+      "footerLeft": "فيرموير MakeCode · أي نموذج TM · Web Bluetooth",
+      "footerRight": "للتعديل"
     }
   ]
 }

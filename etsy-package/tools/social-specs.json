@@ -1,5 +1,5 @@
 {
-  "_comment": "Social media kit specs — 4 aspect ratios per language, driven by generate-social.mjs. Screenshots resolved from output/<lang>/screenshots/.",
+  "_comment": "Social kit for Teachable Machine for Micro:bit. Google TM URL · local TF.js · 9 LED icons · BLE UART.",
 
   "formats": [
     { "name": "ig-post",    "w": 1080, "h": 1080, "label": "Instagram feed",   "layout": "square" },
@@ -12,29 +12,29 @@
 
   "en": {
     "brand": "teachable-machine",
-    "kicker": "MICRO:BIT · WEB BLUETOOTH",
-    "title": "Every sensor.\nLive in the browser.",
-    "subtitle": "Chrome / Edge · Zero install · Works offline",
+    "kicker": "GOOGLE TM · LOCAL TF.JS · BLE UART",
+    "title": "Teach a model.\nDrive a micro:bit.",
+    "subtitle": "Chrome / Edge · Any TM image model · 9 LED icons · CMD:LABEL,CONFIDENCE",
     "cta": "Try the demo →",
     "url": "abourdim.github.io/teachable-machine",
-    "hashtags": "#microbit  #STEM  #EdTech"
+    "hashtags": "#TeachableMachine  #TensorFlowJS  #microbit  #EdTech  #STEM"
   },
   "fr": {
     "brand": "teachable-machine",
-    "kicker": "MICRO:BIT · WEB BLUETOOTH",
-    "title": "Chaque capteur,\nen direct dans le navigateur.",
-    "subtitle": "Chrome / Edge · Zéro installation · Hors ligne",
+    "kicker": "GOOGLE TM · TF.JS LOCAL · BLE UART",
+    "title": "Entraîne un modèle.\nPilote un micro:bit.",
+    "subtitle": "Chrome / Edge · Tout modèle TM · 9 icônes LED · CMD:LABEL,CONFIDENCE",
     "cta": "Essayer la démo →",
     "url": "abourdim.github.io/teachable-machine",
-    "hashtags": "#microbit  #STEM  #EdTech"
+    "hashtags": "#TeachableMachine  #TensorFlowJS  #microbit  #EdTech  #STEM"
   },
   "ar": {
     "brand": "teachable-machine",
-    "kicker": "MICRO:BIT · WEB BLUETOOTH",
-    "title": "كل حساس،\nمباشرةً في المتصفح.",
-    "subtitle": "Chrome / Edge · بدون تثبيت · يعمل دون اتصال",
+    "kicker": "GOOGLE TM · TF.JS محلي · BLE UART",
+    "title": "درّب نموذجاً.\nقُد micro:bit.",
+    "subtitle": "Chrome / Edge · أي نموذج TM · 9 أيقونات LED · CMD:LABEL,CONFIDENCE",
     "cta": "← جرّب العرض التوضيحي",
     "url": "abourdim.github.io/teachable-machine",
-    "hashtags": "#microbit  #STEM  #EdTech"
+    "hashtags": "#TeachableMachine  #TensorFlowJS  #microbit  #EdTech  #STEM"
   }
 }
