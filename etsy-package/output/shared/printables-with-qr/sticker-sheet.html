@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  ⚠️  REWRITE PER PRODUCT — DO NOT SHIP AS-IS
+  ───────────────────────────────────────────────────────────────────────
+  apply-template.mjs only substituted identifiers (Teachable Machine for Micro:bit,
+  v1.0.0, https://abourdim.github.io/teachable-machine/, etc.). The feature content, steps,
+  shortcuts, and examples below were inherited from the template's
+  source product (teachable-machine) and WILL BE WRONG for your product
+  unless you rewrite them.
+  
+  Before including this file in a buyer ZIP:
+    1. Delete this banner.
+    2. Rewrite every mention of specific features, shortcuts,
+       tab names, hardware interactions, etc. to match your product.
+    3. Verify with: grep -iE "class|chart\.js|3d board|gamepad|
+       ML model|classification|led matrix|train + predict|sensors tab" this-file.
+  ═══════════════════════════════════════════════════════════════════════
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Teachable Machine for Micro:bit Printable Sticker Sheet</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Orbitron:wght@500&family=Tajawal:wght@400;500;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4 portrait; margin: 0; }
+  body { width: 210mm; height: 297mm; font-family: 'Tajawal', sans-serif; background: #fff; overflow: hidden; }
+
+  .page { width: 210mm; height: 297mm; padding: 12mm 14mm; position: relative; }
+
+  .header { text-align: center; margin-bottom: 6mm; }
+  .header h1 { font-family: 'Righteous', sans-serif; font-size: 24px; color: #020617; }
+  .header p { font-size: 11px; color: #94a3b8; }
+
+  .grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4mm; }
+
+  .sticker {
+    aspect-ratio: 1; border-radius: 50%; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    border: 2px dashed #d1d5db; position: relative; padding: 6px;
+  }
+  .sticker .emoji { font-size: 30px; }
+  .sticker .label { font-size: 9px; color: #374151; font-weight: 700; margin-top: 2px; line-height: 1.2; }
+
+  .s-green { background: #f0fdf4; border-color: #22c55e; }
+  .s-cyan { background: #ecfeff; border-color: #22d3ee; }
+  .s-gold { background: #fffbeb; border-color: #fbbf24; }
+  .s-red { background: #fef2f2; border-color: #ef4444; }
+  .s-purple { background: #faf5ff; border-color: #c084fc; }
+  .s-dark { background: #020617; border-color: #22c55e; }
+  .s-dark .label { color: #22c55e; }
+
+  .cut-note { text-align: center; margin-top: 4mm; font-size: 10px; color: #94a3b8; }
+
+  .footer {
+    position: absolute; bottom: 8mm; left: 14mm; right: 14mm;
+    text-align: center; font-size: 9px; color: #cbd5e1;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <h1>Teachable Machine for Micro:bit Achievement Stickers</h1>
+    <p>Print on sticker paper &bull; Cut along the dashed lines &bull; Reward young makers!</p>
+  </div>
+
+  <div class="grid">
+    <!-- Row 1: core milestones -->
+    <div class="sticker s-green"><div class="emoji">📡</div><div class="label">I Connected<br>BLE!</div></div>
+    <div class="sticker s-cyan"><div class="emoji">⚡</div><div class="label">Firmware<br>Flasher</div></div>
+    <div class="sticker s-gold"><div class="emoji">💡</div><div class="label">LED<br>Artist</div></div>
+    <div class="sticker s-purple"><div class="emoji">🌡️</div><div class="label">Sensor<br>Detective</div></div>
+    <div class="sticker s-red"><div class="emoji">📈</div><div class="label">Graph<br>Reader</div></div>
+
+    <!-- Row 2: skills -->
+    <div class="sticker s-green"><div class="emoji">⚙️</div><div class="label">Pro<br>Maker</div></div>
+    <div class="sticker s-cyan"><div class="emoji">🎮</div><div class="label">Samples<br>Hero</div></div>
+    <div class="sticker s-gold"><div class="emoji">🎲</div><div class="label">Camera View<br>Explorer</div></div>
+    <div class="sticker s-purple"><div class="emoji">⏺</div><div class="label">Session<br>Recorder</div></div>
+    <div class="sticker s-green"><div class="emoji">🤖</div><div class="label">Buggy<br>Driver</div></div>
+
+    <!-- Row 3: 3D models -->
+    <div class="sticker s-dark"><div class="emoji">🔲</div><div class="label">micro:bit<br>V2 Expert</div></div>
+    <div class="sticker s-dark"><div class="emoji">🚗</div><div class="label">Buggy<br>Builder</div></div>
+    <div class="sticker s-dark"><div class="emoji">🦾</div><div class="label">Robot Arm<br>Operator</div></div>
+    <div class="sticker s-dark"><div class="emoji">🎯</div><div class="label">Balance<br>Master</div></div>
+    <div class="sticker s-dark"><div class="emoji">🌦️</div><div class="label">Weather<br>Watcher</div></div>
+
+    <!-- Row 4: themes -->
+    <div class="sticker s-dark"><div class="emoji">🥷</div><div class="label">Stealth<br>Theme</div></div>
+    <div class="sticker s-cyan"><div class="emoji">💠</div><div class="label">Neon<br>Theme</div></div>
+    <div class="sticker s-cyan"><div class="emoji">❄️</div><div class="label">Arctic<br>Theme</div></div>
+    <div class="sticker s-red"><div class="emoji">🔥</div><div class="label">Blaze<br>Theme</div></div>
+    <div class="sticker s-gold"><div class="emoji">🎨</div><div class="label">All 4<br>Themes!</div></div>
+
+    <!-- Row 5: languages + challenges -->
+    <div class="sticker s-green"><div class="emoji">🇬🇧</div><div class="label">English<br>Mode</div></div>
+    <div class="sticker s-cyan"><div class="emoji">🇫🇷</div><div class="label">Mode<br>Français</div></div>
+    <div class="sticker s-gold"><div class="emoji">🇩🇿</div><div class="label">العربية<br>RTL</div></div>
+    <div class="sticker s-purple"><div class="emoji">🧙</div><div class="label">Expert<br>Mode</div></div>
+    <div class="sticker s-red"><div class="emoji">🐣</div><div class="label">Beginner<br>Level Up!</div></div>
+
+    <!-- Row 6: extras -->
+    <div class="sticker s-green"><div class="emoji">🎵</div><div class="label">Sound<br>Sleuth</div></div>
+    <div class="sticker s-dark"><div class="emoji">🧭</div><div class="label">Compass<br>Reader</div></div>
+    <div class="sticker s-cyan"><div class="emoji">📊</div><div class="label">Data<br>Scientist</div></div>
+    <div class="sticker s-gold"><div class="emoji">🏆</div><div class="label">Playground<br>Champion</div></div>
+    <div class="sticker s-red"><div class="emoji">🚀</div><div class="label">Ready for<br>Launch!</div></div>
+  </div>
+
+  <div class="cut-note">Cut along dashed lines &bull; Stick on notebooks, laptops, or lab coats!</div>
+
+  <div class="footer">Teachable Machine for Micro:bit Sticker Sheet &bull; v1.0.0 &bull; Print on A4 sticker paper</div>
+
+</div>
+<!-- QR-BLOCK-START -->
+<div style="position:fixed;right:12mm;bottom:12mm;display:flex;gap:8mm;align-items:center;
+  background:rgba(10,14,18,0.92);color:#e8ffe8;padding:4mm 5mm;border-radius:3mm;
+  box-shadow:0 2mm 6mm rgba(0,0,0,0.35);font-family:-apple-system,Segoe UI,sans-serif;
+  max-width:80mm;z-index:9999;">
+  <img src="data:image/png;base64,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55wAAM85AQCecwIAPOcEAHjOCQDwnO4fudA2v9m23GibG9tyo22+tC2/Vdvc2JYbbXNjW260zW+1LTfa5kvbcqNtbmzLjbb50rZ8qW2+si032uYn2ZafpG1ubMvfOgEAnnMCADznBAB4zgkA8JwTAOA5JwDAc04AgOecAADPOQEAnnMCADznBAB4TvePXGibG9vym7XNl7blRtt8ZVtutM1vti032ubGttxomxvb8lO0zY1t+Una5ifZlt+qbb60LTfa5ifZlp/iBAB4zgkA8JwTAOA5JwDAc04AgOecAADPOQEAnnMCADznBAB4zgkA8JwTAOA5f/LLtc2NbfnSttxomy9ty99qmxvb8qW2ubEtN9rmJ9mWL7XNV7blS21zY1te0ja/1bb8Ztvypba5sS1/6wQAeM4JAPCcEwDgOScAwHNOAIDnnAAAzzkBAJ5zAgA85wQAeM4JAPCcEwDgOX/yy23Ll7blRtvc2JYbbXOjbb7SNje2hf9d29zYlq9sy5fa5ktt86Vt+VLb3NiWG23zt7blN9uWL7XNjW35KU4AgOecAADPOQEAnnMCADznBAB4zgkA8JwTAOA5JwDAc04AgOecAADP+ZMfpm1ubMtPsi032ubGttxom7+1LTfa5kvb8pNsy422+a3ahn9P29zYlhtt85W24d/TNj/FCQDwnBMA4DknAMBzTgCA55wAAM85AQCecwIAPOcEAHjOCQDwnBMA4DknAMBz/uTStnxpW77UNj/JtvxW23KjbX6ztrmxLTfa5hXb8pu1zZfa5kvb8pW2ubEtX2qbL23Lb3UCADznBAB4zgkA8JwTAOA5JwDAc04AgOecAADPOQEAnnMCADznBAB4zgkA8Jw/udQ2L9mWL7XNl7blb7XNl7blRtu8ZFt+q235zdrmS9vypba50TZ/a1u+1DY3tuXGttxom1ecAADPOQEAnnMCADznBAB4zgkA8JwTAOA5JwDAc04AgOecAADPOQEAnnMCADyn+0cutM1vti1fapvfalu+1DZf2pYbbXNjW260zY1tudE2N7blK21zY1tutA3/u215Rdvc2JYbbfObbcvfOgEAnnMCADznBAB4zgkA8JwTAOA5JwDAc04AgOecAADPOQEAnnMCADznBAB4TvePfKhtbmzLjba5sS0/Sdv8FNvyk7TNl7blRtvwn23Ljba5sS032ubGtnypbX6rbbnRNi/Zli+1zY1t+VsnAMBzTgCA55wAAM85AQCecwIAPOcEAHjOCQDwnBMA4DknAMBzTgCA55wAAM/p/pFfrG2+tC032ubGtvA7tM2XtuVLbfNTbMuNtrmxLV9qmy9ty0/RNje25Utt86VtecUJAPCcEwDgOScAwHNOAIDnnAAAzzkBAJ5zAgA85wQAeM4JAPCcEwDgOScAwHP+5GNt86Vt+Um25UbbvGJbbrTNjW250TZf2hb+s7a5sS1fapuXtM0rtuVG29zYlt/qBAB4zgkA8JwTAOA5JwDAc04AgOecAADPOQEAnnMCADznBAB4zgkA8JwTAOA5f3KpbW5sy5fa5kvbcqNtvrQtN9rmb23Ljbb50rbcaJufpG1ubMtPsS032uZLbfObbcuNtrmxLV/Zlp9kW36StrmxLT/FCQDwnBMA4DknAMBzTgCA55wAAM85AQCecwIAPOcEAHjOCQDwnBMA4DknAMBz/uRjbXNjW36StrmxLV9qmxvb8rfa5sa2/CTbcqNtfrO2ecW2/GZtc2NbbrTNb9U2v9m2fKltbmzL3zoBAJ5zAgA85wQAeM4JAPCcEwDgOScAwHNOAIDnnAAAzzkBAJ5zAgA85wQAeM6ffGxbbrTNjW35SdrmS9tyo23+1rb8JG1zY1t+s7a5sS032uZvtc2XtuUnaZvfbFt+irbh37MtXzkBAJ5zAgA85wQAeM4JAPCcEwDgOScAwHNOAIDnnAAAzzkBAJ5zAgA85wQAeM6f/DDbcqNtbmzLjba5sS032uZG29zYlr/VNje25UvbcqNtbmwLv0Pb3NiWL23Ljbb5rdrmJ9mWG23Df3YCADznBAB4zgkA8JwTAOA5JwDAc04AgOecAADPOQEAnnMCADznBAB4zp/8MG3zpbb5Utvc2JYvtc1P0TY3tuXGtnypbb60LT/Fttxom5+kbX6SbbnRNje25RVt86VtudE2N7blpzgBAJ5zAgA85wQAeM4JAPCcEwDgOScAwHNOAIDnnAAAzzkBAJ5zAgA85wQAeE73j/BrtM1XtuUnaRv+O7blRtt8aVt+s7b50rZ8pW1ubMtP0jZf2pYbbfOlbflbJwDAc04AgOecAADPOQEAnnMCADznBAB4zgkA8JwTAOA5JwDAc04AgOecAADP+ZNLbcO/Z1tubMtv1TY3tuVG23xpW260zY1t+VLb/K22+dK23GibG9vypba5sS0/Sdv8FG1zY1tesi1fOQEAnnMCADznBAB4zgkA8JwTAOA5JwDAc04AgOecAADPOQEAnnMCADznBAB4zp98bFte0jZfapsb2/JTbMuNtvnStvwkbfOlbflbbfOTbMtv1jY3tuUV2/KTbMuXtuVG29zYlr91AgA85wQAeM4JAPCcEwDgOScAwHNOAIDnnAAAzzkBAJ5zAgA85wQAeM4JAPCcP/lh2uYn2RZ+h235Sbblt9qWG23zpbb5zbblJ9mWv9U2N9rmN2ubL23LT3ECADznBAB4zgkA8JwTAOA5JwDAc04AgOecAADPOQEAnnMCADznBAB4zgkA8Jw/4f+0tvlb2/Kbtc2NbbnRNje25Ubb/BTbcmNbbrTNjW250TY3tuVLbfOlbbnRNn9rW260zY1tudE2N7blJ2mbn+IEAHjOCQDwnBMA4DknAMBzTgCA55wAAM85AQCecwIAPOcEAHjOCQDwnBMA4Dl/Av+jbW5sy5e25Ubb3GibL7XNl7blK21zY1tubMuNtrmxLTfa5iXb8rfa5ktt86W2+Um25ac4AQCecwIAPOcEAHjOCQDwnBMA4DknAMBzTgCA55wAAM85AQCecwIAPOcEAHjOn/ww28L/blt+q7b50rZ8qW1+s7b5Kdrmxra8ZFtesS1fapsvbcuNtrmxLV85AQCecwIAPOcEAHjOCQDwnBMA4DknAMBzTgCA55wAAM85AQCecwIAPOcEAHjOn3ysbfj3tM2NbflbbfOStuE/25YbbfOltvnStnypbW60zY1tudE2f2tbfpK2+dK23GibG9vyU5wAAM85AQCecwIAPOcEAHjOCQDwnBMA4DknAMBzTgCA55wAAM85AQCecwIAPKf7RwCAp5wAAM85AQCecwIAPOcEAHjOCQDwnBMA4DknAMBzTgCA55wAAM85AQCe8/8AZAKkHJip7ngAAAAASUVORK5CYII=" alt="QR code — scan to open live demo" style="width:24mm;height:24mm;background:#fff;padding:1mm;border-radius:1.5mm;display:block;"/>
+  <div style="display:flex;flex-direction:column;gap:1mm;min-width:0;">
+    <div style="font-weight:700;font-size:9pt;color:#00ff88;line-height:1.2;">Live demo</div>
+    <div style="font-size:7pt;opacity:0.75;line-height:1.3;word-break:break-all;">abourdim.github.io/teachable-machine/</div>
+  </div>
+</div>
+<!-- QR-BLOCK-END -->
+</body>
+</html>

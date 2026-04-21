@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  ⚠️  REWRITE PER PRODUCT — DO NOT SHIP AS-IS
+  ───────────────────────────────────────────────────────────────────────
+  apply-template.mjs only substituted identifiers (Teachable Machine for Micro:bit,
+  v1.0.0, https://abourdim.github.io/teachable-machine/, etc.). The feature content, steps,
+  shortcuts, and examples below were inherited from the template's
+  source product (teachable-machine) and WILL BE WRONG for your product
+  unless you rewrite them.
+  
+  Before including this file in a buyer ZIP:
+    1. Delete this banner.
+    2. Rewrite every mention of specific features, shortcuts,
+       tab names, hardware interactions, etc. to match your product.
+    3. Verify with: grep -iE "class|chart\.js|3d board|gamepad|
+       ML model|classification|led matrix|train + predict|sensors tab" this-file.
+  ═══════════════════════════════════════════════════════════════════════
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Teachable Machine for Micro:bit — We Control Robots with Code!</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Orbitron:wght@500&family=Tajawal:wght@400;500;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A3 portrait; margin: 0; }
+  body { width: 297mm; height: 420mm; font-family: 'Tajawal', sans-serif; background: #020617; color: #cbd5e1; overflow: hidden; }
+
+  .page { width: 297mm; height: 420mm; padding: 18mm 22mm; position: relative; overflow: hidden; }
+  .page::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 4px, rgba(34,197,94,.014) 4px, rgba(34,197,94,.014) 8px);
+    pointer-events: none;
+  }
+  .page::after {
+    content: ''; position: absolute; inset: 10mm;
+    border: 2px solid rgba(34,197,94,.15); border-radius: 20px;
+    pointer-events: none;
+  }
+
+  .header { text-align: center; margin-bottom: 12mm; position: relative; }
+  .header .icon { font-size: 56px; margin-bottom: 4px; }
+  .header h1 { font-family: 'Righteous', sans-serif; font-size: 58px; color: #22c55e; letter-spacing: 2px; text-shadow: 0 0 40px rgba(34,197,94,.2); line-height: 1.05; }
+  .header h2 { font-family: 'Righteous', sans-serif; font-size: 28px; color: #22d3ee; margin-top: 6px; }
+  .header .line { width: 60%; height: 3px; background: linear-gradient(90deg, transparent, rgba(34,197,94,.5), transparent); margin: 10px auto 0; }
+
+  .rules { display: flex; flex-direction: column; gap: 11px; margin-bottom: 10mm; }
+  .rule {
+    display: flex; align-items: center; gap: 18px;
+    background: rgba(15,23,42,.55); border: 1px solid rgba(34,197,94,.12);
+    border-radius: 18px; padding: 16px 22px;
+  }
+  .rule-num {
+    width: 54px; height: 54px; flex-shrink: 0;
+    background: linear-gradient(135deg, #22c55e, #15803d); color: #020617;
+    border-radius: 50%; font-family: 'Orbitron', monospace; font-size: 22px;
+    display: flex; align-items: center; justify-content: center; font-weight: 700;
+    box-shadow: 0 4px 16px rgba(34,197,94,.25);
+  }
+  .rule-icon { font-size: 40px; flex-shrink: 0; width: 52px; text-align: center; }
+  .rule-text { flex: 1; }
+  .rule-text h3 { font-family: 'Righteous', sans-serif; font-size: 22px; color: #22c55e; }
+  .rule-text p { font-size: 15px; color: #94a3b8; margin-top: 2px; }
+
+  .motto-wrap { text-align: center; margin-top: 4mm; }
+  .motto {
+    display: inline-block; padding: 14px 30px;
+    background: rgba(34,211,238,.05); border: 1px solid rgba(34,211,238,.18);
+    border-radius: 16px;
+  }
+  .motto h3 { font-family: 'Righteous', sans-serif; font-size: 24px; color: #22d3ee; }
+  .motto p { font-size: 14px; color: #64748b; margin-top: 4px; }
+
+  .corner-tl, .corner-br { position: absolute; font-size: 60px; opacity: .15; }
+  .corner-tl { top: 16mm; left: 20mm; transform: rotate(-15deg); }
+  .corner-br { bottom: 16mm; right: 20mm; transform: rotate(15deg); }
+
+  .footer {
+    position: absolute; bottom: 14mm; left: 22mm; right: 22mm;
+    text-align: center;
+  }
+  .footer span { font-size: 11px; color: #64748b; }
+  .footer .brand { font-family: 'Orbitron', monospace; font-size: 12px; color: #22c55e; }
+
+  .led-row { display: flex; gap: 4px; justify-content: center; margin-top: 4px; }
+  .led { width: 10px; height: 10px; border-radius: 2px; background: #22c55e; box-shadow: 0 0 6px rgba(34,197,94,.7); }
+  .led.off { background: #1e293b; box-shadow: none; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="corner-tl">🤖</div>
+  <div class="corner-br">🚀</div>
+
+  <div class="header">
+    <div class="icon">🎮</div>
+    <h1>We Control Robots<br>with Code!</h1>
+    <h2>Teachable Machine for Micro:bit &bull; Classroom Guide</h2>
+    <div class="led-row">
+      <div class="led off"></div><div class="led"></div><div class="led"></div><div class="led"></div><div class="led off"></div>
+    </div>
+    <div class="line"></div>
+  </div>
+
+  <div class="rules">
+    <div class="rule">
+      <div class="rule-num">1</div>
+      <div class="rule-icon">🔌</div>
+      <div class="rule-text">
+        <h3>Power Up Your micro:bit</h3>
+        <p>Plug in the USB cable or snap in fresh batteries. You should see a friendly <strong style="color:#22c55e;">X</strong> on the LED grid &mdash; that means "ready to pair!"</p>
+      </div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-num">2</div>
+      <div class="rule-icon">🌐</div>
+      <div class="rule-text">
+        <h3>Open Playground in Chrome</h3>
+        <p>Double-click <strong style="color:#22d3ee;">index.html</strong>. Our control panel loads. No internet, no login, no waiting.</p>
+      </div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-num">3</div>
+      <div class="rule-icon">📡</div>
+      <div class="rule-text">
+        <h3>Click Connect, Choose Your Board</h3>
+        <p>A window pops up with a list. Pick <strong style="color:#22c55e;">BBC micro:bit [xxxxx]</strong>. The dot turns green &mdash; you are live over Bluetooth!</p>
+      </div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-num">4</div>
+      <div class="rule-icon">🎛️</div>
+      <div class="rule-text">
+        <h3>Explore Every Tab</h3>
+        <p>Paint the LEDs. Watch live temperature and sound. Spin classes. Drive the predicted class. Press keys <strong style="color:#22c55e;">1</strong> through <strong style="color:#22c55e;">8</strong> to jump between tools.</p>
+      </div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-num">5</div>
+      <div class="rule-icon">📈</div>
+      <div class="rule-text">
+        <h3>Graph It, Record It, Share It</h3>
+        <p>Open the <strong style="color:#22c55e;">Graph</strong> tab. Watch sensor lines dance. Hit <strong style="color:#22d3ee;">Record</strong> to save a session as JSON &mdash; then show a friend what you discovered!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="motto-wrap">
+    <div class="motto">
+      <h3>Every scientist started by asking "what happens if I press this?"</h3>
+      <p>Your micro:bit is a tiny computer. Today, you are its boss.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="brand">Teachable Machine for Micro:bit v1.0.0</span>
+    <span> &bull; Print on A3, hang it proud in the lab!</span>
+  </div>
+
+</div>
+<!-- QR-BLOCK-START -->
+<div style="position:fixed;right:12mm;bottom:12mm;display:flex;gap:8mm;align-items:center;
+  background:rgba(10,14,18,0.92);color:#e8ffe8;padding:4mm 5mm;border-radius:3mm;
+  box-shadow:0 2mm 6mm rgba(0,0,0,0.35);font-family:-apple-system,Segoe UI,sans-serif;
+  max-width:80mm;z-index:9999;">
+  <img src="data:image/png;base64,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" alt="QR code — scan to open live demo" style="width:24mm;height:24mm;background:#fff;padding:1mm;border-radius:1.5mm;display:block;"/>
+  <div style="display:flex;flex-direction:column;gap:1mm;min-width:0;">
+    <div style="font-weight:700;font-size:9pt;color:#00ff88;line-height:1.2;">Scan to try the live demo</div>
+    <div style="font-size:7pt;opacity:0.75;line-height:1.3;word-break:break-all;">abourdim.github.io/teachable-machine/</div>
+  </div>
+</div>
+<!-- QR-BLOCK-END -->
+</body>
+</html>

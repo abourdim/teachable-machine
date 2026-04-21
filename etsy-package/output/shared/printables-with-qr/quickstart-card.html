@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  ⚠️  REWRITE PER PRODUCT — DO NOT SHIP AS-IS
+  ───────────────────────────────────────────────────────────────────────
+  apply-template.mjs only substituted identifiers (Teachable Machine for Micro:bit,
+  v1.0.0, https://abourdim.github.io/teachable-machine/, etc.). The feature content, steps,
+  shortcuts, and examples below were inherited from the template's
+  source product (teachable-machine) and WILL BE WRONG for your product
+  unless you rewrite them.
+  
+  Before including this file in a buyer ZIP:
+    1. Delete this banner.
+    2. Rewrite every mention of specific features, shortcuts,
+       tab names, hardware interactions, etc. to match your product.
+    3. Verify with: grep -iE "class|chart\.js|3d board|gamepad|
+       ML model|classification|led matrix|train + predict|sensors tab" this-file.
+  ═══════════════════════════════════════════════════════════════════════
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Teachable Machine for Micro:bit Quick-Start Card</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Orbitron:wght@500&family=Tajawal:wght@400;500;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4 portrait; margin: 0; }
+  body { width: 210mm; height: 297mm; font-family: 'Tajawal', sans-serif; background: #020617; color: #cbd5e1; overflow: hidden; }
+
+  .page { width: 210mm; height: 297mm; padding: 14mm 16mm; position: relative; overflow: hidden; }
+  .page::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(34,197,94,.015) 3px, rgba(34,197,94,.015) 6px);
+    pointer-events: none;
+  }
+
+  .header { text-align: center; margin-bottom: 10mm; position: relative; }
+  .header h1 { font-family: 'Righteous', sans-serif; font-size: 42px; color: #22c55e; letter-spacing: 2px; }
+  .header .sub { font-size: 16px; color: #94a3b8; margin-top: 2px; }
+  .header .tagline { font-size: 13px; color: #64748b; margin-top: 4px; }
+  .header .line { width: 80%; height: 2px; background: linear-gradient(90deg, transparent, rgba(34,197,94,.35), transparent); margin: 8px auto 0; }
+
+  .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8mm; }
+  .step {
+    background: rgba(15,23,42,.6); border: 1px solid rgba(34,197,94,.14);
+    border-radius: 14px; padding: 16px 18px; position: relative;
+  }
+  .step-num {
+    position: absolute; top: -10px; left: 14px;
+    width: 28px; height: 28px; background: #22c55e; color: #020617;
+    border-radius: 50%; font-family: 'Orbitron', monospace; font-size: 13px;
+    display: flex; align-items: center; justify-content: center; font-weight: 700;
+  }
+  .step h3 { font-size: 16px; color: #22c55e; margin-top: 8px; margin-bottom: 4px; font-family: 'Righteous', sans-serif; }
+  .step p { font-size: 13px; color: #94a3b8; line-height: 1.5; }
+  .step .icon { font-size: 28px; text-align: center; margin-bottom: 2px; }
+  .step-full { grid-column: 1 / -1; }
+
+  .section-title { font-family: 'Righteous', sans-serif; font-size: 20px; color: #22d3ee; margin: 6mm 0 4mm; display: flex; align-items: center; gap: 8px; }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: rgba(34,211,238,.18); }
+
+  .shortcuts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 6mm; }
+  .shortcut {
+    background: rgba(15,23,42,.5); border: 1px solid rgba(34,197,94,.08);
+    border-radius: 10px; padding: 8px 10px; text-align: center;
+  }
+  .shortcut kbd {
+    display: inline-block; background: rgba(0,0,0,.5); border: 1px solid rgba(34,197,94,.3);
+    border-radius: 6px; padding: 3px 10px; font-family: 'Orbitron', monospace; font-size: 14px;
+    color: #22c55e; box-shadow: 0 2px 4px rgba(0,0,0,.4); margin-bottom: 3px;
+  }
+  .shortcut span { display: block; font-size: 10px; color: #64748b; }
+
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 6mm; }
+  .feat {
+    background: rgba(15,23,42,.4); border: 1px solid rgba(34,197,94,.06);
+    border-radius: 8px; padding: 8px 10px; font-size: 12px; color: #94a3b8;
+  }
+  .feat strong { color: #22d3ee; display: block; font-size: 13px; margin-bottom: 2px; }
+
+  .footer {
+    position: absolute; bottom: 12mm; left: 16mm; right: 16mm;
+    text-align: center; border-top: 1px solid rgba(34,197,94,.1);
+    padding-top: 8px;
+  }
+  .footer .url { font-family: 'Orbitron', monospace; font-size: 12px; color: #22c55e; }
+  .footer .copy { font-size: 10px; color: #64748b; margin-top: 2px; }
+
+  .pill { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 10px; font-weight: 700; }
+  .pg { background: rgba(34,197,94,.1); color: #22c55e; border: 1px solid rgba(34,197,94,.25); }
+  .pb { background: rgba(34,211,238,.1); color: #22d3ee; border: 1px solid rgba(34,211,238,.25); }
+  code.code { background: rgba(34,197,94,.1); padding: 1px 6px; border-radius: 4px; color: #22c55e; font-size: 12px; font-family: 'Orbitron', monospace; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <h1>Teachable Machine for Micro:bit</h1>
+    <div class="sub">Browser BLE Control Panel for the webcam + BBC micro:bit V2</div>
+    <div class="tagline">No install &bull; No account &bull; 100% local &bull; EN / FR / AR</div>
+    <div class="line"></div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="icon">🤖</div>
+      <h3>Flash the Firmware</h3>
+      <p>Open <a style="color:#22d3ee;">makecode.microbit.org</a>, switch to JavaScript, paste <code class="code">makecode.ts</code>, hit <strong style="color:#22c55e;">Download</strong> and drag to your micro:bit V2.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="icon">🌐</div>
+      <h3>Open the App</h3>
+      <p>Double-click <code class="code">index.html</code> in <strong style="color:#fff;">Chrome</strong> or <strong style="color:#fff;">Edge</strong>. No server, no install. Works offline as a PWA.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="icon">📡</div>
+      <h3>Pair over BLE</h3>
+      <p>Click <span class="pill pg">Connect</span>, pick <strong style="color:#fff;">BBC micro:bit [xxxxx]</strong> in the browser prompt. The board LEDs flash a tick.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="icon">🎛️</div>
+      <h3>Play with the Tabs</h3>
+      <p>LEDs, Sensors, Classes, Samples, Graph, camera view, Bench, About. Press <kbd style="background:rgba(0,0,0,.5);border:1px solid rgba(34,197,94,.25);border-radius:5px;padding:1px 6px;font-size:11px;font-family:'Orbitron',monospace;color:#22c55e;">1</kbd>–<kbd style="background:rgba(0,0,0,.5);border:1px solid rgba(34,197,94,.25);border-radius:5px;padding:1px 6px;font-size:11px;font-family:'Orbitron',monospace;color:#22c55e;">8</kbd> to jump.</p>
+    </div>
+    <div class="step step-full">
+      <div class="step-num">5</div>
+      <div class="icon">📈</div>
+      <h3>Graph It &amp; Save</h3>
+      <p>Open the <strong style="color:#22c55e;">Graph</strong> tab to see live temperature, light, sound and motion rolling across TensorFlow.js. Press <kbd style="background:rgba(0,0,0,.5);border:1px solid rgba(34,197,94,.2);border-radius:4px;padding:0 6px;font-family:'Orbitron',monospace;font-size:11px;color:#22c55e;">F</kbd> for fullscreen, tap <span class="pill pb">Record</span> to capture a session and export it as JSON. No micro:bit? Try <strong style="color:#22d3ee;">Simulate Mode</strong>.</p>
+    </div>
+  </div>
+
+  <div class="section-title">Essential Shortcuts</div>
+  <div class="shortcuts">
+    <div class="shortcut"><kbd>Space</kbd><span>Pause stream</span></div>
+    <div class="shortcut"><kbd>1-8</kbd><span>Switch tab</span></div>
+    <div class="shortcut"><kbd>P</kbd><span>LED presets</span></div>
+    <div class="shortcut"><kbd>F</kbd><span>Fullscreen graph</span></div>
+    <div class="shortcut"><kbd>K</kbd><span>Clear graph</span></div>
+    <div class="shortcut"><kbd>Esc</kbd><span>Close overlay</span></div>
+    <div class="shortcut"><kbd>?</kbd><span>Shortcuts help</span></div>
+    <div class="shortcut"><kbd>T</kbd><span>Cycle themes</span></div>
+  </div>
+
+  <div class="section-title">Highlights</div>
+  <div class="features">
+    <div class="feat"><strong>5&times;5 LED Matrix</strong>Draw, presets, hex patterns</div>
+    <div class="feat"><strong>Live Sensors</strong>Temp, light, sound, accel, classification</div>
+    <div class="feat"><strong>Dual Classes P1/P2</strong>Sliders, gauges, OFF buttons</div>
+    <div class="feat"><strong>Camera View View</strong>micro:bit, Buggy, Arm, Balance, Weather</div>
+    <div class="feat"><strong>4 Themes</strong>Stealth, Neon, Arctic, Blaze</div>
+    <div class="feat"><strong>Trilingual</strong>English, Français, العربية</div>
+  </div>
+
+  <div class="footer">
+    <div class="url">Teachable Machine for Micro:bit v1.0.0</div>
+    <div class="copy">For webcam + BBC micro:bit V2 &bull; Web Bluetooth required &bull; Chrome / Edge</div>
+  </div>
+
+</div>
+<!-- QR-BLOCK-START -->
+<div style="position:fixed;right:12mm;bottom:12mm;display:flex;gap:8mm;align-items:center;
+  background:rgba(10,14,18,0.92);color:#e8ffe8;padding:4mm 5mm;border-radius:3mm;
+  box-shadow:0 2mm 6mm rgba(0,0,0,0.35);font-family:-apple-system,Segoe UI,sans-serif;
+  max-width:80mm;z-index:9999;">
+  <img src="data:image/png;base64,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" alt="QR code — scan to open live demo" style="width:24mm;height:24mm;background:#fff;padding:1mm;border-radius:1.5mm;display:block;"/>
+  <div style="display:flex;flex-direction:column;gap:1mm;min-width:0;">
+    <div style="font-weight:700;font-size:9pt;color:#00ff88;line-height:1.2;">Live demo · Chrome / Edge</div>
+    <div style="font-size:7pt;opacity:0.75;line-height:1.3;word-break:break-all;">abourdim.github.io/teachable-machine/</div>
+  </div>
+</div>
+<!-- QR-BLOCK-END -->
+</body>
+</html>

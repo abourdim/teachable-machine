@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr"><head><meta charset="UTF-8"><style>
+  @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Orbitron:wght@500;700&family=Inter:wght@400;600;800;900&family=Tajawal:wght@400;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A3 portrait; margin: 0; }
+  html, body { width: 297mm; height: 420mm; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #020617;
+    color: #e8ffe8;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .page { width: 297mm; height: 420mm; padding: 16mm 18mm 60mm; position: relative; overflow: hidden; }
+  .page::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(circle at 18% 12%, rgba(34,197,94,.18) 0%, transparent 45%),
+      radial-gradient(circle at 85% 88%, rgba(34,211,238,.12) 0%, transparent 55%);
+  }
+  .page::after {
+    content: ''; position: absolute; inset: 10mm;
+    border: 1.5px solid rgba(34,197,94,.2); border-radius: 8mm;
+    pointer-events: none;
+  }
+
+  .kicker {
+    font-family: 'Orbitron', monospace; font-size: 11pt;
+    color: #22d3ee; letter-spacing: 0.25em;
+    margin-bottom: 4mm;
+    
+  }
+  .title {
+    font-family: 'Orbitron', 'Inter', sans-serif;
+    font-size: 56pt;
+    font-weight: 700;
+    color: #22c55e;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 40px rgba(34,197,94,.3);
+    white-space: pre-line;
+    max-width: 240mm;
+  }
+  .subtitle {
+    font-size: 16pt;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-top: 6mm;
+    line-height: 1.35;
+    max-width: 240mm;
+  }
+
+  .hero-shot {
+    margin: 8mm auto 0;
+    width: 100%; max-width: 235mm; height: 180mm;
+    border-radius: 4mm; overflow: hidden;
+    box-shadow: 0 8mm 20mm rgba(0,0,0,.55), 0 0 0 1.5px rgba(34,197,94,.25);
+    background: #000;
+  }
+  .hero-shot img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+
+  .features {
+    display: flex; gap: 5mm; margin-top: 6mm;
+    margin-bottom: 55mm;
+  }
+  .feat {
+    flex: 1;
+    background: rgba(15,23,42,.75);
+    border: 1px solid rgba(34,197,94,.18);
+    border-radius: 4mm;
+    padding: 5mm 4mm;
+  }
+  .feat .icon { font-size: 22pt; display: block; margin-bottom: 2mm; }
+  .feat h3 { color: #22c55e; font-size: 14pt; font-weight: 800; margin-bottom: 2mm; }
+  .feat p { color: #94a3b8; font-size: 10pt; line-height: 1.4; }
+
+  .qr-block {
+    position: absolute; bottom: 14mm; right: 18mm;
+    display: flex; align-items: center; gap: 5mm;
+    background: rgba(10,14,18,.92); color: #e8ffe8;
+    padding: 5mm 6mm; border-radius: 3mm;
+    border: 1px solid rgba(34,197,94,.3);
+  }
+  .qr-block img { width: 32mm; height: 32mm; background: #fff; padding: 1mm; border-radius: 1mm; display: block; }
+  .qr-block .qr-caption { font-weight: 700; font-size: 11pt; color: #22c55e; line-height: 1.2; margin-bottom: 1.5mm; }
+  .qr-block .qr-url { font-family: 'Orbitron', monospace; font-size: 8pt; color: #94a3b8; letter-spacing: 0.05em; }
+
+  .footer {
+    position: absolute; bottom: 14mm; left: 18mm;
+    max-width: 120mm;
+  }
+  .footer .left { font-size: 9pt; color: #64748b; }
+  .footer .brand { font-family: 'Orbitron', monospace; font-size: 11pt; color: #22c55e; letter-spacing: 0.12em; margin-top: 2mm; }
+</style></head>
+<body><div class="page">
+  <div class="kicker">WEB BLUETOOTH · MICRO:BIT V2</div>
+  <div class="title">Chaque capteur,
+en direct dans le navigateur.</div>
+  <div class="subtitle">Panneau de contrôle prêt pour la classe. 30 ordinateurs. Zéro installation.</div>
+
+  <div class="hero-shot"><img src="file://D:/work/dev/16_workshop/102_etsy/teachable-machine/etsy-package/output/fr/screenshots/screenshot-model.png"></div>
+
+  <div class="features">
+    
+    <div class="feat">
+      <span class="icon">⚡</span>
+      <h3>Capteurs en direct</h3>
+      <p>Température, son, lumière, accéléromètre, boussole — tout en temps réel.</p>
+    </div>
+    <div class="feat">
+      <span class="icon">🎛️</span>
+      <h3>Contrôle complet</h3>
+      <p>Peindre les LEDs, faire tourner les classes, piloter les moteurs. Export CSV.</p>
+    </div>
+    <div class="feat">
+      <span class="icon">🧊</span>
+      <h3>Miroir 3D</h3>
+      <p>Une carte photoréaliste s'incline avec votre micro:bit. La physique prend vie.</p>
+    </div>
+  </div>
+
+  <div class="qr-block">
+    <img src="data:image/png;base64,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">
+    <div>
+      <div class="qr-caption">Scannez pour la démo en direct</div>
+      <div class="qr-url">abourdim.github.io/teachable-machine</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left">Chrome / Edge · Hors ligne · Sans compte<br>Firmware MakeCode · Compatible open source</div>
+    <div class="brand">teachable-machine</div>
+  </div>
+</div></body></html>
