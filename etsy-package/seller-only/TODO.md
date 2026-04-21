@@ -35,7 +35,7 @@ that require human hands. Don't hit Publish until they're done.
       Reviewers flagged that listings with *physical hardware + the
       app together* convert better. Retake the hero with a micro:bit
       V2 held next to (or propped on top of) a laptop showing the
-      Teachable Machine model-training view. Good light, plain background, crop square.
+      Train panel. Good light, plain background, crop square.
 - [ ] **Test Etsy's square thumbnail crop** on mockup 1. The canvas
       is 2000×1500 (4:3). Etsy will center-crop to square for the
       search thumbnail — make sure the product name and the
@@ -97,5 +97,7 @@ that require human hands. Don't hit Publish until they're done.
       behind an email opt-in. Builds a remarketing list.
 - [ ] **Create the AILAUNCH promo code** (first 10 buyers: $14.99 → $8
       with review request). Ships reviews fast.
+- [ ] **Duplicate listing in FR + AR** using `etsy-playbook-fr.html` +
+      `etsy-playbook-ar.html` scripts. Same ZIP, localized copy.
 - [ ] **UTM-tag every share link** (pinterest, reddit, blog). Etsy
       Stats shows you which channel actually converts.

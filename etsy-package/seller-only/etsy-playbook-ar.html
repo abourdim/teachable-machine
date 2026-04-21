@@ -1,9 +1,10 @@
 <!doctype html>
+<!-- REWRITE PER PRODUCT — DO NOT SHIP AS-IS · TRANSLATE TO ARABIC -->
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Teachable Machine لـ Micro:bit — دليل Etsy في دقيقة</title>
+<title>Teachable Machine for Micro:bit — دليل Etsy في دقيقة</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Tajawal:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -125,9 +126,9 @@
 
 <div class="slate">
   <div class="slate-clap">🎬</div>
-  <div class="tag">— دليل Etsy · v1.0.0 —</div>
-  <h1>علّم <span>•</span> شغّل <span>•</span> تحكّم</h1>
-  <div class="tag">عرض الإعلان في دقيقة واحدة · مقتطفات جاهزة للنسخ</div>
+  <div class="tag">— دليل Etsy · الإصدار 1.0.2 —</div>
+  <h1>micro:bit <span>Playground</span></h1>
+  <div class="tag">عرض المنتج في دقيقة واحدة · مقتطفات جاهزة للنسخ</div>
   <div class="meta"><span><b>الصيغة:</b> عمودي 9:16</span><span><b>المدة:</b> ≤ 60 ثانية</span><span><b>الهدف:</b> تحويل المتصفحين إلى مشترين</span></div>
 </div>
 
@@ -146,14 +147,13 @@
 <h2>قبل الضغط على تسجيل</h2>
 <div class="card">
   <ul class="checklist" onclick="var li=event.target.closest('li');if(li)li.classList.toggle('checked')">
-    <li><input type="checkbox"><label>BBC micro:bit V2 يعمل (عبر USB أو البطارية)، ويعرض أيقونة ودودة<span class="where">إذا كان مظلمًا ← أعد تحميل ملف <code>makecode.ts</code> من ZIP</span></label></li>
-    <li><input type="checkbox"><label>متصفح Chrome مفتوح وملف <code>index.html</code> الخاص بنا محمَّل<span class="where">Safari وFirefox وiOS لن تعمل — Web Bluetooth متاح فقط على Chromium</span></label></li>
-    <li><input type="checkbox"><label>رابط نموذج Teachable Machine موجود في الحافظة<span class="where">مشروع صور بثلاث فئات (مثلًا: تلويح / قبضة / لا شيء) هو الأسهل للتصوير</span></label></li>
-    <li><input type="checkbox"><label>تم تحميل النموذج — أسماء الفئات تظهر في التطبيق</label></li>
-    <li><input type="checkbox"><label>تم تشغيل كاميرا الويب — أشرطة الثقة تتحرك عند اتخاذ الوضعيات</label></li>
-    <li><input type="checkbox"><label>تم الاقتران عبر BLE — شارة الحالة <strong>خضراء</strong>، وزر <strong>TEST</strong> يعمل<span class="where">اضغط 🔗 اتصال، ثم اختر BBC micro:bit من نافذة Chrome</span></label></li>
-    <li><input type="checkbox"><label>الوجه واليدان مضاءان جيدًا — الذكاء الاصطناعي لا يتفوق على إضاءتك</label></li>
-    <li><input type="checkbox"><label>الهاتف بوضع 9:16 على ترايبود — الحاسوب وmicro:bit كلاهما في الإطار</label></li>
+    <li><input type="checkbox"><label>جهاز micro:bit V2 يعمل ويعرض أيقونة <kbd>X</kbd><span class="where">إن لم يكن كذلك ← أعد تحميل <code>makecode.ts</code></span></label></li>
+    <li><input type="checkbox"><label>Chrome أو Edge مفتوح، وملف <code>index.html</code> محمَّل<span class="where">Safari وFirefox وiOS لن تعمل</span></label></li>
+    <li><input type="checkbox"><label>BLE متصل — شارة الحالة <strong>خضراء</strong><span class="where">اضغط 🔗 اتصال، ثم اختر BBC micro:bit من النافذة</span></label></li>
+    <li><input type="checkbox"><label>تم اختيار السمة — <strong>Neon</strong> تبدو الأفضل أمام الكاميرا<span class="where">الرأس ← قائمة رولر الطلاء</span></label></li>
+    <li><input type="checkbox"><label>المحرِّك موصول بـ P1 (عند عرض الذراع الروبوتية أو العربة)</label></li>
+    <li><input type="checkbox"><label>علامة تبويب Camera View مفتوحة، مع اختيار العربة أو الذراع<span class="where">علامة التبويب 6 ← قائمة النماذج</span></label></li>
+    <li><input type="checkbox"><label>الهاتف بوضع 9:16 على ترايبود، مضاء من الأمام</label></li>
     <li><input type="checkbox"><label>المكتب مرتَّب — اللوحة وقطعة واحدة فقط في الإطار</label></li>
     <li><input type="checkbox"><label>قراءة النص بصوت عالٍ مرة واحدة — بزمن أقل من 55 ثانية</label></li>
   </ul>
@@ -164,64 +164,55 @@
 <h2>البنية</h2>
 <div class="card">
   <pre style="color:var(--accent2);font-family:var(--mono);font-size:.9rem;line-height:1.7;margin:0">
- 0–3 s   HOOK       "Your kid trains an AI — in 60 seconds."
- 3–10 s  CONTEXT    Paste Teachable Machine URL → Load Model → class names appear.
-10–25 s  DEMO       Start Webcam → confidence bars move. Connect → TEST passes.
-25–40 s  DEMO       Start Sending → pose each class → micro:bit LED icon reacts.
-40–50 s  PAYOFF     Toggle "Talking computer" → voice says what it sees.
-50–55 s  CTA        "Full kit in my shop — link below."
-55–60 s  END FRAME  Logo + handle frozen for the loop preview.</pre>
+ 0–3 s   HOOK        «Watch what this micro:bit does in 60 seconds.»
+ 3–10 s  CONTEXT     Board on-screen, X icon → status turns green.
+10–35 s  DEMO        Demo the core features. Highlight main benefits.
+35–50 s  PAYOFF      Zoom on live graph + 3D model mirroring real board.
+50–55 s  CTA         «Full kit in my shop — link below.»
+55–60 s  END FRAME   Logo + handle frozen for the loop preview.</pre>
 </div>
 
 <!-- ═══════════ النص ═══════════ -->
 <div class="slug" id="script">النص مشهدًا مشهدًا</div>
-<h2>القالب: «علّم الحاسوب أن يرى»</h2>
+<h2>القالب: «الـ micro:bit يصبح ساحة لعب»</h2>
 
 <div class="scene">
   <div class="scene-head"><span class="scene-time">00:00–00:03</span><span class="scene-phase phase-hook">الخطاف</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قل</div>«طفلك يستطيع تدريب ذكاء اصطناعي — وجعل micro:bit يتفاعل. شاهد.»</div>
-    <div class="do"><div class="do-label">🎬 افعل</div>افتح بإيماءة يد أمام كاميرا الويب. نص فوقي: «علّم • شغّل • تحكّم».</div>
+    <div class="say"><div class="say-label">🎙 قل</div>«جهاز micro:bit لديك هو ساحة لعب. بدون تثبيت، بدون حساب — فقط متصفح.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>أمسك اللوحة في الإطار. لقطة مقربة لأيقونة X تنبض على شبكة LED.</div>
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:03–00:10</span><span class="scene-phase phase-demo">السياق · تحميل النموذج</span></div>
+  <div class="scene-head"><span class="scene-time">00:03–00:10</span><span class="scene-phase phase-demo">السياق</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قل</div>«درّب ثلاث فئات على Teachable Machine من Google. انسخ الرابط. الصقه. حمِّل.»</div>
-    <div class="do"><div class="do-label">🎬 افعل</div>تسجيل شاشة: الصق رابط نموذج Teachable Machine في الحقل، واضغط <strong>تحميل النموذج</strong>. تظهر أسماء الفئات بتلاشٍ ناعم.</div>
+    <div class="say"><div class="say-label">🎙 قل</div>«افتح الصفحة، اضغط اتصال — وهذا كل شيء. حساسات مباشرة، LED مباشر، محركات مباشرة.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>تسجيل شاشة: اضغط على <strong>🔗 الاتصال بـ micro:bit</strong>، اختر اللوحة، شارة الحالة تصبح خضراء.</div>
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:10–00:18</span><span class="scene-phase phase-demo">العرض · كاميرا الويب مباشرة</span></div>
+  <div class="scene-head"><span class="scene-time">00:10–00:25</span><span class="scene-phase phase-demo">العرض · الحساسات + 3D</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قل</div>«شغّل كاميرا الويب — الذكاء الاصطناعي يراقب. أشرطة الثقة ترقص.»</div>
-    <div class="do"><div class="do-label">🎬 افعل</div>اضغط <strong>تشغيل كاميرا الويب</strong>. اتخذ وضعية لكل فئة. زُم على أشرطة الثقة وهي تتحرك في الزمن الحقيقي.</div>
+    <div class="say"><div class="say-label">🎙 قل</div>«أملها — فيميل النموذج ثلاثي الأبعاد على الشاشة أيضًا. المس الشعار — فيستجيب.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>علامة التبويب <kbd>6</kbd> ← Camera View. أمل اللوحة الحقيقية ← فيتبعها النموذج الافتراضي. اليد تحمل micro:bit بجانب الشاشة للانقسام.</div>
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:18–00:25</span><span class="scene-phase phase-demo">العرض · الاتصال عبر BLE</span></div>
+  <div class="scene-head"><span class="scene-time">00:25–00:40</span><span class="scene-phase phase-demo">العرض · المحركات + يد التحكم</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قل</div>«اقترن مع micro:bit عبر Bluetooth. بنقرة واحدة. اضغط TEST — يُضيء.»</div>
-    <div class="do"><div class="do-label">🎬 افعل</div>اضغط <strong>اتصال</strong> ← نافذة اختيار BLE في Chrome ← اختر BBC micro:bit ← تصبح الحالة خضراء. اضغط <strong>TEST</strong>. انتقل إلى اللوحة الحقيقية وهي تعرض علامة صح.</div>
+    <div class="say"><div class="say-label">🎙 قل</div>«حرّك محركًا من المتصفح. قُد روبوتًا بيد التحكم.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>عرض الميزات الأساسية.
   </div>
 </div>
 
 <div class="scene">
-  <div class="scene-head"><span class="scene-time">00:25–00:40</span><span class="scene-phase phase-demo">العرض · إيماءة ← LED</span></div>
+  <div class="scene-head"><span class="scene-time">00:40–00:50</span><span class="scene-phase phase-payoff">المكافأة · المخطط</span></div>
   <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قل</div>«ابدأ الإرسال. تلويح ← قلب. قبضة ← سهم. لكل فئة، استجابة.»</div>
-    <div class="do"><div class="do-label">🎬 افعل</div>اضغط <strong>بدء الإرسال</strong>. شاشة مقسومة: وضعية اليد على اليمين، أيقونة LED لـ micro:bit الحقيقي على اليسار. ثبّت كل فئة لثانيتين.</div>
-  </div>
-</div>
-
-<div class="scene">
-  <div class="scene-head"><span class="scene-time">00:40–00:50</span><span class="scene-phase phase-payoff">المكافأة · الحاسوب المتكلم</span></div>
-  <div class="scene-body">
-    <div class="say"><div class="say-label">🎙 قل</div>«فعّل الحاسوب المتكلم — يقول الذكاء الاصطناعي ما يراه. الأطفال يعشقون هذا.»</div>
-    <div class="do"><div class="do-label">🎬 افعل</div>بدّل مفتاح <strong>الحاسوب المتكلم</strong>. اتخذ وضعية ← يقول الصوت «أرى تلويحًا!». ادمج النص كترجمة.</div>
+    <div class="say"><div class="say-label">🎙 قل</div>«سجّل، أعِد التشغيل، صدِّر CSV. إنه مختبر علوم كامل داخل علامة تبويب.»</div>
+    <div class="do"><div class="do-label">🎬 افعل</div>علامة التبويب <kbd>5</kbd> ← 🎲 محاكاة ← يرقص المخطط الحي. زُم على أزرار التسجيل/CSV.</div>
   </div>
 </div>
 
@@ -236,64 +227,57 @@
 <!-- ═══════════ نص الإعلان ═══════════ -->
 <div class="slug" id="listing">نص إعلان جاهز للنسخ</div>
 <h2>عنوان Etsy (140 حرفًا كحد أقصى)</h2>
-<div class="copybox">Teachable Machine لـ Micro:bit — درّب ذكاءً اصطناعيًا، واجعل Micro:bit يتفاعل · كاميرا ويب + Bluetooth · علّم شغّل تحكّم · بلا تثبيت · Chrome<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
-
-<h2>عبارة الصورة الرئيسية (الجملة على الصورة الأولى)</h2>
-<div class="copybox">Teachable Machine لـ Micro:bit — علّم • شغّل • تحكّم. درّب نموذج ذكاء اصطناعي داخل متصفحك، ثم اجعل micro:bit يتفاعل. Chrome + كاميرا ويب + micro:bit V2.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
+<div class="copybox">Teachable Machine for Micro:bit — لوحة تحكم BLE للمعلمين والأطفال · حساسات · محركات · مخطط حي · نماذج 3D · بلا تثبيت · Chrome / Edge<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
 
 <h2>الوصف المختصر (أول 160 حرفًا — تظهر في البحث)</h2>
-<div class="copybox">حمِّل نموذج Teachable Machine، وجّه كاميرا الويب، واقترن مع BBC micro:bit V2 عبر Bluetooth — تتفاعل شاشات LED مع كل فئة. بلا تثبيت وبلا حساب. Chrome فقط.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
+<div class="copybox">لوحة تحكم BLE داخل المتصفح للوحة webcam + BBC micro:bit V2. حساسات ومحركات ومخططات حية ونماذج ثلاثية الأبعاد ويد تحكم — كلها من Chrome. بلا تثبيت وبلا حساب.<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
 
 <h2>الوصف الكامل</h2>
-<div class="copybox">🎓 Teachable Machine لـ Micro:bit — الطريقة الأسهل للأطفال لتدريب ذكاء اصطناعي ورؤيته يتحكّم في عتاد حقيقي.
+<div class="copybox">🎮 Teachable Machine for Micro:bit — لوحة تحكم BLE تعمل داخل المتصفح للوحة webcam + BBC micro:bit V2.
 
-افتح ملف HTML واحدًا في Chrome، حمِّل أي نموذج من Teachable Machine عبر الرابط (صورة أو صوت)، شغّل كاميرا الويب، اقترن مع BBC micro:bit V2 عبر Bluetooth، وكل تصنيف يُضيء أيقونة LED على اللوحة. بلا تثبيت. بلا حساب. بلا سحابة.
+افتح ملف HTML واحدًا في Chrome أو Edge، واقترن عبر Bluetooth، وافتح 8 علامات تبويب من المرح التعليمي (STEM) التفاعلي — بلا تثبيت، بلا حساب، بلا خادم خلفي، بلا تتبع.
 
 ما ستحصل عليه
-• 🎓 تحميل أي نموذج Teachable Machine (صورة أو صوت) عبر الرابط
-• 📷 التقاط من كاميرا الويب + تصنيف مباشر داخل المتصفح
-• 📡 اقتران عبر Web Bluetooth مع BBC micro:bit V2
-• 🟢 زر TEST — تحقّق من وصلة BLE بدون الكاميرا
-• 🔊 «الحاسوب المتكلم» اختياريًا — توليد الكلام يقول ما يراه الذكاء الاصطناعي
-• 🧭 تدفق من صفحة واحدة: درِّب ← حمِّل الرابط ← شغّل كاميرا الويب ← اتصل ← ابدأ الإرسال
-• 🌐 يعمل محليًا — لا شيء يغادر جهازك
-• 👩‍🏫 مطبوعات للمعلم: بطاقة بداية سريعة، ملصق صفي، خطة درس، ملصقات
+• 🎛 شبكة LED + أيقونات جاهزة + نص متحرك
+• 📡 حساسات مباشرة: الحرارة، الإضاءة، الصوت، مقياس التسارع، البوصلة، اللمس
+• ⚙️ محركان (P1 + P2) مع منزلقات ومؤشرات وضبط وأزرار إيقاف
+• 🎮 يد تحكم D-pad للروبوتات والألعاب
+• 📈 مخطط حي (TensorFlow.js) — تسجيل وإعادة تشغيل وتعليقات وتصدير PNG + CSV
+• 🎲 5 نماذج ثلاثية الأبعاد تفاعلية (Three.js): micro:bit، العربة، الذراع، التوازن، الطقس
+• 🎨 4 سمات (Stealth · Neon · Arctic · Blaze) + 3 لغات (EN · FR · AR مع دعم RTL كامل)
+• 📱 PWA — قابل للتثبيت ويعمل بدون إنترنت
+• 👶 وضع المبتدئ + 🧙 وضع الخبير
 
 محتويات التنزيل
 • index.html — التطبيق الكامل
-• makecode.ts — برنامج micro:bit الثابت (يُحمَّل مرة واحدة من MakeCode)
+• makecode.ts — برنامج micro:bit الثابت (تُحمَّل مرة واحدة من MakeCode)
 • SETUP.md — بداية سريعة في 5 دقائق
 • docs/ — دليل مصور، ومرجع سريع، وأسئلة شائعة، ودليل Etsy
-• printables/ — ملفات PDF بقياسي A4 / A3 + HTML قابل للتحرير
 • LICENSE — رخصة مستخدم وحيد للاستخدام الشخصي / الصفي
 
 المتطلبات
-• حاسوب + Chrome (على سطح المكتب) أو Chrome على أندرويد
-• كاميرا ويب
-• BBC micro:bit V2 + كابل USB أو حزمة بطاريات
+• webcam + BBC micro:bit V2 (V1 يعمل لكن بدون حساس صوت)
+• Chrome أو Edge على سطح المكتب (أو Chrome على أندرويد)
 • تفعيل Bluetooth
+• HTTPS أو file:// — النقر المزدوج على HTML يكفي
 
 لمن هو موجَّه
-معلمو STEM · الأسر التي تدرّس منزليًا · النوادي بعد المدرسة · الآباء الصانعون · كل مهتم بالذكاء الاصطناعي.
+المعلمون الذين يديرون ورش STEM · الأسر التي تدرّس منزليًا · نوادي الروبوتات · صانعو النماذج الأولية لمشاريع BLE · كل مهتم بـ micro:bit.
 
 الخصوصية أولًا
-التطبيق يعمل داخل متصفحك. بلا تسجيل دخول. بلا تحليلات. بلا سحابة. رابط النموذج الذي تلصقه ينتقل مباشرة من Chrome إلى شبكة توزيع Teachable Machine — إطارات كاميرا الويب لديك لا تغادر الجهاز أبدًا.
+لا شيء يغادر جهازك. بلا تتبع، بلا تسجيل دخول، بلا سحابة. جميع المعايرات والتسجيلات والإعدادات المسبقة تبقى في localStorage للمتصفح وعلى قرصك.
 
 تحديثات مدى الحياة
 كل إصدار يُطرح من هذا الإعلان هو ملكك للأبد. أعد تنزيل أحدث ZIP في أي وقت من صفحة مشترياتك في Etsy.
 
-تعليمًا موفقًا! 🎓📷🤖<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
+قرصنة سعيدة! 🚀🎮🤖<button class="copybtn" onclick="navigator.clipboard.writeText(this.previousSibling.textContent.trim())">نسخ</button></div>
 
 <h2>فئات الأسعار</h2>
 <table>
   <tr><th>الفئة</th><th>لمن</th><th>السعر</th></tr>
-  <tr><td>الإطلاق</td><td>مستخدم وحيد بسعر مبكر</td><td>14.99 $</td></tr>
-  <tr><td>قياسية</td><td>مستخدم وحيد</td><td>19.99 $</td></tr>
-  <tr><td>الحزمة</td><td>التطبيق + جميع المطبوعات</td><td>34.99 $</td></tr>
-  <tr><td>Tripwire</td><td>جرّب قبل الشراء</td><td>5 $</td></tr>
-  <tr><td>رخصة موقع</td><td>حتى 30 معلمًا في مدرسة واحدة</td><td>249 $</td></tr>
-  <tr><td>منطقة تعليمية</td><td>مواقع متعددة</td><td>599 $</td></tr>
-  <tr><td>عرض <code>AILAUNCH</code></td><td>خصم لأول 10 مشترين</td><td>8 $</td></tr>
+  <tr><td>مستخدم وحيد</td><td>معلم / عائلة / صانع واحد</td><td><code>{{PRICE}}</code></td></tr>
+  <tr><td>صف / موقع</td><td>حتى 30 معلمًا في مدرسة واحدة، طلاب بلا حدود</td><td><code>{{PRICE}}</code></td></tr>
+  <tr><td>منطقة / OEM</td><td>مواقع متعددة — تواصل عبر طلب Etsy</td><td>حسب الطلب</td></tr>
 </table>
 
 <!-- ═══════════ الوسوم ═══════════ -->
@@ -301,55 +285,47 @@
 <h2>13 وسمًا لـ Etsy (20 حرفًا لكل وسم)</h2>
 <div class="pills">
   <span class="pill">micro:bit</span>
-  <span class="pill">ذكاء اصطناعي</span>
-  <span class="pill">تعلم آلي</span>
-  <span class="pill">teachable machine</span>
+  <span class="pill">BLE</span>
+  <span class="pill">bluetooth</span>
   <span class="pill">تعليم</span>
   <span class="pill">STEM</span>
+  <span class="pill">روبوتات</span>
   <span class="pill">برمجة أطفال</span>
   <span class="pill">مورد للمعلم</span>
+  <span class="pill">حساسات</span>
+  <span class="pill">محركات</span>
   <span class="pill">غرفة صف</span>
   <span class="pill">تعليم منزلي</span>
   <span class="pill">ميكرسبيس</span>
-  <span class="pill">كاميرا ويب</span>
-  <span class="pill">bluetooth</span>
-</div>
-
-<h2>وسوم المزايا (للنماذج والصورة الرئيسية)</h2>
-<div class="pills">
-  <span class="pill">كاميرا ويب</span>
-  <span class="pill">ذكاء اصطناعي</span>
-  <span class="pill">Bluetooth</span>
-  <span class="pill">micro:bit</span>
-  <span class="pill">Chrome</span>
-  <span class="pill">بلا تثبيت</span>
 </div>
 
 <h2>المواد (ما الذي يشغّله)</h2>
 <div class="pills">
   <span class="pill">HTML5</span>
   <span class="pill">JavaScript</span>
-  <span class="pill">TensorFlow.js</span>
   <span class="pill">Web Bluetooth</span>
+  <span class="pill">TensorFlow.js</span>
+  <span class="pill">Three.js</span>
+  <span class="pill">PWA</span>
   <span class="pill">MakeCode</span>
   <span class="pill">TypeScript</span>
 </div>
 
 <h2>كلمات SEO</h2>
-<p><code>browser-based</code> · <code>no-install</code> · <code>AI for kids</code> · <code>AI literacy</code> · <code>machine learning</code> · <code>web bluetooth</code> · <code>teacher resource</code> · <code>micro:bit V2</code></p>
+<p><code>browser-based</code> · <code>no-install</code> · <code>privacy-first</code> · <code>offline-capable</code> · <code>web bluetooth</code> · <code>teacher resource</code> · <code>STEM workshop</code> · <code>micro:bit V2</code></p>
 
 <!-- ═══════════ الصور ═══════════ -->
 <div class="slug" id="images">ترتيب الصور السبع للإعلان</div>
 <h2>تسلسل الصور (Etsy يعرض 1 و 2 بأكبر حجم)</h2>
 <div class="card">
   <ol style="padding-right:22px;line-height:2">
-    <li><strong>الصورة البطل</strong> — حاسوب + كاميرا ويب + BBC micro:bit V2 كلها في الإطار، يد تتخذ وضعية، نص فوقي «علّم • شغّل • تحكّم» بخط Orbitron.</li>
-    <li><strong>شاشة تدريب نموذج Teachable Machine</strong> — ثلاث فئات بأشرطة ثقة صحية، مع تمييز زر التصدير.</li>
-    <li><strong>صورة متحركة GIF: إيماءة ← استجابة LED</strong> — حلقة 3 ثوانٍ: وضعية اليد على اليمين، أيقونة LED لـ micro:bit على اليسار.</li>
-    <li><strong>مشهد صفي</strong> — طفلان أمام حاسوب مشترك يدرّبان الذكاء الاصطناعي، وmicro:bit على المكتب.</li>
-    <li><strong>لقطة مقرَّبة لزر TEST</strong> — فحص وصلة BLE بنقرة واحدة، مع ظهور شارة الحالة الخضراء.</li>
-    <li><strong>عرض على الجوّال</strong> — Chrome بمقاس عمودي، التدفق من صفحة واحدة يظهر بأناقة.</li>
-    <li><strong>بطاقة الحزمة / المكافآت</strong> — قائمة «محتويات ZIP» + «تحديثات مدى الحياة · بلا سحابة · Chrome» على تدرج داكن.</li>
+    <li><strong>الصورة البطل</strong> — micro:bit حقيقي + لقطة شاشة مقسومة للحاسوب تُظهر النموذج ثلاثي الأبعاد وهو يعكس ميل اللوحة. عنوان بخط Orbitron فوقها.</li>
+    <li><strong>نظرة عامة على الألسنة</strong> — لقطة شبكية لجميع الألسنة الثماني مع رموزها.</li>
+    <li><strong>لقطة مقرَّبة للمخطط</strong> — TensorFlow.js بخطوط ملونة وتعليقات، مع زر تسجيل أحمر متوهج.</li>
+    <li><strong>العربة + الذراع الروبوتية 3D</strong> — لقطة شاشة مقسومة تُظهر نموذجين من بين نماذج Three.js الخمسة.</li>
+    <li><strong>يد تمسك اللوحة</strong> — محرك حقيقي موصول بـ P1، والمنزلقات على الشاشة في الخلفية.</li>
+    <li><strong>عيّنة السمات</strong> — شبكة 2×2: Stealth · Neon · Arctic · Blaze.</li>
+    <li><strong>بطاقة نصية</strong> — «رخصة مستخدم وحيد · تحديثات مدى الحياة · بلا سحابة · Chrome / Edge» على تدرج داكن.</li>
   </ol>
 </div>
 
@@ -358,23 +334,23 @@
 <h2>أخطاء شائعة</h2>
 <table>
   <tr><th>❌ لا تفعل</th><th>✅ افعل</th></tr>
-  <tr><td>ابدأ بـ «مرحبًا، أنا…» مع 10 ثوانٍ من المقدمة</td><td>افتح بإيماءة يد تُشغّل LED على micro:bit في أول 3 ثوانٍ</td></tr>
+  <tr><td>ابدأ بـ «مرحبًا، أنا…» مع 10 ثوانٍ من المقدمة</td><td>افتح باللوحة الحقيقية وهي تُميل نموذجًا ثلاثي الأبعاد في أول 3 ثوانٍ</td></tr>
   <tr><td>التصوير بالوضع الأفقي (16:9)</td><td>عمودي 9:16 — Etsy يشغّل تلقائيًا على الجوال</td></tr>
-  <tr><td>التحدث فوق حركة مزدحمة على الشاشة</td><td>اترك أشرطة الثقة تتنفس لثانية، ثم اشرح</td></tr>
-  <tr><td>نسيان الترجمة (Etsy يشغّل مع كتم الصوت)</td><td>ادمج الترجمة أو أضف نصًا فوقيًا في كل مشهد</td></tr>
-  <tr><td>عرض Safari / iPhone في الفيديو</td><td>Chrome فقط — مستخدمو iOS سيشترون ثم يطلبون استرجاع المبلغ</td></tr>
+  <tr><td>التحدث فوق رسوم متحركة مزدحمة</td><td>اترك الصورة تتنفس لثانية، ثم اشرح</td></tr>
+  <tr><td>نسيان الترجمة (Etsy يشغّل كتم الصوت)</td><td>ادمج الترجمة أو أضف نصًا في كل مشهد</td></tr>
+  <tr><td>عرض iOS / Safari في الفيديو</td><td>اعرض دائمًا على Chrome/Edge — مستخدمو iPhone سيشترون ثم يطلبون استرجاع المبلغ</td></tr>
   <tr><td>تخطي CTA</td><td>قل «الرابط في الأسفل» في آخر 5 ثوانٍ في كل مرة</td></tr>
 </table>
 
 <!-- ═══════════ بطاقة سريعة ═══════════ -->
 <div class="slug">بطاقة الجيب المرجعية</div>
-<div class="copybox">قبل     V2 يعمل · Chrome مفتوح · رابط النموذج جاهز · كاميرا الويب تعمل · BLE أخضر · TEST ناجح · هاتف 9:16
-صوِّر   خطاف في 3 ثوانٍ · حمِّل النموذج · شغّل كاميرا الويب · اتصل · TEST · ابدأ الإرسال · الحاسوب المتكلم · CTA
+<div class="copybox">قبل     V2 يعمل (أيقونة X) · Chrome مفتوح · BLE أخضر · هاتف 9:16
+صوِّر   خطاف في 3 ثوانٍ · إمالة ← انعكاس 3D · محرك يتحرك · محاكاة مخطط · CTA
 بعد     قصّ إلى 55 ثانية · ترجمة مدمجة · أول إطار = المصغَّرة
 أعلن    عنوان · وصف 160 حرفًا · 13 وسمًا · 7 صور · فئات الأسعار</div>
 
 <p style="text-align:center;margin-top:40px;color:var(--muted);font-size:.85rem">
-  Teachable Machine لـ Micro:bit v1.0.0 — دليل Etsy في دقيقة · اطبع بحجم A4 · غلّفه · واحتفظ به بجانب معدات التصوير
+  Teachable Machine for Micro:bit v1.0.0 — دليل Etsy في دقيقة · اطبع بحجم A4 · غلّفه · واحتفظ به بجانب معدات التصوير
 </p>
 
 </body>

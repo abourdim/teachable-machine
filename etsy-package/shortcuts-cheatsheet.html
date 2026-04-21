@@ -1,8 +1,26 @@
 <!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  ⚠️  REWRITE PER PRODUCT — DO NOT SHIP AS-IS
+  ───────────────────────────────────────────────────────────────────────
+  apply-template.mjs only substituted identifiers (Teachable Machine for Micro:bit,
+  v1.0.0, https://abourdim.github.io/teachable-machine/, etc.). The feature content, steps,
+  shortcuts, and examples below were inherited from the template's
+  source product (teachable-machine) and WILL BE WRONG for your product
+  unless you rewrite them.
+  
+  Before including this file in a buyer ZIP:
+    1. Delete this banner.
+    2. Rewrite every mention of specific features, shortcuts,
+       tab names, hardware interactions, etc. to match your product.
+    3. Verify with: grep -iE "class|chart\.js|3d board|gamepad|
+       ML model|classification|led matrix|train + predict|sensors tab" this-file.
+  ═══════════════════════════════════════════════════════════════════════
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Teachable Machine for Micro:bit Buttons &amp; Controls Cheat Sheet</title>
+<title>Teachable Machine for Micro:bit Keyboard Shortcuts Cheat Sheet</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Orbitron:wght@500&family=Tajawal:wght@400;500;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -17,8 +35,8 @@
   }
 
   .header { text-align: center; margin-bottom: 6mm; }
-  .header h1 { font-family: 'Righteous', sans-serif; font-size: 30px; color: #22c55e; display: inline; }
-  .header span { font-size: 15px; color: #64748b; margin-left: 12px; }
+  .header h1 { font-family: 'Righteous', sans-serif; font-size: 32px; color: #22c55e; display: inline; }
+  .header span { font-size: 16px; color: #64748b; margin-left: 12px; }
 
   .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
 
@@ -35,16 +53,14 @@
   }
   .row:nth-child(even) { background: rgba(34,197,94,.02); }
 
-  .btn {
+  kbd {
     display: inline-flex; align-items: center; justify-content: center;
-    min-width: 92px; height: 26px; padding: 0 10px;
+    min-width: 30px; height: 26px; padding: 0 8px;
     background: rgba(0,0,0,.6); border: 1px solid rgba(34,197,94,.3);
-    border-radius: 8px; font-family: 'Orbitron', monospace; font-size: 10px;
+    border-radius: 6px; font-family: 'Orbitron', monospace; font-size: 11px;
     color: #22c55e; box-shadow: 0 2px 4px rgba(0,0,0,.4);
-    white-space: nowrap; text-transform: uppercase; letter-spacing: .5px;
+    white-space: nowrap;
   }
-  .btn.cy { border-color: rgba(34,211,238,.35); color: #22d3ee; }
-  .btn.am { border-color: rgba(251,191,36,.35); color: #fbbf24; }
   .label { font-size: 12px; color: #94a3b8; flex: 1; }
 
   .footer {
@@ -68,75 +84,95 @@
   .d-red { background: #ef4444; box-shadow: 0 0 8px rgba(239,68,68,.6); }
   .d-blue { background: #22d3ee; box-shadow: 0 0 8px rgba(34,211,238,.6); }
   .d-gray { background: #475569; }
-  .note { font-size: 11px; color: #22d3ee; padding: 6px 10px; background: rgba(34,211,238,.04); border: 1px solid rgba(34,211,238,.15); border-radius: 8px; }
 </style>
 </head>
 <body>
 <div class="page">
 
   <div class="header">
-    <h1>Teachable Machine for Micro:bit &mdash; Buttons &amp; Controls</h1>
+    <h1>Teachable Machine for Micro:bit Shortcuts</h1>
     <span>Cheat Sheet &mdash; Laminate Me!</span>
   </div>
-  <div class="laminate-tip">Print &rarr; Laminate &rarr; Stick next to the laptop</div>
+  <div class="laminate-tip">Print &rarr; Laminate &rarr; Stick near your micro:bit</div>
 
   <div class="cols">
 
-    <!-- Column 1: The 6 on-screen buttons -->
+    <!-- Column 1 -->
     <div>
       <div class="group">
-        <div class="group-title">Main Flow &mdash; Buttons In Order</div>
-        <div class="row"><span class="btn">Load Model</span><span class="label">Paste a Teachable Machine URL, fetch the AI</span></div>
-        <div class="row"><span class="btn">Start Webcam</span><span class="label">Grant camera access, begin live classification</span></div>
-        <div class="row"><span class="btn">Connect</span><span class="label">Open Web Bluetooth prompt, pair micro:bit V2</span></div>
-        <div class="row"><span class="btn am">TEST</span><span class="label">Send a single test command &mdash; verify pairing</span></div>
-        <div class="row"><span class="btn">Start Sending</span><span class="label">Push the top class to the micro:bit each frame</span></div>
-        <div class="row"><span class="btn cy">Talk On/Off</span><span class="label">Toggle speech synthesis &mdash; the computer speaks the class</span></div>
+        <div class="group-title">Streaming &amp; Data</div>
+        <div class="row"><kbd>Space</kbd><span class="label">Pause / Resume sensor stream</span></div>
+        <div class="row"><kbd>K</kbd><span class="label">Clear graph buffer</span></div>
+        <div class="row"><kbd>F</kbd><span class="label">Toggle fullscreen graph</span></div>
+        <div class="row"><kbd>R</kbd><span class="label">Start / Stop session recording</span></div>
       </div>
 
       <div class="group">
-        <div class="group-title">Heads-up</div>
-        <div class="row"><span class="label" style="color:#22d3ee;">No keyboard shortcuts. Everything is button-driven &mdash; safe for kids and touchscreens.</span></div>
+        <div class="group-title">Tabs (1&ndash;8)</div>
+        <div class="row"><kbd>1</kbd><span class="label">LEDs &mdash; 5&times;5 matrix</span></div>
+        <div class="row"><kbd>2</kbd><span class="label">Sensors &mdash; live readings</span></div>
+        <div class="row"><kbd>3</kbd><span class="label">Classes &mdash; P1 &amp; P2</span></div>
+        <div class="row"><kbd>4</kbd><span class="label">Samples &mdash; D-pad + Fire</span></div>
+        <div class="row"><kbd>5</kbd><span class="label">Graph &mdash; TensorFlow.js live plot</span></div>
+        <div class="row"><kbd>6</kbd><span class="label">Camera View &mdash; Three.js view</span></div>
+        <div class="row"><kbd>7</kbd><span class="label">Bench &mdash; raw JSON console</span></div>
+        <div class="row"><kbd>8</kbd><span class="label">About &mdash; version &amp; credits</span></div>
       </div>
     </div>
 
-    <!-- Column 2: BLE states + order -->
+    <!-- Column 2 -->
     <div>
       <div class="group">
-        <div class="group-title">Bluetooth Connection States</div>
+        <div class="group-title">LEDs &amp; Overlays</div>
+        <div class="row"><kbd>P</kbd><span class="label">Open LED preset picker</span></div>
+        <div class="row"><kbd>C</kbd><span class="label">Clear LED matrix</span></div>
+        <div class="row"><kbd>H</kbd><span class="label">Heart preset</span></div>
+        <div class="row"><kbd>S</kbd><span class="label">Smile preset</span></div>
+        <div class="row"><kbd>Esc</kbd><span class="label">Close any overlay / fullscreen</span></div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">Camera View Models</div>
+        <div class="row"><kbd>M</kbd><span class="label">Switch model (cycle)</span></div>
+        <div class="row"><span style="font-size:14px;">🔲</span><span class="label">micro:bit V2 board</span></div>
+        <div class="row"><span style="font-size:14px;">🚗</span><span class="label">Buggy robot</span></div>
+        <div class="row"><span style="font-size:14px;">🦾</span><span class="label">Robot Arm</span></div>
+        <div class="row"><span style="font-size:14px;">🎯</span><span class="label">Balance game</span></div>
+        <div class="row"><span style="font-size:14px;">🌦️</span><span class="label">Weather station</span></div>
+      </div>
+
+      <div class="group">
+        <div class="group-title">Themes &amp; View</div>
+        <div class="row"><kbd>T</kbd><span class="label">Cycle theme (Stealth &rarr; Neon &rarr; Arctic &rarr; Blaze)</span></div>
+        <div class="row"><kbd>L</kbd><span class="label">Cycle language (EN &rarr; FR &rarr; AR)</span></div>
+        <div class="row"><kbd>?</kbd><span class="label">Show shortcuts help overlay</span></div>
+      </div>
+    </div>
+
+    <!-- Column 3 -->
+    <div>
+      <div class="group">
+        <div class="group-title">BLE State Cheat Sheet</div>
         <div class="ble-row"><span class="dot d-gray"></span><span class="label"><strong style="color:#cbd5e1;">Disconnected</strong> &mdash; click Connect to pair</span></div>
-        <div class="ble-row"><span class="dot d-amber"></span><span class="label"><strong style="color:#fbbf24;">Pairing</strong> &mdash; choose "BBC micro:bit [xxxxx]" in the browser prompt</span></div>
-        <div class="ble-row"><span class="dot d-green"></span><span class="label"><strong style="color:#22c55e;">Connected</strong> &mdash; ready to send classifications</span></div>
-        <div class="ble-row"><span class="dot d-blue"></span><span class="label"><strong style="color:#22d3ee;">Sending</strong> &mdash; AI results streaming to the board</span></div>
-        <div class="ble-row"><span class="dot d-red"></span><span class="label"><strong style="color:#ef4444;">Error / Lost</strong> &mdash; power-cycle the micro:bit, pair again</span></div>
+        <div class="ble-row"><span class="dot d-amber"></span><span class="label"><strong style="color:#fbbf24;">Pairing</strong> &mdash; choose "BBC micro:bit [xxxxx]"</span></div>
+        <div class="ble-row"><span class="dot d-green"></span><span class="label"><strong style="color:#22c55e;">Connected</strong> &mdash; data is streaming live</span></div>
+        <div class="ble-row"><span class="dot d-blue"></span><span class="label"><strong style="color:#22d3ee;">Simulate</strong> &mdash; fake data, no board needed</span></div>
+        <div class="ble-row"><span class="dot d-red"></span><span class="label"><strong style="color:#ef4444;">Error</strong> &mdash; auto-retry 3x, then prompt</span></div>
       </div>
 
       <div class="group">
-        <div class="group-title">Recommended Flow</div>
-        <div class="row"><span class="label">1. Load Model &rarr; 2. Start Webcam &rarr; 3. Connect &rarr; 4. TEST &rarr; 5. Start Sending</span></div>
-        <div class="row"><span class="label">Once connected, you can TEST any time without the webcam running.</span></div>
-      </div>
-    </div>
-
-    <!-- Column 3: What the micro:bit does + tips -->
-    <div>
-      <div class="group">
-        <div class="group-title">What The micro:bit Does</div>
-        <div class="row"><span class="label"><strong style="color:#22c55e;">Each class = one LED reaction.</strong> The board shows a distinct icon / arrow / face per class on its 5&times;5 LEDs.</span></div>
-        <div class="row"><span class="label">TEST sends a demo icon so you can confirm pairing before training anything.</span></div>
-      </div>
-
-      <div class="group">
-        <div class="group-title">Talking Computer</div>
-        <div class="row"><span class="label"><strong style="color:#22d3ee;">Talk On</strong> &mdash; browser speech synthesis announces the top class ("I see a wave!").</span></div>
-        <div class="row"><span class="label"><strong style="color:#22d3ee;">Talk Off</strong> &mdash; silent; LEDs still react on the board.</span></div>
+        <div class="group-title">Classes (P1 / P2)</div>
+        <div class="row"><kbd>Q</kbd> / <kbd>A</kbd><span class="label">P1 class +/- 10&deg;</span></div>
+        <div class="row"><kbd>W</kbd> / <kbd>S</kbd><span class="label">P2 class +/- 10&deg;</span></div>
+        <div class="row"><kbd>0</kbd><span class="label">Center both classes (90&deg;)</span></div>
+        <div class="row"><kbd>O</kbd><span class="label">Classes OFF (detach PWM)</span></div>
       </div>
 
       <div class="group">
         <div class="group-title">Pro Tips</div>
         <div class="row" style="flex-direction:column;align-items:start;">
-          <span class="note">Use Chrome on a computer. Web Bluetooth is not supported in Safari or on iPhone.</span>
-          <span class="label" style="color:#64748b;font-size:11px;margin-top:4px;">Good lighting &rarr; better AI accuracy. Train more examples per class &rarr; fewer mis-fires.</span>
+          <span class="label" style="color:#22d3ee;">No board? Turn on <strong>Simulate Mode</strong> in Settings for Sine/Random/Ramp data.</span>
+          <span class="label" style="color:#64748b;font-size:11px;">Only <strong>Chrome</strong> / <strong>Edge</strong> (desktop or Android) support Web Bluetooth.</span>
         </div>
       </div>
     </div>
@@ -144,8 +180,8 @@
   </div>
 
   <div class="footer">
-    <span>Teachable Machine for Micro:bit v1.0.0 &bull; Single-page, button-driven, kid-friendly.</span>
-    <span class="brand">Chrome + webcam + BBC micro:bit V2</span>
+    <span>Teachable Machine for Micro:bit v1.0.0 &bull; Print on A4 landscape, laminate, love.</span>
+    <span class="brand">For the webcam + BBC micro:bit V2</span>
   </div>
 
 </div>

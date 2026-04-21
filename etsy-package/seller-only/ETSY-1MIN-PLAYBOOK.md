@@ -25,15 +25,15 @@ A second-by-second script: **what to say** + **what to click / do** to produce a
 
 Before you press Record:
 
-- [ ] BBC micro:bit V2 powered on (USB or battery), friendly icon on its LEDs
-- [ ] Chrome open with the app loaded
-- [ ] A Teachable Machine model URL ready (Image project recommended for video — visual classes look great on camera)
-- [ ] Model Loaded — class names visible on screen
-- [ ] Webcam started — confidence bars moving
-- [ ] Bluetooth paired — status is green, TEST passed
-- [ ] Good lighting on your face and hands — the AI is only as good as your light
-- [ ] Phone in 9:16 on a tripod, framing shows the laptop + the micro:bit together
-- [ ] Desk cleared — only the board + a notebook or prop in frame
+- [ ] webcam + BBC micro:bit V2 powered on, showing the **X** icon *(if not → re-flash `makecode.ts`)*
+- [ ] Chrome or Edge open with `index.html` loaded
+- [ ] BLE paired — status chip is **green**
+- [ ] Theme set — **Neon** photographs best; **Arctic** reads best in harsh daylight
+- [ ] Language matches your voiceover (EN / FR / AR)
+- [ ] micro:bit V2 paired (optional)
+- [ ] Tab 6 (3D) open with Buggy or Robot Arm selected — looks impressive in the hero shot
+- [ ] Phone in 9:16 on a tripod, front-lit, clean background
+- [ ] Desk cleared — only the board + one prop (buggy / class / cable) in frame
 - [ ] Captions app running OR on-screen text plan ready
 - [ ] Script read aloud once, timed under 55 seconds
 - [ ] Phone silenced, kids / dogs warned
@@ -43,10 +43,10 @@ Before you press Record:
 ## The 60-second arc
 
 ```
- 0–3 s   HOOK        "Watch me teach a computer to see — in 60 seconds."
- 3–10 s  CONTEXT     Show the 3 training classes on Teachable Machine. Load URL.
-10–35 s  DEMO        Start Webcam → confidence bars move. Connect + TEST. Start Sending.
-35–50 s  PAYOFF      Pose each class → micro:bit LEDs react. Flip Talk on — it speaks.
+ 0–3 s   HOOK        "Watch what this micro:bit does in 60 seconds."
+ 3–10 s  CONTEXT     Board → laptop → Connect → green chip.
+10–35 s  DEMO        Demo the core features. Highlight main benefits.
+35–50 s  PAYOFF      Live graph with Simulate. Record / Replay / CSV.
 50–55 s  CTA         "Full kit, lifetime updates — link below."
 55–60 s  END FRAME   Logo + handle frozen for the loop preview.
 ```
@@ -55,21 +55,20 @@ Etsy loops the video, so the **end frame should match the cover** — keeps view
 
 ---
 
-## Script Template A — "Teach a computer in 60 seconds" (hero demo)
+## Script Template A — "Your micro:bit becomes a playground" (hero demo)
 
-**Use case:** the main Etsy listing video. Shows the whole Train → Load → Webcam → Connect → Send flow.
+**Use case:** the main Etsy listing video. Showcases the 3D, the BLE pairing, and the live graph in one go.
 
 | Time | What to SAY | What to CLICK / DO |
 |---|---|---|
-| 0–3 s | *"I taught a computer to see me — in 60 seconds."* | Close-up of your hand making a wave. Text overlay: "Teach • Trigger • Control." |
-| 3–10 s | *"Google's Teachable Machine. Three classes. Train it in a browser tab."* | Cut to Teachable Machine site — show Wave / Fist / Nothing classes. Click Export, copy URL. |
-| 10–18 s | *"Paste the URL into our app. Load Model. One click."* | Paste into our app in Chrome. Click **Load Model**. Class names appear. |
-| 18–25 s | *"Start Webcam — the AI is watching."* | Click **Start Webcam**. Confidence bars move as you pose. |
-| 25–32 s | *"Connect a micro:bit over Bluetooth. Press TEST. LEDs react."* | Click **Connect**, pick the board, press **TEST**. micro:bit shows a check. |
-| 32–42 s | *"Start Sending. Wave → heart. Fist → arrow. Every class, an LED icon."* | Click **Start Sending**. Pose each class → cut to real micro:bit LEDs reacting. |
-| 42–50 s | *"Flip on Talk — the computer says what it sees."* | Toggle **Talk**. Pose → voice says "I see a wave!" |
+| 0–3 s | *"Your micro:bit becomes a playground — in the browser, in 60 seconds."* | Close-up of the real board with the X icon on the LEDs. Your hand holds it. |
+| 3–10 s | *"One page, one click, paired."* | Cut to the laptop. Click **🔗 Connect to micro:bit** → pick the board → chip turns green. |
+| 10–20 s | *"Sensors live — tilt it, the 3D model tilts too."* | Tab **6 · Camera View**. Tilt the real board. The virtual one mirrors it. Hold both in frame. |
+| 20–30 s | *"Click through the live demo — features run in the browser."* | Click through the live demo; features run in the browser.|
+| 30–40 s | *"Live graph with record, replay, CSV. A lab in a browser tab."* | Tab **5 · Graph** → click **🎲 Simulate** → chart dances → hover on **⏺ Record** and **📄 CSV**. |
+| 40–50 s | *"4 themes, 3 languages, works offline, no install, no account."* | Quick theme swap (header dropdown) → show Neon → Arctic. |
 | 50–55 s | *"Link below — lifetime updates, teachers and kids welcome."* | Face-cam back on. Eye contact. |
-| 55–60 s | *"Happy teaching."* | Hold still. Logo + handle overlay freezes. This becomes the loop frame. |
+| 55–60 s | *"Happy hacking."* | Hold still. Logo + handle overlay freezes. This becomes the loop frame. |
 
 ---
 
@@ -79,29 +78,29 @@ Etsy loops the video, so the **end frame should match the cover** — keeps view
 
 | Time | What to SAY | What to CLICK / DO |
 |---|---|---|
-| 0–3 s | *"STEM teachers — 45 minutes to AI literacy."* | Overhead shot of a laptop + a micro:bit on a desk, a kid's hand in frame. |
-| 3–10 s | *"Kids train a model. No cloud accounts, no installs."* | Quick cut: student at Teachable Machine site, then our app. Model loads. |
-| 10–20 s | *"They see confidence bars move. They learn what 'class' means."* | Close-up of the confidence bars reacting to hand signs. |
-| 20–30 s | *"They pair a micro:bit over Bluetooth. Their body now runs the hardware."* | Click Connect → green. Press TEST. Start Sending. LEDs react. |
-| 30–40 s | *"Included: a 45-min lesson plan, a classroom poster, 30 stickers, a cheat sheet."* | Fan out the printables on the desk. |
+| 0–3 s | *"STEM teachers — you need to see this."* | Overhead shot of a laptop + 5 micro:bits laid out on a desk. |
+| 3–10 s | *"One browser tab. Live sensors. No install on 30 laptops."* | Click Connect. Status goes green. Cut to Train panel — values streaming. |
+| 10–20 s | *"Calibrate the classification right in the UI. Baseline the sound for a quiet classroom."* | Train panel → Calibrate. Show the Set Level / Set Ambient buttons. |
+| 20–30 s | *"Record a full lesson. Export CSV. Drop into a lab report."* | Graph tab → Record → Stop → Save Session → CSV. |
+| 30–40 s | *"4 themes — Arctic for projectors. 3 languages — Arabic with full RTL."* | Swap theme to Arctic. Swap language to Arabic — watch the UI flip RTL. |
 | 40–50 s | *"Site license for up to 30 teachers. Lifetime updates."* | Text overlay with the licensing tiers + Etsy shop name. |
 | 50–60 s | *"Link below. Tag me when you run a workshop."* | Face-cam, hold the micro:bit, smile, freeze on logo. |
 
 ---
 
-## Script Template C — "Kid teaches the AI" (parent / home-school angle)
+## Script Template C — "Kid builds a robot" (parent / home-school angle)
 
-**Use case:** UGC / influencer feel.
+**Use case:** showing a young maker using the app — UGC / influencer feel.
 
 | Time | What to SAY | What to CLICK / DO |
 |---|---|---|
-| 0–3 s | *"My kid taught a computer to see. With a browser tab."* | Close-up: a small hand tapping Load Model. |
-| 3–10 s | *"Three classes: wave, clap, nothing. Trained in 5 minutes."* | Kid recording samples on Teachable Machine. Click Train. |
-| 10–20 s | *"One click loads it into the app. The webcam goes live."* | Paste URL → Load Model → Start Webcam. Confidence bars dance. |
-| 20–30 s | *"Pair the micro:bit. Press TEST. Everything lights up."* | Click Connect → green. Press TEST → LEDs flash. |
-| 30–40 s | *"Start Sending. Now every hand sign flips the LEDs on the board."* | Wave → heart. Clap → tick. Real micro:bit reacting in frame. |
-| 40–50 s | *"No login. Nothing leaves the computer. Runs offline in Chrome."* | Close the Wi-Fi indicator (airplane mode). App still works. |
-| 50–60 s | *"Full kit on Etsy. Link below."* | Kid holding the board. Smile. Freeze. |
+| 0–3 s | *"My kid built a robot. With a browser tab."* | Close-up: a small hand tapping Connect. |
+| 3–10 s | *"The micro:bit drives the class. The 3D model mirrors the real robot."* | Tab 6 (predicted class). Real robot next to the laptop. Buggy in 3D follows. |
+| 10–20 s | *"D-pad in the browser → arrows on the LED → commands to the motors."* | Tab 4 (Samples). Press ⬆ → LED arrow. Buggy crawls forward. |
+| 20–30 s | *"Tilt the brain — the ball rolls to the targets."* | Tab 6 → Balance Game model. Tilt the board. Ball rolls. |
+| 30–40 s | *"Graph the sensors. Record the run. Replay for homework."* | Tab 5 → Record 3 s of accel → Replay → Save Session. |
+| 40–50 s | *"No login. Nothing leaves the computer. Offline after first load."* | Close the Wi-Fi indicator (airplane mode). App still works. |
+| 50–60 s | *"Full kit on Etsy. Link below."* | Kid holding the robot + board. Smile. Freeze. |
 
 ---
 
@@ -109,7 +108,7 @@ Etsy loops the video, so the **end frame should match the cover** — keeps view
 
 - **One scene per phase.** Do not cut every 2 s — it feels frantic.
 - **Switch scenes on words**, not mid-sentence.
-- **Pause 1 second on TEST passing** — visual emphasis.
+- **Pause 1 second on the graph record button** — visual emphasis.
 - **Look at the camera lens**, not the screen, during all CTAs.
 - **Smile for the final 3 seconds**. The loop frame matters.
 - **Watch the clock** — if you pass 55 s, re-cut. Etsy compresses aggressively.
@@ -118,11 +117,11 @@ Etsy loops the video, so the **end frame should match the cover** — keeps view
 
 ## Common mistakes to avoid
 
-| Do not | Do |
+| ❌ Don't | ✅ Do |
 |---|---|
-| Start with "Hi, I'm…" + 10 s intro | First 3 s = a hand signal that triggers a micro:bit LED icon |
+| Start with "Hi, I'm…" + 10 s intro | First 3 s = the board tilting a 3D model on the laptop |
 | Film landscape (16:9) | 9:16 portrait — Etsy autoplays on mobile |
-| Demo on Safari / iPhone | Show Chrome only. iOS users will buy and refund |
+| Demo on Safari / iPhone | Show Chrome/Edge only. iOS users will buy and refund |
 | Skip captions | Burn in captions — the feed is muted by default |
 | Whisper | Speak 15% louder and 10% slower than normal conversation |
 | Forget the CTA | "Link below" in the last 5 s, every single time |
@@ -136,7 +135,7 @@ Etsy loops the video, so the **end frame should match the cover** — keeps view
 1. Watch the playback **once**, eyes off the script. Does it land?
 2. If >60 s → trim with a simple editor (iMovie, CapCut, DaVinci). Aim for 55 s.
 3. Burn in captions if you haven't already. Keep them centered below the subject.
-4. First frame — set it to a strong, still visual (the board + a hand signing). This is your cover.
+4. First frame — set it to a strong, still visual (the board in hand, or the logo). This is your cover.
 5. Export MP4 / H.264, under 100 MB.
 6. Upload to the Etsy listing. Verify autoplay. Check on a phone with sound off.
 
@@ -145,7 +144,7 @@ Etsy loops the video, so the **end frame should match the cover** — keeps view
 ## Etsy-specific upload tips
 
 - Etsy listing videos appear at the top as an **autoplaying preview tile**. First frame is the cover — make it visually clean.
-- Use the listing **title** to echo the video's first words. If you say *"I taught a computer to see"*, the listing title starts with *"Teachable Machine for Micro:bit — Teach • Trigger • Control…"*.
+- Use the listing **title** to echo the video's first words. If you say *"Your micro:bit becomes a playground"*, the listing title starts with *"Teachable Machine for Micro:bit — BLE Control Panel…"*.
 - Add the captions text into the listing **description** — searchable, helps SEO.
 - Tag the listing with words you actually said in the video.
 - Price tiers: single user `{{PRICE}}` · classroom / site `{{PRICE}}`.
@@ -167,9 +166,9 @@ Etsy loops the video, so the **end frame should match the cover** — keeps view
 ## Quick-reference cheat card
 
 ```
-PRE     Model URL ready · Chrome open · Webcam on · BLE green · TEST passed · 9:16 phone
+PRE     V2 has X icon · Chrome open · BLE green · 9:16 phone · Neon theme
 LAUNCH  Record → first words land in the first 3 seconds
-DURING  Load Model → Start Webcam → Connect → TEST → Start Sending → Talk on
+DURING  Tilt → 3D · A → LED · slider → class · Simulate → graph
 AFTER   Stop → trim to 55 s → burn captions → first frame = thumbnail
 UPLOAD  Etsy listing → upload MP4 → echo first words in listing title
 ```
@@ -180,52 +179,48 @@ UPLOAD  Etsy listing → upload MP4 → echo first words in listing title
 
 **Title (140 chars max):**
 ```
-Teachable Machine for Micro:bit — Train an AI, Make a Micro:bit React · Webcam + Bluetooth · Teach Trigger Control · No Install · Chrome
+Teachable Machine for Micro:bit — BLE Control Panel for Teachers & Kids · Sensors · Classes · Live Graph · 3D Models · No Install · Chrome / Edge
 ```
 
 **160-char short description:**
 ```
-Load a Teachable Machine model, point a webcam, pair a BBC micro:bit V2 over Bluetooth — LEDs react to every class. No install, no account. Chrome only.
+Browser-based BLE control panel for the webcam + BBC micro:bit V2. Sensors, classes, live graphs, 3D models, and a Samples — all from Chrome. No install, no account.
 ```
 
 **13 Etsy tags:**
 ```
-micro:bit, AI, machine learning, education, STEM, teachable machine, kids coding, teacher resource, classroom, homeschool, makerspace, webcam, bluetooth
+micro:bit, BLE, bluetooth, education, STEM, robotics, kids coding, teacher resource, sensors, classes, classroom, home school, makerspace
 ```
 
 **Materials:**
 ```
-HTML5, JavaScript, TensorFlow.js, Web Bluetooth, MakeCode, TypeScript
+HTML5, JavaScript, Web Bluetooth, TensorFlow.js, Three.js, PWA, MakeCode, TypeScript
 ```
 
 **SEO keywords:**
 ```
-browser-based · no-install · privacy-first · AI literacy · machine learning for kids · web bluetooth · micro:bit V2 · STEM workshop · teacher resource
+browser-based · no-install · privacy-first · offline-capable · web bluetooth · micro:bit V2 · STEM workshop · teacher resource
 ```
 
 **Price tiers (fill the `{{PRICE}}` placeholders):**
 
 | Tier | Who | Price |
 |---|---|---|
-| Launch | Early-bird single user | $14.99 |
-| Standard | Single user | $19.99 |
-| Bundle | Single user + all printables | $34.99 |
-| Tripwire | Try before you buy | $5 |
-| Site license | Up to 30 teachers at one school | $249 |
-| District | Multiple sites | $599 |
-| Promo code `AILAUNCH` | Launch discount | $8 |
+| Single user | One teacher / family / maker | `{{PRICE}}` |
+| Classroom / Site | Up to 30 teachers at one school | `{{PRICE}}` |
+| District / OEM | Multiple sites — DM through order | Custom |
 
 ---
 
 ## 7-image listing order
 
-1. **Hero** — real micro:bit + laptop, confidence bars visible on screen, hand signing in front of the webcam. Title overlay in Orbitron.
-2. **The 5-step flow** — Train → Load URL → Webcam → Connect → Send, big and clear.
-3. **Confidence bars close-up** — the AI is watching; bars tell the story.
-4. **micro:bit reacting** — hand signs on the left, LED icons on the right.
-5. **Talking Computer** — speech bubble "I see a wave!" on a kid-friendly scene.
-6. **What's in the ZIP** — printables fanned out next to the laptop.
-7. **License card** — "Single-user license · Lifetime updates · No cloud · Chrome" on a dark gradient.
+1. **Hero** — real micro:bit + laptop, 3D model mirroring the board's tilt. Title overlay in Orbitron.
+2. **Tabs overview** — grid screenshot of all train + predict with emoji labels.
+3. **Live graph** — TensorFlow.js close-up with colored lines + annotations, Record button glowing red.
+4. **3D models** — split screenshot of Buggy + Robot Arm.
+5. **Hand-holding** — real class plugged into P1, sliders on the screen.
+6. **Theme sampler** — 2×2 grid: Stealth · Neon · Arctic · Blaze.
+7. **License card** — "Single-user license · Lifetime updates · No cloud · Chrome / Edge" on a dark gradient.
 
 ---
 

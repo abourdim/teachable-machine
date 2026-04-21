@@ -1,4 +1,25 @@
 <!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  ⚠️  REWRITE PER PRODUCT — DO NOT SHIP AS-IS
+  ───────────────────────────────────────────────────────────────────────
+  apply-template.mjs substituted Teachable Machine for Micro:bit / v1.0.0 only.
+  The content below was inherited from teachable-machine and references
+  product-specific things: BBC micro:bit V2, X icon, BLE, P1, classes,
+  Tab 3/5/6, TensorFlow.js, Neon/Arctic themes, etc.
+
+  Before printing:
+    1. Delete this banner.
+    2. Rewrite the Pre-flight checklist (left column) for YOUR product.
+    3. Rewrite the 8-row arc (Say + Do columns) — keep the time
+       boundaries (0-3 / 3-10 / 10-20 / 20-30 / 30-40 / 40-50 / 50-55
+       / 55-60); they are proven pacing.
+    4. Rewrite the Cheat card monospace block (bottom right) as 4 lines:
+       PRE / LAUNCH / DURING / AFTER / UPLOAD.
+    5. Keep the specs table (right column, top) — Etsy specs don't
+       change per product.
+  ═══════════════════════════════════════════════════════════════════════
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -81,17 +102,16 @@
   <div>
     <h2>Pre-flight (90s)</h2>
     <ul>
-      <li>Teachable Machine image model trained (2–3 classes)</li>
-      <li>Model <strong>URL copied</strong> from Export → Upload</li>
-      <li>Chrome (or Edge) open, <code>index.html</code> loaded</li>
-      <li>Webcam permission granted — live preview visible</li>
-      <li>BBC micro:bit V2 powered, Bluetooth pairing ready</li>
-      <li>Bluetooth chip shows <span class="ok">green</span> after connect</li>
+      <li>BBC micro:bit V2 on, X icon showing</li>
+      <li>Chrome/Edge open, <code>index.html</code> loaded</li>
+      <li>BLE paired — chip is <span class="ok">green</span></li>
+      <li>Theme: <strong>Neon</strong> (or Arctic for daylight)</li>
       <li>Language matches voiceover (EN / FR / AR)</li>
-      <li>Speech synthesis tested once (optional)</li>
-      <li>Props for the trained gestures ready on desk</li>
+      <li>micro:bit V2 paired (optional)</li>
+      <li>Tab 6 (3D) on Buggy or Robot Arm</li>
       <li>Phone in 9:16 on tripod, front-lit</li>
-      <li>Desk cleared — laptop, webcam, micro:bit only</li>
+      <li>Desk cleared — board + one prop only</li>
+      <li>Captions app ready OR overlay plan</li>
       <li>Script read once, under 55s</li>
       <li>Phone silenced, kids/dogs warned</li>
     </ul>
@@ -114,7 +134,7 @@
     <ul>
       <li>One scene per phase — don't cut every 2s</li>
       <li>Switch on words, not mid-sentence</li>
-      <li>1s pause on TEST button press</li>
+      <li>1s pause on Record button</li>
       <li>Eye contact with lens on CTA</li>
       <li>Smile for final 3s — loop frame</li>
       <li>If &gt; 55s, re-cut</li>
@@ -128,14 +148,14 @@
     <tr><th>Time</th><th>Say</th><th>Do / Click</th></tr>
   </thead>
   <tbody>
-    <tr><td class="t">0–3s</td>   <td class="say">"Teach your micro:bit to see — in the browser, in 60 seconds."</td>           <td class="do">Close-up webcam + micro:bit V2 side by side. Hand holds the board.</td></tr>
-    <tr><td class="t">3–10s</td>  <td class="say">"Train a model on Teachable Machine, paste the URL, done."</td>                <td class="do">B-roll of teachablemachine.withgoogle.com → Export → Copy URL.</td></tr>
-    <tr><td class="t">10–20s</td> <td class="say">"Paste the model URL — the webcam starts classifying instantly."</td>          <td class="do">Paste URL in app. Live webcam preview + confidence bars on screen.</td></tr>
-    <tr><td class="t">20–30s</td> <td class="say">"One click pairs the micro:bit over Bluetooth."</td>                           <td class="do">Click Connect micro:bit → Chrome picker → V2 selected → chip <span class="ok">green</span>.</td></tr>
-    <tr><td class="t">30–40s</td> <td class="say">"Show a gesture — the micro:bit LEDs react live."</td>                         <td class="do">Perform trained gesture. Top class highlights. Real board shows matching icon.</td></tr>
-    <tr><td class="t">40–50s</td> <td class="say">"TEST button, optional voice feedback, three languages, no install."</td>     <td class="do">Click TEST. Toggle Speech. Language EN → FR → AR swap.</td></tr>
-    <tr><td class="t">50–55s</td> <td class="say">"Link below — lifetime updates, teachers and kids welcome."</td>               <td class="do">Face-cam. Eye contact with lens.</td></tr>
-    <tr><td class="t">55–60s</td> <td class="say">"Teach. Trigger. Control."</td>                                                <td class="do">Hold still. Logo + handle freeze. Loop frame.</td></tr>
+    <tr><td class="t">0–3s</td>   <td class="say">"Your micro:bit becomes a playground — in the browser, in 60 seconds."</td> <td class="do">Close-up real board with X icon. Hand holds it.</td></tr>
+    <tr><td class="t">3–10s</td>  <td class="say">"One page, one click, paired."</td>                                          <td class="do">Cut to laptop. Click Connect → pick board → chip <span class="ok">green</span>.</td></tr>
+    <tr><td class="t">10–20s</td> <td class="say">"Sensors live — tilt it, the 3D model tilts too."</td>                      <td class="do">Tab 6 · Camera View. Tilt real board. Virtual mirrors.</td></tr>
+    <tr><td class="t">20–30s</td> <td class="say">"Click through the live demo — features run in the browser."</td>          <td class="do">Click through the live demo; features run in the browser.</td></tr>
+    <tr><td class="t">30–40s</td> <td class="say">"Live graph with record, replay, CSV. A lab in a browser tab."</td>         <td class="do">Tab 5 · Graph → Simulate → hover Record and CSV.</td></tr>
+    <tr><td class="t">40–50s</td> <td class="say">"4 themes, 3 languages, works offline, no install, no account."</td>        <td class="do">Theme dropdown → Neon → Arctic. Quick swap.</td></tr>
+    <tr><td class="t">50–55s</td> <td class="say">"Link below — lifetime updates, teachers and kids welcome."</td>            <td class="do">Face-cam. Eye contact with lens.</td></tr>
+    <tr><td class="t">55–60s</td> <td class="say">"Happy hacking."</td>                                                       <td class="do">Hold still. Logo + handle freeze. Loop frame.</td></tr>
   </tbody>
 </table>
 
@@ -153,11 +173,11 @@
   </div>
   <div>
     <h2>Cheat card</h2>
-<div class="cheat">PRE     model trained · URL copied
-        webcam on · V2 powered · Chrome
+<div class="cheat">PRE     V2=X · Chrome · BLE green
+        9:16 phone · Neon · desk clean
 LAUNCH  first words land in first 3s
-DURING  paste URL · connect · gesture
-        TEST button · speech toggle
+DURING  tilt→3D · A→LED · slider→class
+        Simulate→graph
 AFTER   Stop → trim 55s → captions
         first frame = thumbnail
 UPLOAD  echo first words in title</div>

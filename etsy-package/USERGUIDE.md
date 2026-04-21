@@ -36,6 +36,8 @@ etsy-package/
     ├── ETSY_LISTING.html
     ├── ETSY_PUBLISH_GUIDE.html
     ├── etsy-playbook.html
+    ├── etsy-playbook-fr.html
+    ├── etsy-playbook-ar.html
     ├── ETSY-1MIN-PLAYBOOK.md
     ├── LICENSE-SITE
     └── SITE_LICENSE_CERTIFICATE.html
@@ -101,8 +103,8 @@ The HTML sources ship too, so teachers can tweak them.
   advertised on the listing.
 
 #### `shortcuts-cheatsheet.html` — A4 landscape
-- **What:** Single-page flow reference (Train → Load URL → Start Webcam
-  → Connect → Start Sending), BLE state cheat sheet, TEST button tips.
+- **What:** Keyboard shortcuts (Space, 1–8, P, F, K, Esc), BLE state
+  cheat sheet, tab map.
 - **When to use:** teachers print and pin next to the classroom PC.
 
 #### `classroom-poster.html` — A3 portrait
@@ -117,8 +119,8 @@ The HTML sources ship too, so teachers can tweak them.
   hand or in Canva, hand out.
 
 #### `sticker-sheet.html` — A4 portrait
-- **What:** 30 circular badges — "I Trained an AI!", "I Connected BLE!",
-  "My Micro:bit Listens!" and other achievement stickers.
+- **What:** 30 circular badges — "I Connected BLE!", theme icons, 3D
+  model crew, language badges, achievement stickers.
 - **When to use:** teachers print on sticker paper (Avery 22807 or
   similar) for student rewards. Great "bonus" in Etsy description.
 
@@ -135,13 +137,13 @@ The HTML sources ship too, so teachers can tweak them.
   elements, each 2000×1500 px. Rendered by `build-package.js` into
   `output/etsy-mockup-1.png` … `etsy-mockup-7.png`.
 - **The seven mockups:**
-  1. **Hero shot** — laptop + webcam + BBC micro:bit V2 in frame, product name + "Teach • Trigger • Control" tagline overlay
-  2. **Teachable Machine model-training screen** — three classes with confidence bars
-  3. **Gesture → LED reaction GIF** — hand pose on the left, micro:bit LED icon on the right
-  4. **Classroom scene** — kids teaching the AI at a shared laptop, micro:bit on the desk
-  5. **TEST button close-up** — the one-click BLE sanity check
-  6. **Mobile view** — Chrome on a laptop sized down, the single-page flow in portrait crop
-  7. **Bundle / bonus card** — "What's in the ZIP" file manifest and lifetime-updates badge
+  1. **Hero shot** — product name + tagline on Stealth background
+  2. **16-cell feature grid** — train + predict × features
+  3. **Teacher pitch** — "For teachers" with quotes
+  4. **Kid pitch** — big, playful, colorful
+  5. **What's in the ZIP** — file manifest
+  6. **4-theme showcase** — Stealth / Neon / Arctic / Blaze
+  7. **Trilingual callout** — EN / FR / AR
 - **When to use:** upload as the 7 listing images on Etsy in this order.
   Etsy shows the first image as the thumbnail in search.
 
@@ -172,10 +174,11 @@ Etsy listing.
 - **When to use:** open this in a browser **first** on launch day. Tick
   off each step. Your progress persists across reloads.
 
-#### `etsy-playbook.html`
+#### `etsy-playbook.html` / `-fr.html` / `-ar.html`
 - **What:** 60-second video script + shot list for the Etsy listing
-  video. English-only (this product is monolingual — one video per
-  listing is all Etsy allows).
+  video. EN / FR / AR variants (Etsy lets you upload one video per
+  listing; use whichever language best matches your target audience,
+  or record three separate videos for international listings).
 - **When to use:** day you film the product video. Keep the playbook
   open on a second screen while recording.
 
@@ -211,10 +214,10 @@ Numbered by when each file enters the picture:
 4. Preview `etsy-listing-mockups.html` in Chrome; verify all 7 mockups
    render with current branding.
 
-### 2. Record the video (once)
+### 2. Record the video (once per language)
 
-5. Open `seller-only/etsy-playbook.html` on a second screen. Record in
-   OBS following the shot list.
+5. Open `seller-only/etsy-playbook.html` (EN / FR / AR) on a second
+   screen. Record in OBS following the shot list.
 6. Export a 60-second MP4, ≤100 MB, 1080p or higher (Etsy's limit).
 
 ### 3. Create the listing (launch day)
