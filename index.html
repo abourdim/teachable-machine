@@ -56,6 +56,21 @@
     .animated-logo {
       flex: 0 0 auto;
     }
+
+    .lang-flag-btn {
+      background: transparent; border: 1px solid rgba(148,163,184,0.25);
+      display: flex; align-items: center; padding: 3px; border-radius: 5px;
+      cursor: pointer; opacity: .55; line-height: 0;
+    }
+    .lang-flag-btn.active { border-color: var(--accent, #22c55e); opacity: 1; }
+    .lang-flag-btn svg { display: block; border-radius: 2px; }
+
+    a.secondary {
+      border-radius: 999px; padding: 7px 12px; font-size: 0.78rem;
+      background: rgba(15,23,42,0.9); color: #e5e7eb;
+      border: 1px solid rgba(148,163,184,0.6);
+    }
+    a.secondary:hover { border-color: rgba(148,163,184,0.9); }
   </style>
 </head>
 
@@ -70,12 +85,17 @@
           <div class="title-text">
             <h1>WORKSHOP-DIY.ORG</h1>
             <div class="subtitle">
-              <span class="header-tagline">Explore · Create · Innovate</span>
+              <span class="header-tagline" data-i18n="tagline">Explore · Create · Innovate</span>
             </div>
           </div>
         </div>
 
         <div class="header-right">
+          <div id="lang-switch" style="display:flex;gap:4px;">
+            <button class="lang-flag-btn" data-lang="en" title="English" aria-label="English" onclick="setLang('en')"><svg width="22" height="15" viewBox="0 0 60 40"><rect width="60" height="40" fill="#012169"/><path d="M0 0L60 40M60 0L0 40" stroke="#fff" stroke-width="6.5"/><path d="M0 0L60 40M60 0L0 40" stroke="#C8102E" stroke-width="3.5"/><path d="M30 0V40M0 20H60" stroke="#fff" stroke-width="11"/><path d="M30 0V40M0 20H60" stroke="#C8102E" stroke-width="6.5"/></svg></button>
+            <button class="lang-flag-btn" data-lang="fr" title="Français" aria-label="Français" onclick="setLang('fr')"><svg width="22" height="15" viewBox="0 0 60 40"><rect width="20" height="40" fill="#002395"/><rect x="20" width="20" height="40" fill="#fff"/><rect x="40" width="20" height="40" fill="#ED2939"/></svg></button>
+            <button class="lang-flag-btn" data-lang="ar" title="العربية" aria-label="العربية" onclick="setLang('ar')"><svg width="22" height="15" viewBox="0 0 900 600"><defs><clipPath id="glTM1"><rect width="450" height="600"/></clipPath></defs><rect width="450" height="600" fill="#006233"/><rect x="450" width="450" height="600" fill="#FFF"/><g fill="#D21034" transform="translate(450,300)"><circle r="125"/><circle cx="25" r="100" fill="#FFF"/><g clip-path="url(#glTM1)" transform="translate(-450,-300)"><circle cx="475" cy="300" r="100" fill="#006233"/></g><path d="M85-12l22 67h71l-57 42 22 67-58-42-57 42 21-67-57-42h71z"/></g></svg></button>
+          </div>
           <div class="chip">
             <span class="chip-dot"></span>
             <span id="status">READY!</span>
@@ -92,25 +112,25 @@
           <div class="card">
             <div class="card-header">
               <div>
-                <div class="card-title"><span class="icon">🧠</span>Teachable Machine</div>
-                <div class="card-subtitle">Paste your model URL, then load.</div>
+                <div class="card-title"><span class="icon">🧠</span><span data-i18n="card_teachable_title">Teachable Machine</span></div>
+                <div class="card-subtitle" data-i18n="card_teachable_sub">Paste your model URL, then load.</div>
               </div>
-              <span class="badge">Ends with <strong>/models/XXXXX/</strong></span>
+              <span class="badge" data-i18n="badge_ends_with"><span>Ends with</span> <strong>/models/XXXXX/</strong></span>
             </div>
 
             <div class="form-row">
               <input id="modelUrl" type="text" placeholder="https://teachablemachine.withgoogle.com/models/XXXXX/" />
-              <button id="loadBtn" class="primary"><span class="btn-icon">⬇️</span>Load model</button>
-              <button id="startCamBtn" disabled class="secondary"><span class="btn-icon">📷</span>Start webcam</button>
+              <button id="loadBtn" class="primary"><span class="btn-icon">⬇️</span><span data-i18n="btn_load_model">Load model</span></button>
+              <button id="startCamBtn" disabled class="secondary"><span class="btn-icon">📷</span><span data-i18n="btn_start_webcam">Start webcam</span></button>
             </div>
 
             <div class="hint">
-              <div class="hint-title">Steps</div>
+              <div class="hint-title" data-i18n="hint_steps_title">Steps</div>
               <ol>
-                <li>Load model</li>
-                <li>Start webcam</li>
-                <li>Connect micro:bit</li>
-                <li>Start sending</li>
+                <li data-i18n="step_load_model">Load model</li>
+                <li data-i18n="step_start_webcam">Start webcam</li>
+                <li data-i18n="step_connect_microbit">Connect micro:bit</li>
+                <li data-i18n="step_start_sending">Start sending</li>
               </ol>
             </div>
           </div>
@@ -119,49 +139,53 @@
           <div class="card">
             <div class="card-header">
               <div>
-                <div class="card-title"><span class="icon">🔌</span>micro:bit live link</div>
-                <div class="card-subtitle">Connect and stream commands.</div>
+                <div class="card-title"><span class="icon">🔌</span><span data-i18n="card_link_title">micro:bit live link</span></div>
+                <div class="card-subtitle" data-i18n="card_link_sub">Connect and stream commands.</div>
               </div>
 
               <span id="connPill" class="status-pill">
                 <span id="connDot" class="status-dot"></span>
-                <span id="connText">Disconnected</span>
+                <span id="connText" data-i18n="conn_disconnected">Disconnected</span>
               </span>
             </div>
 
             <div class="button-row">
-              <button id="connectBtn" class="primary"><span class="btn-icon">🔗</span>Connect</button>
-              <button id="disconnectBtn" disabled class="secondary"><span class="btn-icon">✖</span>Disconnect</button>
-              <button id="testBtn" disabled class="secondary"><span class="btn-icon">🧪</span>Send TEST</button>
+              <button id="connectBtn" class="primary"><span class="btn-icon">🔗</span><span data-i18n="btn_connect">Connect</span></button>
+              <button id="disconnectBtn" disabled class="secondary"><span class="btn-icon">✖</span><span data-i18n="btn_disconnect">Disconnect</span></button>
+              <button id="testBtn" disabled class="secondary"><span class="btn-icon">🧪</span><span data-i18n="btn_send_test">Send TEST</span></button>
             </div>
 
             <div class="button-row">
-              <button id="startSendBtn" disabled class="primary"><span class="btn-icon">🚀</span>Start sending</button>
-              <button id="stopSendBtn" disabled class="secondary"><span class="btn-icon">🛑</span>Stop</button>
-              <button id="speechBtn" class="secondary"><span class="btn-icon">🗣</span>Enable speech</button>
-              <button id="muteBtn" disabled class="secondary"><span class="btn-icon">🤫</span>Mute</button>
+              <button id="startSendBtn" disabled class="primary"><span class="btn-icon">🚀</span><span data-i18n="btn_start_sending">Start sending</span></button>
+              <button id="stopSendBtn" disabled class="secondary"><span class="btn-icon">🛑</span><span data-i18n="btn_stop">Stop</span></button>
+              <button id="speechBtn" class="secondary"><span class="btn-icon">🗣</span><span data-i18n="btn_enable_speech">Enable speech</span></button>
+              <button id="muteBtn" disabled class="secondary"><span class="btn-icon">🤫</span><span data-i18n="btn_mute">Mute</span></button>
             </div>
 
             <div class="device-row">
-              <span class="device-label">Last sent</span>
+              <span class="device-label" data-i18n="label_last_sent">Last sent</span>
               <span class="device-value" id="lastSent">—</span>
+            </div>
+
+            <div class="button-row" style="margin-top:10px;">
+              <a href="flash.html" class="secondary" style="text-decoration:none;display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:8px;"><span class="btn-icon">💾</span><span data-i18n="link_get_code">Get micro:bit code</span></a>
             </div>
           </div>
 
           <!-- Predictions -->
           <div class="card">
             <div class="card-header">
-              <div class="card-title"><span class="icon">📡</span>Prediction</div>
-              <span class="badge">Normalized: <strong id="normLabel">—</strong></span>
+              <div class="card-title"><span class="icon">📡</span><span data-i18n="card_prediction_title">Prediction</span></div>
+              <span class="badge" data-i18n="badge_normalized"><span>Normalized:</span> <strong id="normLabel">—</strong></span>
             </div>
 
             <div class="sensor-layout" style="grid-template-columns: 1fr 1fr;">
               <div class="sensor-card">
-                <div class="sensor-label">Label</div>
+                <div class="sensor-label" data-i18n="label_pred_label">Label</div>
                 <div class="sensor-value"><span id="predLabel">—</span></div>
               </div>
               <div class="sensor-card">
-                <div class="sensor-label">Confidence</div>
+                <div class="sensor-label" data-i18n="label_confidence">Confidence</div>
                 <div class="sensor-value"><span id="predProb">—</span></div>
               </div>
             </div>
@@ -175,41 +199,41 @@
           <!-- Webcam -->
           <div class="card">
             <div class="card-header">
-              <div class="card-title"><span class="icon">📷</span>Webcam</div>
-              <span class="badge">Live view</span>
+              <div class="card-title"><span class="icon">📷</span><span data-i18n="card_webcam_title">Webcam</span></div>
+              <span class="badge" data-i18n="badge_live_view">Live view</span>
             </div>
 
             <div id="webcam-container" style="display:flex;justify-content:center;"></div>
 
             <div class="hint" style="margin-top:8px;">
-              <div class="hint-title">Tip</div>
-              <div>Good lighting helps the model “see” better.</div>
+              <div class="hint-title" data-i18n="hint_tip_title">Tip</div>
+              <div data-i18n="hint_lighting">Good lighting helps the model “see” better.</div>
             </div>
           </div>
 
           <!-- Camera controls (separate card so webcam stays big) -->
           <div class="card" id="camera-controls-card">
             <div class="card-header">
-              <div class="card-title"><span class="icon">🎛️</span>Camera controls</div>
-              <span class="badge">Front / Back · Flip</span>
+              <div class="card-title"><span class="icon">🎛️</span><span data-i18n="card_camera_title">Camera controls</span></div>
+              <span class="badge" data-i18n="badge_front_back_flip">Front / Back · Flip</span>
             </div>
 
             <div class="button-row" style="margin-top:6px;">
-              <button id="camSideBtn" disabled class="secondary"><span class="btn-icon">🎥</span>Front / Back</button>
-              <button id="flipBtn" disabled class="secondary"><span class="btn-icon">🪞</span>Flip</button>
+              <button id="camSideBtn" disabled class="secondary"><span class="btn-icon">🎥</span><span data-i18n="btn_front_back">Front / Back</span></button>
+              <button id="flipBtn" disabled class="secondary"><span class="btn-icon">🪞</span><span data-i18n="btn_flip">Flip</span></button>
             </div>
 
             <div class="device-row">
-              <span class="device-label">Camera</span>
+              <span class="device-label" data-i18n="label_camera">Camera</span>
               <span class="device-value" id="camSideStatus">—</span>
               <span style="opacity:.6;">•</span>
-              <span class="device-label">Flip</span>
+              <span class="device-label" data-i18n="btn_flip">Flip</span>
               <span class="device-value" id="flipStatus">—</span>
             </div>
 
             <div class="hint" style="margin-top:8px;">
-              <div class="hint-title">Tip</div>
-              <div>If the image looks “backwards”, press <strong>Flip</strong>.</div>
+              <div class="hint-title" data-i18n="hint_tip_title">Tip</div>
+              <div data-i18n="hint_backwards">If the image looks “backwards”, press <strong>Flip</strong>.</div>
             </div>
           </div>
 
@@ -219,17 +243,17 @@
           <!-- Message log -->
           <div class="card log-card" style="flex:1;">
             <div class="card-header">
-              <div class="card-title"><span class="icon">🧾</span>Message log</div>
+              <div class="card-title"><span class="icon">🧾</span><span data-i18n="card_log_title">Message log</span></div>
               <div class="log-controls">
-                <button id="clearLogBtn" class="small secondary">Clear</button>
+                <button id="clearLogBtn" class="small secondary" data-i18n="btn_clear">Clear</button>
               </div>
             </div>
 
             <div class="log" id="log"></div>
 
             <div class="log-footer">
-              <span>PC ⇄ micro:bit</span>
-              <span>Teachable predictions</span>
+              <span data-i18n="footer_pc_microbit">PC ⇄ micro:bit</span>
+              <span data-i18n="footer_teachable_predictions">Teachable predictions</span>
             </div>
           </div>
 
@@ -262,6 +286,131 @@
   const MIN_SEND_MS = 300;
   const MIN_SPEAK_MS = 600;
 
+  /* ================= i18n (EN/FR/AR) =========================
+     Same data-i18n + dictionary pattern used across the WDIY app family.
+     innerHTML (not textContent) so hint_backwards can keep its <strong>. */
+  const RTL_LANGS = { ar: true };
+  const I18N = {
+    fr: {
+      tagline: "Explorer · Créer · Innover",
+      card_teachable_title: "Teachable Machine",
+      card_teachable_sub: "Collez l'URL de votre modèle, puis chargez-le.",
+      badge_ends_with: "<span>Se termine par</span> <strong>/models/XXXXX/</strong>",
+      btn_load_model: "Charger le modèle",
+      btn_start_webcam: "Démarrer la webcam",
+      hint_steps_title: "Étapes",
+      step_load_model: "Charger le modèle",
+      step_start_webcam: "Démarrer la webcam",
+      step_connect_microbit: "Connecter le micro:bit",
+      step_start_sending: "Démarrer l'envoi",
+      card_link_title: "Liaison micro:bit en direct",
+      card_link_sub: "Connectez-vous et diffusez des commandes.",
+      conn_disconnected: "Déconnecté", conn_connected: "Connecté",
+      btn_connect: "Connecter", btn_disconnect: "Déconnecter", btn_send_test: "Envoyer TEST",
+      btn_start_sending: "Démarrer l'envoi", btn_stop: "Arrêter",
+      btn_enable_speech: "Activer la voix", btn_mute: "Muet",
+      label_last_sent: "Dernier envoi",
+      link_get_code: "Obtenir le code micro:bit",
+      card_prediction_title: "Prédiction",
+      badge_normalized: "<span>Normalisé :</span> <strong id=\"normLabel\">—</strong>",
+      label_pred_label: "Étiquette", label_confidence: "Confiance",
+      card_webcam_title: "Webcam", badge_live_view: "Vue en direct",
+      hint_tip_title: "Astuce", hint_lighting: "Un bon éclairage aide le modèle à mieux « voir ».",
+      card_camera_title: "Contrôles caméra", badge_front_back_flip: "Avant / Arrière · Miroir",
+      btn_front_back: "Avant / Arrière", btn_flip: "Miroir",
+      label_camera: "Caméra",
+      hint_backwards: "Si l'image semble « inversée », appuyez sur <strong>Miroir</strong>.",
+      card_log_title: "Journal des messages", btn_clear: "Effacer",
+      footer_pc_microbit: "PC ⇄ micro:bit", footer_teachable_predictions: "Prédictions Teachable",
+      status_ready: "PRÊT !", status_connecting: "Connexion...", status_connect_failed: "Échec de connexion",
+      status_loading: "Chargement…", status_model_error: "Erreur de modèle",
+      status_starting_webcam: "Démarrage de la webcam...", status_switching_camera: "Changement de caméra...",
+      status_flipping: "Retournement...",
+      log_requesting: "Recherche du micro:bit…", log_connected: "✅ micro:bit connecté",
+      log_disconnected: "Déconnecté", log_connect_failed: "Échec de connexion : ",
+      log_model_loading: "Chargement du modèle…", log_model_loaded: "Modèle chargé.",
+      log_model_load_failed: "Échec du chargement du modèle : ",
+      log_webcam_started: "Webcam démarrée (", log_switch_camera: "Changement de caméra : ",
+      log_flip: "Miroir ", log_speech_enabled: "Voix activée.", log_speech_muted: "Voix coupée.",
+      log_started_sending: "Envoi des prédictions démarré.", log_stopped_sending: "Envoi arrêté.",
+      log_ui_ready: "Interface prête → Charger le modèle → Démarrer la webcam → Connecter le micro:bit → Démarrer l'envoi",
+      alert_paste_url: "Collez l'URL du modèle",
+      alert_model_failed: "Échec du chargement du modèle. Vérifiez que l'URL se termine par /models/XXXXX/",
+      speech_enabled_utterance: "Voix activée",
+      cam_front: "Avant", cam_back: "Arrière", flip_on: "ACTIVÉ", flip_off: "DÉSACTIVÉ"
+    },
+    ar: {
+      tagline: "استكشف · ابتكر · أبدع",
+      card_teachable_title: "Teachable Machine",
+      card_teachable_sub: "الصق رابط النموذج، ثم حمّله.",
+      badge_ends_with: "<span>ينتهي بـ</span> <strong>/models/XXXXX/</strong>",
+      btn_load_model: "تحميل النموذج",
+      btn_start_webcam: "تشغيل الكاميرا",
+      hint_steps_title: "الخطوات",
+      step_load_model: "تحميل النموذج",
+      step_start_webcam: "تشغيل الكاميرا",
+      step_connect_microbit: "توصيل micro:bit",
+      step_start_sending: "بدء الإرسال",
+      card_link_title: "اتصال micro:bit المباشر",
+      card_link_sub: "اتصل وابدأ بث الأوامر.",
+      conn_disconnected: "غير متصل", conn_connected: "متصل",
+      btn_connect: "اتصال", btn_disconnect: "قطع الاتصال", btn_send_test: "إرسال TEST",
+      btn_start_sending: "بدء الإرسال", btn_stop: "إيقاف",
+      btn_enable_speech: "تفعيل الصوت", btn_mute: "كتم",
+      label_last_sent: "آخر إرسال",
+      link_get_code: "الحصول على كود micro:bit",
+      card_prediction_title: "التنبؤ",
+      badge_normalized: "<span>موحّد:</span> <strong id=\"normLabel\">—</strong>",
+      label_pred_label: "التصنيف", label_confidence: "الثقة",
+      card_webcam_title: "الكاميرا", badge_live_view: "عرض مباشر",
+      hint_tip_title: "نصيحة", hint_lighting: "الإضاءة الجيدة تساعد النموذج على \"الرؤية\" بشكل أفضل.",
+      card_camera_title: "إعدادات الكاميرا", badge_front_back_flip: "أمامية / خلفية · عكس",
+      btn_front_back: "أمامية / خلفية", btn_flip: "عكس",
+      label_camera: "الكاميرا",
+      hint_backwards: "إذا بدت الصورة \"معكوسة\"، اضغط على <strong>عكس</strong>.",
+      card_log_title: "سجل الرسائل", btn_clear: "مسح",
+      footer_pc_microbit: "الحاسوب ⇄ micro:bit", footer_teachable_predictions: "تنبؤات Teachable",
+      status_ready: "جاهز!", status_connecting: "جاري الاتصال...", status_connect_failed: "فشل الاتصال",
+      status_loading: "جاري التحميل…", status_model_error: "خطأ في النموذج",
+      status_starting_webcam: "جاري تشغيل الكاميرا...", status_switching_camera: "جاري تبديل الكاميرا...",
+      status_flipping: "جاري العكس...",
+      log_requesting: "جاري البحث عن micro:bit…", log_connected: "✅ تم توصيل micro:bit",
+      log_disconnected: "تم قطع الاتصال", log_connect_failed: "فشل الاتصال: ",
+      log_model_loading: "جاري تحميل النموذج…", log_model_loaded: "تم تحميل النموذج.",
+      log_model_load_failed: "فشل تحميل النموذج: ",
+      log_webcam_started: "تم تشغيل الكاميرا (", log_switch_camera: "تبديل الكاميرا: ",
+      log_flip: "عكس ", log_speech_enabled: "تم تفعيل الصوت.", log_speech_muted: "تم كتم الصوت.",
+      log_started_sending: "بدأ إرسال التنبؤات.", log_stopped_sending: "توقف الإرسال.",
+      log_ui_ready: "الواجهة جاهزة ← تحميل النموذج ← تشغيل الكاميرا ← توصيل micro:bit ← بدء الإرسال",
+      alert_paste_url: "الصق رابط النموذج",
+      alert_model_failed: "فشل تحميل النموذج. تأكد أن الرابط ينتهي بـ /models/XXXXX/",
+      speech_enabled_utterance: "تم تفعيل الصوت",
+      cam_front: "أمامية", cam_back: "خلفية", flip_on: "مفعّل", flip_off: "معطّل"
+    }
+  };
+  const ORIG = {};
+  function tr(key) {
+    const lang = document.documentElement.lang || 'en';
+    if (I18N[lang] && I18N[lang][key] !== undefined) return I18N[lang][key];
+    return ORIG[key] !== undefined ? ORIG[key] : key;
+  }
+  function applyLang(lang) {
+    if (lang !== 'fr' && lang !== 'ar') lang = 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = RTL_LANGS[lang] ? 'rtl' : 'ltr';
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (ORIG[key] === undefined) ORIG[key] = el.innerHTML;
+      const dict = I18N[lang];
+      el.innerHTML = (dict && dict[key] !== undefined) ? dict[key] : ORIG[key];
+    });
+    document.querySelectorAll('.lang-flag-btn').forEach(b => {
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('teachable-lang', lang); } catch (e) {}
+  }
+  window.setLang = applyLang;
+
   /* ================= UI HELPERS ================= */
   const $ = id => document.getElementById(id);
 
@@ -281,10 +430,10 @@
     const text = $("connText");
     if (isConnected) {
       pill.classList.add("connected");
-      text.textContent = "Connected";
+      text.textContent = tr('conn_connected');
     } else {
       pill.classList.remove("connected");
-      text.textContent = "Disconnected";
+      text.textContent = tr('conn_disconnected');
     }
   }
 
@@ -299,7 +448,8 @@
 
     speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = "en-US";
+    const speechLangs = { en: "en-US", fr: "fr-FR", ar: "ar-SA" };
+    u.lang = speechLangs[document.documentElement.lang] || "en-US";
     speechSynthesis.speak(u);
 
     lastSpoken = text;
@@ -311,8 +461,8 @@
 
   async function connectMicrobit() {
     try {
-      setStatus("Connecting...");
-      logLine("Requesting micro:bit…", "info");
+      setStatus(tr('status_connecting'));
+      logLine(tr('log_requesting'), "info");
 
       device = await navigator.bluetooth.requestDevice({
         filters: [{ namePrefix: "BBC micro:bit" }],
@@ -322,13 +472,13 @@
       device.addEventListener("gattserverdisconnected", () => {
         connected = false;
         writeChar = null;
-        setStatus("Disconnected");
+        setStatus(tr('conn_disconnected'));
         setConn(false);
         $("disconnectBtn").disabled = true;
         $("testBtn").disabled = true;
         $("startSendBtn").disabled = true;
         $("stopSendBtn").disabled = true;
-        logLine("Disconnected", "error");
+        logLine(tr('log_disconnected'), "error");
       });
 
       server = await device.gatt.connect();
@@ -339,21 +489,21 @@
       if (!writeChar) throw new Error("UART write characteristic not found");
 
       connected = true;
-      setStatus("READY!");
+      setStatus(tr('status_ready'));
       setConn(true);
 
       $("disconnectBtn").disabled = false;
       $("testBtn").disabled = false;
       $("startSendBtn").disabled = !(model && webcam);
 
-      logLine("✅ micro:bit connected", "success");
+      logLine(tr('log_connected'), "success");
 
     } catch (e) {
       console.error(e);
       alert((e.name || "Error") + ": " + (e.message || e));
-      setStatus("Connect failed");
+      setStatus(tr('status_connect_failed'));
       setConn(false);
-      logLine("Connect failed: " + (e.message || e), "error");
+      logLine(tr('log_connect_failed') + (e.message || e), "error");
     }
   }
 
@@ -377,8 +527,8 @@
   function setCamUI() {
     const camSideStatus = $("camSideStatus");
     const flipStatus = $("flipStatus");
-    if (camSideStatus) camSideStatus.textContent = (camFacing === "user") ? "Front" : "Back";
-    if (flipStatus) flipStatus.textContent = camFlip ? "ON" : "OFF";
+    if (camSideStatus) camSideStatus.textContent = (camFacing === "user") ? tr('cam_front') : tr('cam_back');
+    if (flipStatus) flipStatus.textContent = camFlip ? tr('flip_on') : tr('flip_off');
   }
 
   async function stopWebcamSafe() {
@@ -392,7 +542,7 @@
   async function startWebcamAdvanced() {
     camRestarting = true;
 
-    setStatus("Starting webcam...");
+    setStatus(tr('status_starting_webcam'));
     await stopWebcamSafe();
 
     // Clear the view immediately
@@ -426,8 +576,8 @@
     setCamUI();
 
     $("startSendBtn").disabled = !(connected && model);
-    setStatus("READY!");
-    logLine("Webcam started (" + camFacing + ")", "success");
+    setStatus(tr('status_ready'));
+    logLine(tr('log_webcam_started') + camFacing + ")", "success");
 
     camRestarting = false;
   }
@@ -437,23 +587,23 @@
 
   $("loadBtn").onclick = async () => {
     const base = $("modelUrl").value.trim();
-    if (!base) return alert("Paste model URL");
+    if (!base) return alert(tr('alert_paste_url'));
 
     const modelURL = base.endsWith("/") ? base + "model.json" : base + "/model.json";
     const metadataURL = base.endsWith("/") ? base + "metadata.json" : base + "/metadata.json";
 
     try {
-      setStatus("Loading…");
-      logLine("Loading model…", "info");
+      setStatus(tr('status_loading'));
+      logLine(tr('log_model_loading'), "info");
       model = await tmImage.load(modelURL, metadataURL);
       $("startCamBtn").disabled = false;
-      setStatus("READY!");
-      logLine("Model loaded.", "success");
+      setStatus(tr('status_ready'));
+      logLine(tr('log_model_loaded'), "success");
     } catch (e) {
       console.error(e);
-      setStatus("Model error");
-      logLine("Model load failed: " + (e.message || e), "error");
-      alert("Model load failed. Check the URL ends with /models/XXXXX/");
+      setStatus(tr('status_model_error'));
+      logLine(tr('log_model_load_failed') + (e.message || e), "error");
+      alert(tr('alert_model_failed'));
     }
   };
 
@@ -519,18 +669,18 @@
   $("startSendBtn").onclick = () => {
     sending = true;
     $("stopSendBtn").disabled = false;
-    setStatus("READY!");
-    logLine("Started sending predictions.", "info");
+    setStatus(tr('status_ready'));
+    logLine(tr('log_started_sending'), "info");
   };
 
   $("stopSendBtn").onclick = () => {
     sending = false;
     $("stopSendBtn").disabled = true;
-    setStatus("READY!");
+    setStatus(tr('status_ready'));
     stableCount = 0;
     lastLabelKey = "";
     lastSentKey = "";
-    logLine("Stopped sending.", "info");
+    logLine(tr('log_stopped_sending'), "info");
   };
 
   $("testBtn").onclick = () => sendLine("CMD:TEST,1.00");
@@ -543,16 +693,16 @@
     // Friendly defaults per side:
     camFlip = (camFacing === "user"); // front = mirror ON, back = OFF
     setCamUI();
-    setStatus("Switching camera...");
-    logLine("Switch camera: " + camFacing, "info");
+    setStatus(tr('status_switching_camera'));
+    logLine(tr('log_switch_camera') + camFacing, "info");
     await startWebcamAdvanced();
   };
 
   if (flipBtn) flipBtn.onclick = async () => {
     camFlip = !camFlip;
     setCamUI();
-    setStatus("Flipping...");
-    logLine("Flip " + (camFlip ? "ON" : "OFF"), "info");
+    setStatus(tr('status_flipping'));
+    logLine(tr('log_flip') + (camFlip ? tr('flip_on') : tr('flip_off')), "info");
     await startWebcamAdvanced();
   };
 
@@ -560,23 +710,27 @@
   $("speechBtn").onclick = () => {
     speechEnabled = true;
     $("muteBtn").disabled = false;
-    speak("Speech enabled");
-    logLine("Speech enabled.", "success");
+    speak(tr('speech_enabled_utterance'));
+    logLine(tr('log_speech_enabled'), "success");
   };
 
   $("muteBtn").onclick = () => {
     speechEnabled = false;
     speechSynthesis.cancel();
     $("muteBtn").disabled = true;
-    logLine("Speech muted.", "info");
+    logLine(tr('log_speech_muted'), "info");
   };
 
   $("clearLogBtn").onclick = () => { $("log").innerHTML = ""; };
 
-  setStatus("READY!");
+  let savedLang = 'en';
+  try { savedLang = localStorage.getItem('teachable-lang') || 'en'; } catch (e) {}
+  applyLang(savedLang);
+
+  setStatus(tr('status_ready'));
   setConn(false);
   setCamUI();
-  logLine("UI ready → Load model → Start webcam → Connect micro:bit → Start sending", "info");
+  logLine(tr('log_ui_ready'), "info");
   </script>
 </body>
 </html>
